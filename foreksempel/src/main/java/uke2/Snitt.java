@@ -24,7 +24,7 @@ public class Snitt {
         snitt.leggTil(3);
         System.out.println(snitt.hentSnitt());
         snitt.leggTil(122);
-        snitt.leggTil(3);
+        snitt.leggTil(33);
         System.out.println("Snittet er nå "+snitt.hentSnitt());
     }
     
