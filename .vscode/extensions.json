@@ -1,3 +1,6 @@
 {
-  "recommendations": ["vscjava.vscode-java-pack"]
+  "recommendations": [
+    "vscjava.vscode-java-pack",
+    "bilalekrem.scenebuilderextension"
+  ]
 }
