@@ -8,12 +8,12 @@ public int nextInt() {
     Random random = new Random();
     return random.nextInt(100);
 }
+    int test;
 
     public static void main(String[] args) {
         Random100 ra = new Random100();
         System.out.println(ra.nextInt());
-        
-
+    
     }
 
 }
