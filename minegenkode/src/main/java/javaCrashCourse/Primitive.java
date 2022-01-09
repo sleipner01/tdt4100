@@ -1,6 +1,6 @@
 package javaCrashCourse;
 
-public class Main {
+public class Primitive {
     
     public static void main(String[] args) {
         System.out.println("javaCrashCourse");
@@ -30,5 +30,7 @@ public class Main {
         if(isEligible) {
             System.out.println(myAge + " " + viewCount + " " + massiveViewCount + " " + price + " " + letter);
         }
+
+
     }
 }
