@@ -2,11 +2,9 @@ package javaCrashCourse;
 
 public class Primitive {
     
-    public static void main(String[] args) {
+    public static void main(Strings[] args) {
         System.out.println("javaCrashCourse");
         // System.out.println("Hello Java!");
-
-
 
         // Integers
         int age = 30, temperature = 20;
@@ -30,7 +28,5 @@ public class Primitive {
         if(isEligible) {
             System.out.println(myAge + " " + viewCount + " " + massiveViewCount + " " + price + " " + letter);
         }
-
-
     }
 }
