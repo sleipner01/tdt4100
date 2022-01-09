@@ -2,7 +2,7 @@ package javaCrashCourse;
 
 public class Primitive {
     
-    public static void main(Strings[] args) {
+    public static void main(StringExamples[] args) {
         System.out.println("javaCrashCourse");
         // System.out.println("Hello Java!");
 

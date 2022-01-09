@@ -1,6 +1,6 @@
 package javaCrashCourse;
 
-public class Strings {
+public class StringExamples {
 
     public static void main(String[] args) {
         String message = "   Hello World" + "!!   ";
