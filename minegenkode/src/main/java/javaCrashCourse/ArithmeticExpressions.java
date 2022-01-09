@@ -30,6 +30,7 @@ public class ArithmeticExpressions {
         h -= 1;
         h *= 1;
         h /= 1;
+        System.out.println(h);
 
         System.out.println("--------");
 
