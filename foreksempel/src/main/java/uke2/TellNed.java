@@ -1,7 +1,5 @@
 package uke2;
 
-import org.w3c.dom.ls.LSException;
-
 public class TellNed {
 
     int igjen;
