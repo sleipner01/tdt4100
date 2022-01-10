@@ -29,3 +29,6 @@ liste = legg_til_frukt(liste,"ananas",1)
 print(f'Nananananas: {finn_antall(liste,"ananas")}')
 
 print(liste)
+
+# Men hadde det ikke vært kult om vi kunne lage egne fruktobjekter,
+# som husker hvor mange det er av dem?
