@@ -27,5 +27,7 @@ public class Mortage {
 
         String mortageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + mortageFormatted);
+
+        scanner.close();
     }
 }
