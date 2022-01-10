@@ -1,0 +1,113 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Frukt",
+            "request": "launch",
+            "mainClass": "foreksempel/uke2.Frukt",
+            "projectName": "foreksempel"
+        },
+        {
+            "type": "java",
+            "name": "Launch Random100",
+            "request": "launch",
+            "mainClass": "foreksempel/uke2.Random100",
+            "projectName": "foreksempel"
+        },
+        {
+            "type": "java",
+            "name": "Launch Snitt",
+            "request": "launch",
+            "mainClass": "foreksempel/uke2.Snitt",
+            "projectName": "foreksempel"
+        },
+        {
+            "type": "java",
+            "name": "Launch TellNed",
+            "request": "launch",
+            "mainClass": "foreksempel/uke2.TellNed",
+            "projectName": "foreksempel"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArithmeticExpressions",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.ArithmeticExpressions",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayExamples",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.ArrayExamples",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch Casting",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.Casting",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch CastingExamples",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.CastingExamples",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConstantExamples",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.ConstantExamples",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch Formatting",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.Formatting",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch MathExamples",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.MathExamples",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch Mortage",
+            "request": "launch",
+            "console": "externalTerminal",
+            "mainClass": "minegenkode/javaCrashCourse.Mortage",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReadingInputExamples",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.ReadingInputExamples",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringExamples",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.StringExamples",
+            "projectName": "minegenkode"
+        }
+    ]
+}
