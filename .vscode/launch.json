@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ForLoops",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.ForLoops",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch IfStatements",
             "request": "launch",
             "mainClass": "minegenkode/javaCrashCourse.IfStatements",
