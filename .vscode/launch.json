@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch IfStatements",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.IfStatements",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch LogicalOperators",
             "request": "launch",
             "mainClass": "minegenkode/javaCrashCourse.LogicalOperators",
