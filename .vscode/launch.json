@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LogicalOperators",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.LogicalOperators",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch ComparisonOperators",
+            "request": "launch",
+            "mainClass": "minegenkode/javaCrashCourse.ComparisonOperators",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
