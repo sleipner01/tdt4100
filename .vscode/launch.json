@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UsePen",
+            "request": "launch",
+            "mainClass": "minegenkode/pen.UsePen",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch LoginPage",
             "request": "launch",
             "mainClass": "minegenkode/loginGUI.LoginPage",
