@@ -16,5 +16,8 @@ public class IfStatements {
         boolean hasHighIncome = (income > 100_000);
         System.out.println(hasHighIncome);
 
+        String className = (income > 100_000) ? "First" : "Economy";
+        System.out.println(className);
+
     }
 }
