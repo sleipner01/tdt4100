@@ -6,11 +6,11 @@ public class TellNed {
 
     int igjen;
 
-    private TellNed(int igjen) {
+    public TellNed(int igjen) {
         this.igjen = igjen;
     }
 
-    private void start() {
+    public void start() {
         while (this.igjen >= 0) {
             System.out.println("Det er igjen "+this.igjen+" sekunder til forelesning. Omtrent.");
             this.igjen -= 1;
@@ -24,8 +24,5 @@ public class TellNed {
     public static void main(String[] args) {
         TellNed tellned = new TellNed(10);
         tellned.start();
-
-
-
     }
 }
