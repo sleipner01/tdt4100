@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LoginPage",
+            "request": "launch",
+            "mainClass": "minegenkode/loginGUI.LoginPage",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch GUI",
             "request": "launch",
             "mainClass": "minegenkode/javaGUI.GUI",
