@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch UsePen",
             "request": "launch",
+            "mainClass": "minegenkode/pens.UsePen",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch UsePen",
+            "request": "launch",
             "mainClass": "minegenkode/pen.UsePen",
             "projectName": "minegenkode"
         },

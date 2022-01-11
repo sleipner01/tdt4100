@@ -1,4 +1,4 @@
-package pen;
+package pens;
 
 public class Pen {
     String type = "gel";
