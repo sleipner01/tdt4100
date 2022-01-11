@@ -4,8 +4,6 @@ public class SuperPen extends Pen {
     
     public String color = "gold";
     public int point = 8;
-
-    @Override
     
     public void write(String text) {
         if(clicked == false) System.out.println("The pen isn't clicked...");

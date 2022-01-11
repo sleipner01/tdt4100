@@ -1,9 +1,9 @@
 package pens;
 
 public class Pen {
-    String type = "gel";
-    String color = "blue";
-    int point = 10;
+    public String type = "gel";
+    public String color = "blue";
+    public int point = 10;
 
     static boolean clicked = false;
 
