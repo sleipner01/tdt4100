@@ -20,9 +20,12 @@ public class Person {
 
     public String getNavn() {
         return navn;
+
     }
 
     public void drikkKaffe() {
+        var variabelnavn = "34";
+
         this.kopperIntatt += 1;
         System.out.println(this.getNavn()+" har drukket kopp "+this.kopperIntatt);
     }
@@ -32,12 +35,6 @@ public class Person {
         System.out.println(person.getNavn());
         person.drikkKaffe();
         System.out.println("Nok kaffe: "+person.nokKaffe());
-
-        Person person2 = new Person("Frank");
-        person.drikkKaffe();
-        person.drikkKaffe();
-        person.drikkKaffe();
-        person.drikkKaffe();
 
     }
 }
