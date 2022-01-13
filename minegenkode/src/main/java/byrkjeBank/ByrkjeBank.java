@@ -6,8 +6,8 @@ public class ByrkjeBank {
 
 	public static void main(String[] args) {
 				
-		Account beyonce = new Account("Beyonce", "B00002");
-		beyonce.showMenu();
+		Account account = new Account("Magnus", "Byrkjeland", "B00002");
+		account.showMenu();
 		
 		
 	}

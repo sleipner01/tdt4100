@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ByrkjeBank",
+            "request": "launch",
+            "mainClass": "minegenkode/byrkjeBank.ByrkjeBank",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch UsePen",
             "request": "launch",
             "mainClass": "minegenkode/pens.UsePen",
