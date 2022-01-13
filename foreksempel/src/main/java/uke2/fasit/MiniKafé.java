@@ -1,4 +1,4 @@
-package uke2;
+package uke2.fasit;
 
 // En kafé som har plass til én person.
 // Vi har en KaffeMater, som serverer kaffe helt til kunden er fornøyd.
