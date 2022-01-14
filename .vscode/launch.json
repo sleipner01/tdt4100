@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Location",
+            "request": "launch",
+            "mainClass": "ovinger/stateandbehavior.Location",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch Account",
             "request": "launch",
             "mainClass": "ovinger/stateandbehavior.Account",
