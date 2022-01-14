@@ -19,7 +19,7 @@ For å få testene og eventuell kode til øvingene lokalt brukes systemet git. I
 
 ## Dette må du gjøre
 
-Oppgavene for denne øvingen skal lagres i [`ovinger/src/main/java/stateandbehavior`](../../src/main/java/stateandbehavior), og denne mappen må du opprette selv. Test-filene som kjøres for å teste koden ligger i [`ovinger/src/test/java/stateandbehavior`](../../src/test/java/stateandbehavior).
+Oppgavene for denne øvingen skal lagres i [`ovinger/src/main/java/stateandbehavior`](../../src/main/java/stateandbehavior). Test-filene som kjøres for å teste koden ligger i [`ovinger/src/test/java/stateandbehavior`](../../src/test/java/stateandbehavior).
 
 Hvis du ikke allerede har gjort det, må du installere VSCode med det forhåndskonfigurerte oppsettet for TDT4100. Se [denne](https://www.ntnu.no/wiki/display/tdt4100/VS+Code) wikisiden for en guide. Dersom du opplever problemer med oppsett/installasjon send oss gjerne en melding på Teams i "Teknisk Hjelp" kanalen, still et spørsmål på Piazza eller spør din læringsassistent!
 
