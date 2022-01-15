@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UpOrDownCounter",
+            "request": "launch",
+            "mainClass": "ovinger/stateandbehavior.UpOrDownCounter",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch Digit",
             "request": "launch",
             "mainClass": "ovinger/stateandbehavior.Digit",
