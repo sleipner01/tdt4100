@@ -19,7 +19,7 @@ Konstruktøren tar inn en `int`, som initialiserer tallsystem-verdien, mens siff
 
 Skriv Java-kode for `Digit`-klassen med oppførsel som er beskrevet over. Lag også en `toString()`-metode som returnerer siffer-verdien som en `String`, hvor sifrene 0-9 etterfølges av A-Z. F.eks. skal siffer-verdien 10 i sekstentallssystemet gi "A" som returverdi.
 
-Lag en `main`-metode, slik at du kan sjekke at oppførselen stemmer med tilstandsdiagrammet (bruk samme sekvens av kall).
+Lag en `main`-metode, der du gjennomfører en valgfri sekvens av kall som viser at koden oppfører seg som tenkt. Om du tegnet tilstandsdiagram for denne oppgaven i Del 1, kan du bruk samme sekvens av kall her.
 
 Testkode for denne oppgaven finner du her: [src/test/java/stateandbehavior/DigitTest.java](../../src/test/java/stateandbehavior/DigitTest.java).
 

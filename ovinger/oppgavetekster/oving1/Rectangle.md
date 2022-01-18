@@ -37,7 +37,7 @@ Andre metoder:
 
 Skriv Java-kode for `Rectangle`-klassen med oppførsel som er beskrevet over.
 
-Lag en passende `toString()`-metode og et hovedprogram, slik at du kan sjekke at oppførselen stemmer med tilstandsdiagrammet (bruk samme sekvens av kall).
+Lag en passende `toString()`-metode og et hovedprogram, der du gjennomfører en valgfri sekvens av kall som viser at koden oppfører seg som tenkt. Om du tegnet tilstandsdiagram for denne oppgaven i Del 1, kan du bruk sekvens av kall her.
 
 Testkode for denne oppgaven finner du her: [src/test/java/stateandbehavior/RectangleTest.java](../../src/test/java/stateandbehavior/RectangleTest.java).
 
