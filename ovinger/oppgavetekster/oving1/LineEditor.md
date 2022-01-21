@@ -23,7 +23,7 @@ Klassen har metoder med følgende oppførsel:
 
 Skriv Java-kode for `LineEditor`-klassen med oppførsel som beskrevet over.
 
-Lag en `toString()`-metode som viser teksten med tegnet `'|'` skutt inn på tekstinnsettingsposisjonen. Lag så en `main`-metode, slik at du kan sjekke at oppførselen stemmer med tilstandsdiagrammet (bruk samme start-tilstand og sekvens av kall).
+Lag en `toString()`-metode som viser teksten med tegnet `'|'` skutt inn på tekstinnsettingsposisjonen. Lag så en `main`-metode, der du gjennomfører en valgfri sekvens av kall som viser at koden oppfører seg som tenkt. Om du tegnet tilstandsdiagram for denne oppgaven i Del 1, kan du bruk samme sekvens av kall her.
 
 Testkode for oppgaven finner du her: [src/test/java/stateandbehavior/LineEditorTest.java](../../src/test/java/stateandbehavior/LineEditorTest.java).
 

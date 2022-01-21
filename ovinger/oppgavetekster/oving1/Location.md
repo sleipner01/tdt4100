@@ -19,6 +19,6 @@ Merk at konvensjonen innen datagrafikk og rutenettbaserte spill er at $`x`$ øke
 
 Skriv Java-kode for `Location`-klassen med oppførsel som beskrevet over.
 
-Lag en passende `toString()`-metode og en `main`-metode, slik at du kan sjekke at oppførselen stemmer med tilstandsdiagrammet (bruk samme start-tilstand og sekvens av kall).
+Lag en passende `toString()`-metode og en `main`-metode, der du gjennomfører en valgfri sekvens av kall som viser at koden oppfører seg som tenkt. Om du tegnet tilstandsdiagram for denne oppgaven i Del 1, kan du bruk samme sekvens av kall her.
 
 Testkode for oppgaven finner du her: [src/test/java/stateandbehavior/LocationTest.java](../../src/test/java/stateandbehavior/LocationTest.java).
