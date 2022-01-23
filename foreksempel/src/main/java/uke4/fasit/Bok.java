@@ -1,7 +1,7 @@
 package uke4.fasit;
 
 
-public class Bok {
+public class Bok{
 
 	/**
 	 * Vi har tre variable som lagrer tilstanden. Legg merke til at
@@ -24,7 +24,11 @@ public class Bok {
 		return hvor;
 	}
 
-	
+	private boolean kanLese(int mengde) {
+		return hvor + mengde > sider;
+	}
+
+
 	/**
 	 * Utløs unntak hvis en hevder å ha lest flere sider av boken
 	 * enn det er igjen av boken. Oppdaterer ellers hvilken side
@@ -32,7 +36,7 @@ public class Bok {
 	 * @param mengde er antall sider som er lest denne gangen.
 	 */
 	public void lest(int mengde) {
-		if (hvor + mengde > sider)
+		if (kanLese(mengde))
 			throw new IllegalArgumentException("Nope.");
 		hvor += mengde;
 	}
