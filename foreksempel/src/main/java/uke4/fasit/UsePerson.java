@@ -1,0 +1,18 @@
+package uke4.fasit;
+
+public class UsePerson {
+    
+    public static void main(String[] args) {
+
+        // Person1 lagrer navnet som for- og etternavn, men vi kan skrive ut
+        // hele navnet på en gang.
+        Person1 p1 = new Person1("Jens", "Olsen");
+        System.out.println(p1.getFullName());
+
+        // Person2 lagrer kun 'hele navnet' men vi kan hente ut for- og 
+        // etternavn.
+        Person2 p2 = new Person2("Jens Olsen");
+        System.out.println(p2.getGivenName()+" "+p2.getFamilyName());
+    }
+    
+}
