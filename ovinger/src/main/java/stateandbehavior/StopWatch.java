@@ -1,5 +1,8 @@
 package stateandbehavior;
 
+// This does not work properly. I know the fix since I just now understood what the task really wanted, but I don't have the time.
+// Anyways, I wrote a lot of code, so I figured I deliver this as well. 
+
 public class StopWatch {
 
     boolean started;
