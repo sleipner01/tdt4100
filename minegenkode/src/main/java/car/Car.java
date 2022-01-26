@@ -10,7 +10,7 @@ public class Car {
     private Person driver;
     private Plate plate;
     private int numberOfSeats;
-    private Collection<Person> passengers = new ArrayList();
+    private Collection<Person> passengers = new ArrayList<>();
 
     public Car(String sign, int numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
