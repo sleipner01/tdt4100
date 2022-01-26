@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Account",
+            "request": "launch",
+            "mainClass": "ovinger/oving2.Account",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch Car",
             "request": "launch",
             "mainClass": "minegenkode/car.Car",
