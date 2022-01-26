@@ -2,7 +2,10 @@
 // 1.
 // Det er komplett innkapsling av tilstanden fordi vi lager metoder som kan endre på variablene i klassen,
 // men at man utenfra objektet ikke får tilgang til variablene direkte.
-// Da kan vi gjøre ulike tester med verdiene som blir sendt før vi lagerer dem i variablene.
+// Da kan vi gjøre ulike tester med verdiene som blir sendt før vi lagerer dem i variablene,
+// slik at man alltid lagrer verdiene på en måte koden man har skrevet forstår det på.
+// Andre skal man benytte seg av koden senere trenger man ikke å huske alle "reglene" for oppsettet i koden,
+// eller at parameterne trenger en viss form, men man får tydelig beskjed om hva metoden forventer å få inn. 
 
 // 2.
 // Denne klassen er data-orientert, siden metodene her behandler dataen, sjekket at den er gyldig før den blir lagret.
