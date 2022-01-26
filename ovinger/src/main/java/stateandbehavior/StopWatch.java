@@ -8,6 +8,8 @@ public class StopWatch {
     boolean started;
     boolean hasBeenStopped;
     int ticks;
+    int startTicks;
+    int stopTicks;
     int thisLapTimeStart;
     int lastLapTime;
 
@@ -15,6 +17,8 @@ public class StopWatch {
         this.started = false;
         this.hasBeenStopped = false;
         this.ticks = 0;
+        this.startTicks = 0;
+        this.stopTicks = 0;
         this.lastLapTime = -1;
         this.thisLapTimeStart = 0;
     }
@@ -32,14 +36,13 @@ public class StopWatch {
     }
 
     public int getTime() {
-        if(this.hasBeenStopped == true)
-            return this.ticks;
-        if(this.started == false)
-            return -1;
-        return this.ticks;
+        if (!this.started) return -1;
+        if (this.hasBeenStopped) return this.stopTicks - this.startTicks;
+        return this.ticks - this.startTicks;
     }
 
     public int getLapTime() {
+        if (!this.started) return -1;
         return this.ticks - this.thisLapTimeStart;
     }
 
@@ -53,6 +56,7 @@ public class StopWatch {
 
     public void start() {
         this.started = true;
+        this.startTicks = this.ticks;
         this.thisLapTimeStart = this.ticks;
     }
 
@@ -63,6 +67,7 @@ public class StopWatch {
     
     public void stop() {
         this.hasBeenStopped = true;
+        this.stopTicks = this.ticks;
         lap();
     }
 
