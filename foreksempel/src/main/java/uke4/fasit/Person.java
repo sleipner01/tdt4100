@@ -24,11 +24,12 @@ public class Person {
 	 * Konstruktører er fine - og en kan ha mange av dem. 
 	 * en kan ha flere av dem. Det vanlige er å la ÉN av dem faktisk lage
 	 * objektet, mens de andre peker til denne ved hjelp av this(). 
-     * I dette eksempelet kaller konstruktøren med to parametre i bruk først
-     * konstruktøren som kaller med én parameter, før den setter den siste.
-     * Konstruktøren med én parameter kaller den uten parametre først, før
-     * den setter sitt eget felt. 
-     * 
+	 * I dette eksempelet vil konstruktøren uten parametre kalle den tar inn navn, da
+	 * har den lagt på en standardverdi for navn. Konstruktøren som kun tar inn navn kaller igjen
+	 * konstruktøren som tar inn navn og alder. Den sender med en standardverdi på alder.
+	 * 
+	 * Koden her avviker fra eksempelet jeg laget i forelesning. Kjør det og se om du forstår endringen i logikk.
+	 * 
      * Når jeg gjør det på denne måten kan man ha verifikasjon av stuff på et
      * passende sted, og slippe å ha ting flere steder.
      * 
@@ -37,23 +38,24 @@ public class Person {
      * 
 	 */
 
+	 // Denne k får inn alt vi trenger for å lage et fullverdig objekt av typen Person  
 	public Person(String name, int age) {
-        this(name);
+        this.name = name;
 		this.age = age;
-        System.out.println("Person: Inni 2 parameters konstruktør");
+        System.out.println("Person: Inni 2 parameters konstruktør"); 
 	}
 
+	// Her mangler vi alder. Da må vi kalle k over, men med en standardverdi for alder 
 	public Person(String name) { // Hvis ikke alder er nevnt, 0 år.
-        this(); // Vi har ikke noen alder, sant? Da settes en standard i konstruktøren uten parametre. 
-        this.name = name;
+        this(name, 33); // Vi har ikke noen alder, sant? Da lager vi en standard da! 
 		System.out.println("Person: Inni 1 parameters konstruktør");
 	}
 
-	// Defaultverdier når en ikke spesifiserer noe.
+	// Her har vi ikkeno. Da kaller vi metoden rett over, med en standardverdi for navn.
 	public Person() { 
+		this("Wanda");
 		System.out.println("Person: Inni 0 parameters konstruktør");
-		this.name = "Kari Nordmann";
-		this.age = 0;
+
 	}
 
 
