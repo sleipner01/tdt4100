@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Car",
+            "request": "launch",
+            "mainClass": "minegenkode/car.Car",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch Plate",
             "request": "launch",
             "mainClass": "minegenkode/car.Plate",
