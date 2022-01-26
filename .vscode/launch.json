@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Plate",
+            "request": "launch",
+            "mainClass": "minegenkode/car.Plate",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch Person",
+            "request": "launch",
+            "mainClass": "minegenkode/car.Person",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch UpOrDownCounter",
             "request": "launch",
             "mainClass": "ovinger/stateandbehavior.UpOrDownCounter",
