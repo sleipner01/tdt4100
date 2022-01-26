@@ -1,3 +1,14 @@
+// TEORI
+// 1.
+// Det er komplett innkapsling av tilstanden fordi vi lager metoder som kan endre på variablene i klassen,
+// men at man utenfra objektet ikke får tilgang til variablene direkte.
+// Da kan vi gjøre ulike tester med verdiene som blir sendt før vi lagerer dem i variablene.
+
+// 2.
+// Denne klassen er data-orientert, siden metodene her behandler dataen, sjekket at den er gyldig før den blir lagret.
+// Lager man en klasse, som f.eks Bank.java, blir den tjeneste-orientert siden kan kan benytte seg av metodene i Account.java.
+
+
 package oving2;
 
 public class Account {
