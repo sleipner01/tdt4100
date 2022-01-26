@@ -16,7 +16,7 @@ public class Bokhylle {
     // Vi vil lagre flere bøker!
     List<Bok> samling;
 
-    // Collection<Bok> samling = new ArrayList<>();
+    // List<Bok> samling = new ArrayList<>();
 
     public Bokhylle() {
         samling = new ArrayList<>();
