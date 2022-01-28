@@ -1,3 +1,15 @@
+// 1.
+// Et forslag er å atomisere all informasjon,
+// som å dele fornavn og etternavn inn i to egne variabler.
+
+// 2.
+    // 1.
+    // Lagre infoen i et objekt, med fornavn, etternavn
+    // domene, og landskode.
+
+    // 2.
+    // Splitte validert input og lagre domnene, og landskode i egne variabler.
+
 package oving2;
 
 import java.util.Arrays;
@@ -12,7 +24,7 @@ public class Person {
     private Date birthday;
     private char gender = '\0';
     
-    private static final String emailFormat = "^[A-Za-z.]+@[A-Za-z.]+$";
+    private static final String emailFormat = "^[A-Za-z.]+@[A-Za-z0-9.]+$";
     private static final List<String> landCodes = Arrays.asList(
         "ad", "ae", "af", "ag", "ai", "al", "am", "ao", "aq", "ar", "as",
         "at", "au", "aw", "ax", "az", "ba", "bb", "bd", "be", "bf", "bg",
@@ -123,23 +135,17 @@ public class Person {
         this.birthday = birthday;
     }
 
-    private boolean validateGender(char genderInput, boolean throwExeption) {
-        // if (genderInput == 'm' || genderInput == 'f') {
-        //     genderInput = Character.toUpperCase(genderInput);
-        // }
+    private boolean validateGender(char genderInput) throws IllegalArgumentException {
+        String validGenders = "MF\0";
 
-        if (genderInput != 'M' || genderInput != 'F') {
-            if (throwExeption)
-                throw new IllegalArgumentException("The gender can only be F or M.");
-            
-            return false;
-        }
+        if (validGenders.indexOf(genderInput) == -1) 
+            throw new IllegalArgumentException("The gender can only be F or M.");
 
         return true;
     }
 
-    public void setGender(char gender) {
-        validateGender(gender, true);
+    public void setGender(char gender) throws IllegalArgumentException {
+        validateGender(gender);
         this.gender = gender;
     }
 
@@ -147,7 +153,9 @@ public class Person {
     public static void main(String[] args) {
 
         Person person = new Person();
-        person.setEmail("ola.nordmann@ntnu");
+        person.setName("Ola Nordmann");
+        person.setEmail("ola.nordmann@ntnu.no");
+        person.setGender('F');
 
     }
 
