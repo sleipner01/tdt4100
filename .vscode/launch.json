@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Person",
+            "request": "launch",
+            "mainClass": "ovinger/oving2.Person",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch Account",
             "request": "launch",
             "mainClass": "ovinger/oving2.Account",
