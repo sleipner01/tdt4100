@@ -12,6 +12,7 @@ public class SelfServiceCheckout {
     public SelfServiceCheckout(String day) {
         validateDay(day);
         this.day = day;
+        System.out.println(this.day);
     }
 
     private void validateDay(String day) {
@@ -25,6 +26,7 @@ public class SelfServiceCheckout {
         }
 
         this.phoneNumber = phoneNumber;
+        System.out.println(this.phoneNumber);
     }
 
     private boolean isValidPhoneNumber(String phoneNumber) {
@@ -56,7 +58,7 @@ public class SelfServiceCheckout {
     }
 
     public static void main(String[] args) {
-        
+
     }
 
 }
