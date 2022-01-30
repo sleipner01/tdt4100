@@ -11,6 +11,11 @@ public class DownCounterController {
 	@FXML TextField input;
 	@FXML Text output;
 
+	@FXML void initialize(){
+		downCounter = new DownCounter(3);
+		output.setText("Oppstart! Starter med 3:");
+	}
+
 	@FXML
 	void handleNew() {
 		int i = Integer.valueOf(input.getText());

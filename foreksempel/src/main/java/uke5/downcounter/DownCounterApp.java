@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class DownCounterControllerApp extends Application{
+public class DownCounterApp extends Application{
 	@Override
 	public void start(final Stage primaryStage) throws Exception {
 		primaryStage.setTitle("DownCounter");
