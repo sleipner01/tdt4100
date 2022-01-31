@@ -12,7 +12,11 @@
 
 package oving2;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -23,6 +27,10 @@ public class Person {
     private String email;
     private Date birthday;
     private char gender = '\0';
+    private String SSN;
+
+    private static final int[] SSNControlF = { 3, 7, 6, 1, 8, 9, 4, 5, 2 },
+                               SSNControlG = { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
     
     private static final String emailFormat = "^[A-Za-z.]+@[A-Za-z0-9.]+$";
     private static final List<String> landCodes = Arrays.asList(
@@ -83,11 +91,6 @@ public class Person {
         if(nameArray[1].length() < 2)
             throw new IllegalArgumentException("The sur-name need to have at least two characters.");
         
-        System.out.println(nameArray[0]);
-        System.out.println(nameArray[1]);
-
-
-
         return true;
     }
 
@@ -119,18 +122,16 @@ public class Person {
         this.email = email;
     }
 
-    private boolean valiDate(Date date) throws IllegalAccessException {
+    private boolean valiDate(Date date) throws IllegalArgumentException {
         Date today = new Date();
 
-        if(today.before(date)) {
-            //if(throwExeption)
+        if(today.before(date))
             throw new IllegalArgumentException("Cannot set a future date");
-        }
         
         return true;
     }
 
-    public void setBirthday(Date birthday) throws IllegalAccessException {
+    public void setBirthday(Date birthday) throws IllegalArgumentException {
         valiDate(birthday);
         this.birthday = birthday;
     }
@@ -149,13 +150,43 @@ public class Person {
         this.gender = gender;
     }
 
+    private boolean validateSSN(String SSN) throws IllegalArgumentException, IllegalStateException {
 
-    public static void main(String[] args) {
+        if (this.birthday == null || this.gender == '\0')
+            throw new IllegalStateException("Use need to set birthday and gender before the SSN.");
+
+        if (SSN.length() < 11 || SSN.length() > 12)
+            throw new IllegalArgumentException("The SSN must be 11 digits long.");
+
+
+        String SSNDatePattern = "ddMMyy";
+        DateFormat df = new SimpleDateFormat(SSNDatePattern);
+        String birthdayAsString = df.format(this.birthday);
+
+
+        if(!SSN.startsWith(birthdayAsString))
+            throw new IllegalArgumentException("The SSN is invalid.");
+        
+        
+
+        return true;
+    }
+
+    public void setSSN(String SSN) throws IllegalArgumentException {
+        validateSSN(SSN);
+        this.SSN = SSN;
+    }
+
+
+    public static void main(String[] args) throws ParseException {
 
         Person person = new Person();
         person.setName("Ola Nordmann");
         person.setEmail("ola.nordmann@ntnu.no");
         person.setGender('F');
+        Date date= new SimpleDateFormat("dd/MM/yyyy").parse("10/05/2001");
+        person.setBirthday(date);
+        person.setSSN("10050191325");
 
     }
 
