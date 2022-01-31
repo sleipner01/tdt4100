@@ -152,29 +152,69 @@ public class Person {
 
     private boolean validateSSN(String SSN) throws IllegalArgumentException, IllegalStateException {
 
+        // Check if birthday and gender are set
         if (this.birthday == null || this.gender == '\0')
             throw new IllegalStateException("Use need to set birthday and gender before the SSN.");
 
+        // Length of input
         if (SSN.length() < 11 || SSN.length() > 12)
             throw new IllegalArgumentException("The SSN must be 11 digits long.");
 
 
+        // Birthday validation
         String SSNDatePattern = "ddMMyy";
         DateFormat df = new SimpleDateFormat(SSNDatePattern);
         String birthdayAsString = df.format(this.birthday);
 
-
         if(!SSN.startsWith(birthdayAsString))
             throw new IllegalArgumentException("The SSN is invalid.");
+
+        // Gendercheck
+        int genderNumber = Character.getNumericValue(SSN.charAt(SSN.length()-3));
+        if(gender == 'F' && genderNumber%2 != 0)
+            throw new IllegalArgumentException("The SSN is invalid for females");
+        if(gender == 'M' && genderNumber%2 != 1)
+            throw new IllegalArgumentException("The SSN is invalid for males");
+    
+        // K1 & K2
+        int k1WeightSum = 0;
+        int k2WeightSum = 0;
+        int[] SSNIntegerArray = new int[SSN.length()];
+        for (int i = 0; i < SSN.length(); i++){
+            // Getting ACHII value, therefore - '0'
+            SSNIntegerArray[i] = SSN.charAt(i) - '0';
+            System.out.println("i" + i + ":" + SSNIntegerArray[i]);
+        }
+
+        for (int i = 0; i < 9; i++) {
+            k1WeightSum += SSNIntegerArray[i]*SSNControlF[i]; 
+        }
+
+        if (controlFormula(k1WeightSum) != SSNIntegerArray[SSNIntegerArray.length - 2])
+            throw new IllegalArgumentException("First control value is invalid");
         
+        for (int i = 0; i < 10; i++) {
+            k2WeightSum += SSNIntegerArray[i]*SSNControlG[i]; 
+        }
+
+        if (controlFormula(k2WeightSum) != SSNIntegerArray[SSNIntegerArray.length - 1])
+            throw new IllegalArgumentException("Second control value is invalid");
         
 
         return true;
     }
 
+    private int controlFormula(int weightSum) {
+        return 11-(weightSum % 11);
+    }
+
     public void setSSN(String SSN) throws IllegalArgumentException {
         validateSSN(SSN);
         this.SSN = SSN;
+    }
+
+    public String getSSN() {
+        return this.SSN;
     }
 
 
@@ -183,7 +223,7 @@ public class Person {
         Person person = new Person();
         person.setName("Ola Nordmann");
         person.setEmail("ola.nordmann@ntnu.no");
-        person.setGender('F');
+        person.setGender('M');
         Date date= new SimpleDateFormat("dd/MM/yyyy").parse("10/05/2001");
         person.setBirthday(date);
         person.setSSN("10050191325");
