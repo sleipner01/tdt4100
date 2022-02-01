@@ -17,6 +17,9 @@ public class StrengSammenligning {
         System.out.println(streng1 == streng2);
         System.out.println(streng1.equals(streng2));
 
+        System.out.println("\nEksempel med sammenligning av to 'string literals' :");
+        System.out.println("Test" == "Test");
+
     }
 
 }
