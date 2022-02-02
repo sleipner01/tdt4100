@@ -30,7 +30,7 @@ public class MiniKafe {
         Person person = new Person("Ada");
         mk.setPerson(person);
         mk.serverPerson();
-        Person person2 = new Person("Børge");
+        Person person2 = new Person("😃");
         mk.setPerson(person2);
         mk.serverPerson();
 

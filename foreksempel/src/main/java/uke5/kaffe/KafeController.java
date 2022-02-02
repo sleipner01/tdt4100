@@ -9,7 +9,6 @@ public class KafeController {
 	MiniKafe mk = new MiniKafe();
 	Person p = new Person("Jo");
 	
-	@FXML TextField input;
 	@FXML Text output;
 
 	@FXML
