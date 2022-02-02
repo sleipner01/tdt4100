@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CarApp",
+            "request": "launch",
+            "mainClass": "minegenkode/carUke5.CarApp",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch Person",
             "request": "launch",
             "mainClass": "ovinger/oving2.Person",

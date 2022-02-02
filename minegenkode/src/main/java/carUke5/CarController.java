@@ -25,5 +25,32 @@ public class CarController {
 	@FXML Button addPassenger;
 	@FXML Button setCar;
 	@FXML Button removePassengerButton;
+
+	@FXML void handleSetCar() {
+		String regnr = carPlate.getText();
+		int antall = Integer.parseInt(carSeats.getText());
+
+		try {
+			car = new Car(regnr, antall);
+			carInfo.setText(car.toString());
+		}
+		catch (Exception e) {
+			//TODO: handle exception
+			carInfo.setText(e.toString());
+		}
+	} 
+
+	@FXML void handleSetDriver() {
+		String name = driverName.getText();
+		int age = Integer.parseInt(driverAge.getText());
+		car.setDriver(new Person(name, age));
+	}
 	
+	@FXML void handleAddPassenger() {
+		
+	}
+	
+	@FXML void handleRemovePassenger() {
+		
+	}
 }
