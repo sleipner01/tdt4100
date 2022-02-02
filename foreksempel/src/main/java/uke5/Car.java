@@ -94,7 +94,13 @@ public class Car {
      * @return Den totale alderen til alle som er med i bilen - passasjerer og fører. Hvis de er der!
      */
     public int getTotalAge() {
-        return 0; // Må jo endres, bare for at det skal returnere noe.
+        int total = 0;
+        if (driver != null) total += driver.getAge();
+        for (Person person : passengers) {
+            total += person.getAge();
+        }
+        return total;
+
     }
 
     
@@ -124,6 +130,21 @@ public class Car {
         System.out.println(car.getPassengers());
         System.out.println(car.isFull());
 
+        System.out.println(car.getTotalAge());
+
+
+    }
+
+
+    public void removePassenger(String name) {
+
+        Person tmp = null;
+        for (Person person : passengers) {
+            if (person.getName().equals(name)) {
+                tmp = person;
+            }
+        }
+        if (tmp != null) passengers.remove(tmp);
 
     }
 

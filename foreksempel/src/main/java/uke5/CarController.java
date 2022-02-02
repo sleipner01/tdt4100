@@ -32,20 +32,40 @@ public class CarController {
 		int antall = Integer.parseInt(carSeats.getText());
 		try {
 			car = new Car(regnr, antall);
-			carInfo.setText(car.toString());
+			updateGui();
 		} catch (Exception e) {
 			carInfo.setText(e.getMessage());
 		}	
 	}
 
 	@FXML void handleSetDriver() {
+		String name = driverName.getText();
+		int age = Integer.parseInt(driverAge.getText());
+		car.setDriver(new Person(name, age));
+		updateGui();
 	}
 
 	@FXML void handleAddPassenger() {
+		String name = passengerName.getText();
+		int age = Integer.parseInt(passengerAge.getText());
+		car.addPassenger(new Person(name, age));
+		updateGui();
+
 	}
 
 	@FXML void handleRemovePassenger() {
+		String name = removePassenger.getText();
+		car.removePassenger(name);
+		updateGui(); 
+
 	}
 
+	private void updateGui() {
+		if (car != null) {
+			carInfo.setText(car.toString());
+			addPassenger.setDisable(car.isFull());
+			ageInfo.setText(Integer.toString(car.getTotalAge()));
+		}
+	}
 
 }
