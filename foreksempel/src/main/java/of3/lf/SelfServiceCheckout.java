@@ -3,11 +3,10 @@ package of3.lf;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 public class SelfServiceCheckout {
 
-    public static final Collection<String> days = Arrays.asList("mon", "tue", "wed", "thu", "fri", "sat", "sun");
+    public static final List<String> days = Arrays.asList("mon", "tue", "wed", "thu", "fri", "sat", "sun");
 
     // Felter / Tilstand - del 1
     private String day;
@@ -123,7 +122,8 @@ public class SelfServiceCheckout {
     // Del 2 b)
     private boolean validatePassword(String password) {
         // Eventuelt kan man her bare bruke
-        // password.matches("^(?=.*[0-9])(?=.*[a-zA-Z]).{6,10}$");
+        // password.matches("^(?=.*[0-9])(?=.*[a-zA-Z]).{6,10}$"); som jeg brukte i
+        // forelesning
         // Dette uttrykket kalles RegEx og kan være noe utfordrende å skrive på egenhånd
         // Det finnes dog en rekke gode ressurser på nett hvis man søker litt rundt.
         // Nedenfor har jeg beskrevet en mer "manuell" metode som løses med vanlig
@@ -198,10 +198,7 @@ public class SelfServiceCheckout {
             // Som gjør at vi sammenligner strenger på riktig måte
             if (!uniqueBarcodes.contains(item.getBarcode())) {
                 int count = this.getNumberOfEqualItemsInCart(item.getBarcode());
-                receipt += String.format(
-                        """
-                                %dx %s\t%.2f\t%.2f\t%.2f
-                                """,
+                receipt += String.format("%dx %s\t%.2f\t%.2f\t%.2f\n",
                         count,
                         item.getName(),
                         this.getPriceWithoutMVAForItem(item),
