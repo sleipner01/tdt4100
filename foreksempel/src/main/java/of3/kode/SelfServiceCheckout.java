@@ -1,5 +1,6 @@
 package of3.kode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,17 +8,41 @@ public class SelfServiceCheckout {
 
     public static final List<String> days = Arrays.asList("mon", "tue", "wed", "thu", "fri", "sat", "sun");
 
+    private boolean adminMode;
+    private String password;
     private String day;
     private String phoneNumber;
+    private List<Item> shoppingCart;
 
-    public SelfServiceCheckout(String day) {
+    public SelfServiceCheckout(String day, String password) {
         validateDay(day);
+        validatePassword(password);
         this.day = day;
+        this.adminMode = false;
+        this.password = password;
+        this.shoppingCart = new ArrayList<>();
+    }
+
+    public void activateAdminMode(String password) {
+        if (this.adminMode) {
+            throw new IllegalStateException("Du er allerede logget inn som admin!");
+        }
+        if (this.password.equals(password)) {
+            this.adminMode = true;
+        } else {
+            throw new IllegalArgumentException("Feil passord!");
+        }
     }
 
     private void validateDay(String day) {
         if (!days.contains(day)) {
             throw new IllegalArgumentException("Invalid weekday");
+        }
+    }
+
+    private void validatePassword(String password) {
+        if (!password.matches("^(?=.*[0-9])(?=.*[a-zA-Z]).{6,10}$")) {
+            throw new IllegalArgumentException("Invalid Password");
         }
     }
 
@@ -67,12 +92,47 @@ public class SelfServiceCheckout {
         return true;
     }
 
-    public void scanItem(String itemName, int amount, double price) {
-        double rebate = 0.0;
-        if (phoneNumber != null && day.equals("thu")) {
-            rebate = 0.1;
+    public void scanItem(Item item) {
+        this.shoppingCart.add(item);
+        System.out.println(item.getName() + ": " + item.getPrice() + " kr");
+    }
+
+    public void scanItems(List<Item> items) {
+        for (Item item : items) {
+            scanItem(item);
         }
-        System.out.println(amount + "x " + itemName + ": " + (price - (price * rebate)) + " kr");
+    }
+
+    public void removeFromCart(int index) {
+        if (!this.adminMode) {
+            throw new IllegalStateException("Du har ikke lov til å fjerne varer!");
+        }
+        this.shoppingCart.remove(index);
+    }
+
+    public boolean isMember() {
+        return this.phoneNumber != null;
+    }
+
+    public double getDiscountForItem(Item item) {
+        if (isMember() && item.getCategory().equals("taco")) {
+            if (this.day.equals("fri") || this.day.equals("sat")) {
+                return 0.3;
+            }
+        }
+        return 0.0;
+    }
+
+    public double getPriceForItem(Item item) {
+        return item.getPrice() - (item.getPrice() * this.getDiscountForItem(item));
+    }
+
+    public double getTotalPriceForCart() {
+        double sum = 0;
+        for (Item item : shoppingCart) {
+            sum += this.getPriceForItem(item);
+        }
+        return sum;
     }
 
     @Override
@@ -85,6 +145,10 @@ public class SelfServiceCheckout {
         // TODO: Skriv kode for å printe ut varer og pris
         // Hint: Du kan bruke følgende streng med format-funksjonen:
 
+        for (Item item : this.shoppingCart) {
+            receipt += String.format("%dx %s\t%.2f\t%.2f\t%.2f\n", 1, item.getName(), this.getPriceForItem(item), 0.0,
+                    this.getPriceForItem(item));
+        }
         // "%dx %s\t%.2f\t%.2f\t%.2f"
 
         /*
@@ -103,7 +167,7 @@ public class SelfServiceCheckout {
                                 Takk for at du handlet
                                     hos oss i OOP!
                         --------------------------------------
-                        """);
+                        """, 0.0, this.getTotalPriceForCart());
         return receipt;
     }
 
@@ -116,21 +180,21 @@ public class SelfServiceCheckout {
         Item tortillas = new Item("Lefser", 15, "taco", " | || | || ||||");
         Item groundMeat = new Item("Kjøttdeig", 29.99, "taco", "|||| || | |||||");
 
-        // SelfServiceCheckout checkout = new SelfServiceCheckout("fri", "passord123");
+        SelfServiceCheckout checkout = new SelfServiceCheckout("fri", "passord123");
 
-        // checkout.scanItem(tomato);
-        // checkout.scanItem(cheese);
-        // checkout.scanItem(tortillas);
-        // checkout.scanItem(groundMeat);
-        // checkout.scanItem(cheese2);
+        checkout.scanItem(tomato);
+        checkout.scanItem(cheese);
+        checkout.scanItem(tortillas);
+        checkout.scanItem(groundMeat);
+        checkout.scanItem(cheese2);
 
-        // System.out.println(checkout);
+        System.out.println(checkout);
 
-        // checkout.registerPhoneNumber("004742345678");
-        // checkout.activateAdminMode("passord123");
-        // checkout.removeFromCart(0);
+        checkout.registerPhoneNumber("004742345678");
+        checkout.activateAdminMode("passord123");
+        checkout.removeFromCart(0);
 
-        // System.out.println(checkout);
+        System.out.println(checkout);
     }
 
 }

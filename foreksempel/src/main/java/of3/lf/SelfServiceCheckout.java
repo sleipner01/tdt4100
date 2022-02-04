@@ -24,12 +24,6 @@ public class SelfServiceCheckout {
         this.shoppingCart = new ArrayList<>();
     }
 
-    private void validateDay(String day) {
-        if (!days.contains(day)) {
-            throw new IllegalArgumentException("Invalid weekday");
-        }
-    }
-
     // Del 4 a)
     public void removeFromCart(int index) {
         if (!this.adminMode) {
@@ -75,6 +69,17 @@ public class SelfServiceCheckout {
     public void scanItems(List<Item> shoppingCart) {
         for (Item i : shoppingCart) {
             scanItem(i);
+        }
+    }
+
+    // Metodene nedenfor er alle "private" da de kun er hjelpe/valideringsmetoder
+    // Dette betyr at vi ikke har bruk for de utenfor klassen og vi gjør de derfor
+    // heller ikke synlige utenfor.
+
+    // Fra forrige uke
+    private void validateDay(String day) {
+        if (!days.contains(day)) {
+            throw new IllegalArgumentException("Invalid weekday");
         }
     }
 
