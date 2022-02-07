@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import oving3.card.Card;
+import oving3.card.CardDeck;
 
 public class CardDeckTest {
 

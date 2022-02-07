@@ -5,16 +5,16 @@ import java.util.List;
 
 public class CardDeck {
 
-    private ArrayList<Card> cardDeck = new ArrayList<>();
+    private List<Card> cardDeck = new ArrayList<>();
 
     private char[] suits = {'S', 'H', 'D', 'C'};
 
-    public CardDeck(int amount) {
+    public CardDeck(int amount) throws IllegalArgumentException {
         addCards(amount);
     }
 
     private void addCards(int amount) throws IllegalArgumentException {
-        // if(amount < 0 || amount > 13) throw new IllegalArgumentException("You cannot create a deck with " + amount + "cards");
+        if(amount < 0 || amount > 13) throw new IllegalArgumentException("You cannot create a deck with " + amount + " cards");
         
         for (char suit : suits) {   
             for(int face = 1; face < (amount+1); face++) {
@@ -24,30 +24,36 @@ public class CardDeck {
         }
     }
 
-    // public void shufflePerfectly() {
-    //     int deckSize = cardDeck.size();
-    //     int halfIndex = deckSize/2;
-    //     List<Card> firstHalf = cardDeck.subList(0, halfIndex);
-    //     List<Card> secondHalf = cardDeck.subList(halfIndex, deckSize);
+    public void shufflePerfectly() throws IllegalStateException {
+        int deckSize = cardDeck.size();
+    
+        if(deckSize % 2 != 0) 
+            throw new IllegalStateException("The deck is not even, and it is not possible to shuffle perfectly");
 
-    //     for(int i = 0; i < (deckSize-2); i += 2) {
-    //         cardDeck.set(i, firstHalf.get(i));
-    //         cardDeck.set(i+1, secondHalf.get(i));
-    //     }
+        int halfIndex = deckSize/2;
+        List<Card> cardDeckCopy = new ArrayList<Card>();
+        cardDeckCopy.addAll(cardDeck);
+        List<Card> firstHalf = cardDeckCopy.subList(0, halfIndex);
+        List<Card> secondHalf = cardDeckCopy.subList(halfIndex, deckSize);
 
-    // }
+        for(int i = 0; i < firstHalf.size(); i++) {
+            cardDeck.set((i*2), firstHalf.get(i));
+            cardDeck.set(((i*2)+1), secondHalf.get(i));
+        }
+    }
 
-    // public int getCardCount() {
-    //     return this.cardDeck.size();
-    // }
+    public int getCardCount() {
+        return this.cardDeck.size();
+    }
 
-    // public Card getCard(int n) {
-    //     return this.cardDeck.get(n);
-    // }
+    public Card getCard(int n) {
+        return this.cardDeck.get(n);
+    }
 
 
     public static void main(String[] args) {
-        CardDeck deck = new CardDeck(-1);
+        CardDeck deck = new CardDeck(2);
+        deck.shufflePerfectly();
     }
     
 }

@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CardDeck",
+            "request": "launch",
+            "mainClass": "ovinger/oving3.card.CardDeck",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
+            "name": "Launch Car",
+            "request": "launch",
+            "mainClass": "foreksempel/uke5.Car",
+            "projectName": "foreksempel"
+        },
+        {
+            "type": "java",
             "name": "Launch CoffeeCupProgram",
             "request": "launch",
             "mainClass": "ovinger/oving3.debugging.CoffeeCupProgram",
