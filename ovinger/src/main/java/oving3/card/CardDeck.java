@@ -6,7 +6,6 @@ import java.util.List;
 public class CardDeck {
 
     private List<Card> cardDeck = new ArrayList<>();
-
     private char[] suits = {'S', 'H', 'D', 'C'};
 
     public CardDeck(int amount) throws IllegalArgumentException {
