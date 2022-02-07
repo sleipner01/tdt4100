@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CoffeeCupProgram",
+            "request": "launch",
+            "mainClass": "ovinger/oving3.debugging.CoffeeCupProgram",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch Vehicle",
             "request": "launch",
             "mainClass": "ovinger/oving2.Vehicle",

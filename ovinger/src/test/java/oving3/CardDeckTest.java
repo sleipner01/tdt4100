@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import oving3.card.Card;
+
 public class CardDeckTest {
 
 	private void checkDeck(CardDeck deck, List<String> expected) {
