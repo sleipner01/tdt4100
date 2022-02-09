@@ -8,6 +8,7 @@ public class TwitterAccount {
     private String userName;
     private List<Tweet> tweets = new ArrayList<>();
     private int retweetCount;
+    private List<TwitterAccount> following = new ArrayList<>();
 
     public TwitterAccount(String userName) {
         if(!isValidUserName(userName)) 
@@ -30,11 +31,11 @@ public class TwitterAccount {
     }
 
     public void follow(TwitterAccount account) {
-
+        following.add(account);
     }
     
     public void unfollow(TwitterAccount account) {
-
+        following.remove(account);
     }
 
     public boolean isFollowing(TwitterAccount account) {
