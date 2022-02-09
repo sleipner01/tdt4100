@@ -25,6 +25,6 @@ Det skal være mulig å opprette nye stoppeklokker med et tilhørende navn (stre
 
 **Java-kode**
 
-Kopier `StopWatch` fra `encapsulation`-pakken og lag `StopWatchManager` som beskrevet over. Test klassen med selvlagde main-metoder og ved å kjøre JUnit-testene.
+Kopier `StopWatch` fra `stateandbehaviour`-pakken (øving 1) og lag `StopWatchManager` som beskrevet over. Test klassen med selvlagde main-metoder og ved å kjøre JUnit-testene.
 
 Testkode for denne oppgaven finner du her: [oving4/StopWatchTest.java](../../src/test/java/oving4/StopWatchTest.java) og [oving4/StopWatchManagerTest.java](../../src/test/java/oving4/StopWatchManagerTest.java).
