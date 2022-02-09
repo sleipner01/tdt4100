@@ -8,6 +8,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import oving4.twitter.Tweet;
+import oving4.twitter.TwitterAccount;
+
 public class TweetTest {
 	TwitterAccount nils;
 	TwitterAccount ole;
