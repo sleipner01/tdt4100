@@ -8,9 +8,10 @@ public class Tweet {
     private int retweetCount;
 
     public Tweet(TwitterAccount account, String tweet) {
-
-
-        if(isValidTweet(tweet)) this.text = tweet;
+        if(!isValidTweet(tweet)) 
+        throw new IllegalArgumentException("The tweet must be a string.");
+        this.text = tweet;
+        this.account = account;
     }
 
     private boolean isValidTweet(String tweet) {
@@ -19,20 +20,20 @@ public class Tweet {
     }
 
     public Tweet(TwitterAccount account, Tweet tweet) {
-
+        this.tweet = tweet;
     }
 
     public String getText() {
-        return this.text;
+        if(tweet.equals(null)) return this.text;
+        return tweet.getText();
     }
 
     public TwitterAccount getOwner() {
-
-        return account;
+        if(tweet.equals(null)) return account;
+        return tweet.getOwner();
     }
 
     public Tweet getOriginalTweet() {
-
         return tweet;
     }
 

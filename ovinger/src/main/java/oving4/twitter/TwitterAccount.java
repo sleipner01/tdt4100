@@ -26,34 +26,33 @@ public class TwitterAccount {
     }
 
     public String getUserName() {
-
         return this.userName;
     }
 
     public void follow(TwitterAccount account) {
         following.add(account);
+        account.follow(this);
     }
     
     public void unfollow(TwitterAccount account) {
         following.remove(account);
+        account.unfollow(this);
     }
 
     public boolean isFollowing(TwitterAccount account) {
-
-        return false;
+        return following.contains(account);
     }
 
     public boolean isFollowedBy(TwitterAccount account) {
-     
-        return false;
+        return account.isFollowing(this);
     }
 
     public void tweet(String text) {
-
+        tweets.add(new Tweet(this, text));
     }
 
     public void retweet(Tweet tweet) {
-
+        
     }
 
     public Tweet getTweet(int i) {
