@@ -29,7 +29,7 @@ public class Account {
         return false;
     }
 
-    public void deposit(double amount) {
+    public void deposit(double amount) throws IllegalArgumentException {
         if(isNegativeDouble(amount))
             throw new IllegalArgumentException("The value can't be negative.");
 

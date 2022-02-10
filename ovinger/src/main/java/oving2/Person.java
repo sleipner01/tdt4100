@@ -116,7 +116,7 @@ public class Person {
         return true;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) throws IllegalArgumentException {
         validateEmail(email);
         this.email = email;
     }
