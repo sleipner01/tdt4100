@@ -25,12 +25,13 @@ public class Tweet {
         if(!isValidRetweet(account, tweet))
             throw new IllegalArgumentException("You cannot retweet your own tweet.");
         this.tweet = tweet;
+        this.account = account;
+        tweet.addRetweetCount();
     }
 
     public boolean isValidRetweet(TwitterAccount account, Tweet tweet) {
-        for(int i = 0; i < account.getTweetCount(); i++)
-            if(account.getTweet(i).equals(tweet))
-                return false;
+        if(tweet.getOwner().equals(account))
+            return false;
         return true;
     }
 
@@ -40,12 +41,15 @@ public class Tweet {
     }
 
     public TwitterAccount getOwner() {
-        if(Objects.isNull(this.tweet)) return account;
-        return this.tweet.getOwner();
+        return this.account;
     }
 
     public Tweet getOriginalTweet() {
-        return tweet;
+        if(this.getRetweetCount() == 0 && Objects.isNull(this.tweet)) 
+            return null;
+
+        if(Objects.isNull(this.tweet)) return this;
+        return this.tweet.getOriginalTweet();
     }
 
     public int getRetweetCount() {
@@ -53,9 +57,7 @@ public class Tweet {
     }
 
     public void addRetweetCount() {
-        this.retweetCount++;
+        if(Objects.isNull(this.tweet)) this.retweetCount++;
+        else this.tweet.addRetweetCount();
     }
-
-    
-    
 }

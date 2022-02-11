@@ -2,7 +2,6 @@ package oving4.twitter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class TwitterAccount {
 
@@ -48,12 +47,11 @@ public class TwitterAccount {
     }
 
     public void tweet(String text) {
-        this.tweets.add(new Tweet(this, text));
+        this.tweets.add(0, new Tweet(this, text));
     }
 
     public void retweet(Tweet tweet) {
-        this.tweets.add(new Tweet(this, tweet));
-        tweet.addRetweetCount();
+        this.tweets.add(0, new Tweet(this, tweet));
     }
 
     public Tweet getTweet(int i) throws IllegalArgumentException {
@@ -79,7 +77,7 @@ public class TwitterAccount {
     public int getRetweetCount() {
         int count = 0;
         for (Tweet tweet: this.tweets) {
-            if(Objects.isNull(tweet.getOriginalTweet()))
+            if(tweet.getOriginalTweet().getOwner().equals(this))
                 count += tweet.getRetweetCount();
         }
 
@@ -92,8 +90,12 @@ public class TwitterAccount {
         System.out.println(sleipner.getUserName());
 
         sleipner.tweet("Damn, that shit is fiiine");
+        sleipner.tweet("Damn, that shit is fiiine2");
         System.out.println(sleipner.getTweet(1).getText());
+        System.out.println(sleipner.getTweet(2).getText());
         System.out.println(sleipner.getTweet(1).getOwner().getUserName());
+
+
 
 
 
