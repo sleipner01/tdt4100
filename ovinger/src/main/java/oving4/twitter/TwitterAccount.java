@@ -89,25 +89,21 @@ public class TwitterAccount {
         TwitterAccount sleipner = new TwitterAccount("Sleipner");
         System.out.println(sleipner.getUserName());
 
-        sleipner.tweet("Damn, that shit is fiiine");
-        sleipner.tweet("Damn, that shit is fiiine2");
+        sleipner.tweet("Har du noen gang tenkt på at jorda er flat?");
+        sleipner.tweet("Vedum er kul");
         System.out.println(sleipner.getTweet(1).getText());
         System.out.println(sleipner.getTweet(2).getText());
         System.out.println(sleipner.getTweet(1).getOwner().getUserName());
 
 
+        TwitterAccount helligTonne = new TwitterAccount("Hellig Tønne");
+        System.out.println(helligTonne.getUserName());
 
-
-
-        TwitterAccount soopernibba = new TwitterAccount("Soopernibba");
-        System.out.println(soopernibba.getUserName());
-
-        soopernibba.retweet(sleipner.getTweet(1));
-        System.out.println(soopernibba.getTweet(1).getText());
-        System.out.println(soopernibba.getTweet(1).getOwner().getUserName());
-        System.out.println(soopernibba.getTweet(1).getOriginalTweet());
-        System.out.println(soopernibba.getTweet(1).getOriginalTweet().getRetweetCount());
-
+        helligTonne.retweet(sleipner.getTweet(1));
+        System.out.println(helligTonne.getTweet(1).getText());
+        System.out.println(helligTonne.getTweet(1).getOwner().getUserName());
+        System.out.println(helligTonne.getTweet(1).getOriginalTweet().getOwner().getUserName());
+        System.out.println(helligTonne.getTweet(1).getOriginalTweet().getRetweetCount());
 
     }
 
