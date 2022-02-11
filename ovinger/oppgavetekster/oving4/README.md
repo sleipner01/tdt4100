@@ -36,7 +36,7 @@ Alle oppgavene ovenfor er høyst eksamensrelevante og det anbefales å ta en tit
 
 ### Del 2: Klassediagram
 
-- Lag et [klassediagram](https://www.ntnu.no/wiki/display/tdt4100/Klassediagrammer) for en av oppgavene du velger. Husk å få med relasjonene mellom klassene.
+- Lag et [klassediagram](https://www.ntnu.no/wiki/display/tdt4100/Klassediagrammer) for en av oppgavene du velger. Husk å få med relasjonene mellom klassene. Dersom du gjorde bare Partner og Card må du tegne diagram for Card.
 
 Diagrammet kan for eksempel skrives på papir eller tegnes/lages i et valgfritt program. Du trenger ikke levere inn diagrammene, men de skal vises til studass under godkjenning av øvingen.
 
