@@ -6,10 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
-import snakebird.Game;
-import snakebird.SaveHandler;
-import snakebird.Tile;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;

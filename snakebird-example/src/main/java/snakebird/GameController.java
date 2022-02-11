@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class GameController {
 
     private Game game;
-    private SaveHandler saveHandler = new SaveHandler();
+    private ISaveHandler saveHandler = new SaveHandler();
 
     @FXML
     Pane board;

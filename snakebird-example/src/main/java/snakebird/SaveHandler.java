@@ -3,14 +3,11 @@ package snakebird;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class SaveHandler {
+public class SaveHandler implements ISaveHandler {
 
 	public void save(String filename, Game game) throws FileNotFoundException {
 		try (PrintWriter writer = new PrintWriter(new File(getFilePath(filename)))) {
@@ -71,8 +68,8 @@ public class SaveHandler {
 		}
 	}
 
-	public String getFilePath(String filename) throws FileNotFoundException {
-		return getClass().getResource("saves/" + filename + ".txt").getFile();
+	public static String getFilePath(String filename) {
+		return SaveHandler.class.getResource("saves/").getFile() + filename + ".txt";
 	}
 
 }

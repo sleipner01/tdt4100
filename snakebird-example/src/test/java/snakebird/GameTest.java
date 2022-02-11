@@ -9,9 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import snakebird.Game;
-import snakebird.Tile;
-
 public class GameTest {
 
 	private Game game;
