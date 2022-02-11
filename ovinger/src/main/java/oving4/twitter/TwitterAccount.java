@@ -2,6 +2,7 @@ package oving4.twitter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class TwitterAccount {
 
@@ -31,7 +32,7 @@ public class TwitterAccount {
     }
     
     public void unfollow(TwitterAccount account) throws IllegalArgumentException{
-        if(this.following.contains(account))
+        if(!this.following.contains(account))
             throw new IllegalArgumentException("You are not following this account");
         this.following.remove(account);
         // To avoid an error when the other object asks this to remove itself
@@ -52,6 +53,7 @@ public class TwitterAccount {
 
     public void retweet(Tweet tweet) {
         this.tweets.add(new Tweet(this, tweet));
+        tweet.addRetweetCount();
     }
 
     public Tweet getTweet(int i) throws IllegalArgumentException {
@@ -77,11 +79,34 @@ public class TwitterAccount {
     public int getRetweetCount() {
         int count = 0;
         for (Tweet tweet: this.tweets) {
-            if(tweet.getOriginalTweet().equals(null))
+            if(Objects.isNull(tweet.getOriginalTweet()))
                 count += tweet.getRetweetCount();
         }
 
         return count;
+    }
+
+    public static void main(String[] args) {
+        
+        TwitterAccount sleipner = new TwitterAccount("Sleipner");
+        System.out.println(sleipner.getUserName());
+
+        sleipner.tweet("Damn, that shit is fiiine");
+        System.out.println(sleipner.getTweet(1).getText());
+        System.out.println(sleipner.getTweet(1).getOwner().getUserName());
+
+
+
+        TwitterAccount soopernibba = new TwitterAccount("Soopernibba");
+        System.out.println(soopernibba.getUserName());
+
+        soopernibba.retweet(sleipner.getTweet(1));
+        System.out.println(soopernibba.getTweet(1).getText());
+        System.out.println(soopernibba.getTweet(1).getOwner().getUserName());
+        System.out.println(soopernibba.getTweet(1).getOriginalTweet());
+        System.out.println(soopernibba.getTweet(1).getOriginalTweet().getRetweetCount());
+
+
     }
 
 }
