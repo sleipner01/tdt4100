@@ -18,6 +18,14 @@ public class Car {
         System.out.println(this);
     }
 
+    public Person getDriver() {
+        return this.driver;
+    }
+
+    public Plate getPlate() {
+        return this.plate;
+    }
+
     public void setDriver(Person person) {
         if (person.getAge() > 17) {
             this.driver = person;
