@@ -56,7 +56,7 @@ public class Tweet {
         return this.retweetCount;
     }
 
-    public void addRetweetCount() {
+    private void addRetweetCount() {
         if(Objects.isNull(this.tweet)) this.retweetCount++;
         else this.tweet.addRetweetCount();
     }
