@@ -8,6 +8,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import oving4.card.Card;
+import oving4.card.CardDeck;
+import oving4.card.CardHand;
+
 public class CardDeckTest {
 
 	private CardDeck cardDeck;

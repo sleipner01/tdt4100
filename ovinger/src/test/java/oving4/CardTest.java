@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import oving4.card.Card;
+
 public class CardTest {
 
 	private void checkCard(Card card, char suit, int face) {

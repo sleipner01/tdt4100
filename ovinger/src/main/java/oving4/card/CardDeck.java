@@ -49,10 +49,20 @@ public class CardDeck {
         return this.cardDeck.get(n);
     }
 
+    public void deal(CardHand cardHand, int n) {
+        int deckSize = cardDeck.size();
+        for(int i = deckSize-1; i > (deckSize-n-1); i--) {
+            cardHand.addCard(cardDeck.get(i));
+            cardDeck.remove(i);
+        }
+    }
+
 
     public static void main(String[] args) {
         CardDeck deck = new CardDeck(2);
+        CardHand magnus = new CardHand();
         deck.shufflePerfectly();
+        deck.deal(magnus, 2);
     }
     
 }
