@@ -15,11 +15,14 @@ public class Folder {
     public Folder(String name, Folder parent) {
         this.name = name;
         this.parent = parent;
-        if (parent != null) parent.addFolder(this);
     }
 
-    private void addFolder(Folder folder) {
+    public void addFolder(Folder folder) {
         this.folders.add(folder);
+    }
+
+    public void removeFolder(Folder folder) {
+        this.folders.remove(folder);
     }
 
     public String getName() {
@@ -32,7 +35,7 @@ public class Folder {
 
     @Override
     public String toString() {
-        return name + "(" + folders + ")";
+        return name;
     }
 
 
@@ -43,26 +46,10 @@ public class Folder {
     Folder carsten = new Folder("carsten",home);
     Folder adiv = new Folder("adiv",andreas);
     Folder bdiv = new Folder("bdiv",borgeh);
+    Folder btmp = new Folder("btmp",borgeh);
     Folder cdiv = new Folder("cdiv",carsten);
     System.out.println(home);
-    System.out.println(home.contains(borgeh));    
-    System.out.println(borgeh.contains2(home));    
-    }
-
-    private boolean contains(Folder destination) {
-        System.out.println("Contains sjekker: "+this.name + " mot "+destination.getName());
-        if (this == destination) return true;
-        for (Folder folder : folders) {
-            if (folder.contains(destination)) return true;
-        }
-        return false;
-    }
-
-    private boolean contains2(Folder destination) {
-        if (destination != null) System.out.println("Contains2 sjekker "+this.getName() +
-        " mot "+destination.getName());
-        if (destination == this) return true;
-        else if (destination == null) return false;
-        else return this.contains2(destination.getParent());
+    // System.out.println(home.contains(borgeh));    
+    // System.out.println(borgeh.contains2(home));    
     }
 }
