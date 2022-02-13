@@ -50,6 +50,9 @@ public class Folder {
     Folder cdiv = new Folder("cdiv",carsten);
     System.out.println(home);
     // System.out.println(home.contains(borgeh));    
-    // System.out.println(borgeh.contains2(home));    
+    // System.out.println(borgeh.contains2(home));
+    // cdiv.move(bdiv);
+    // File homefile = new File("home.txt", home);
+    // home.printTree();
     }
 }
