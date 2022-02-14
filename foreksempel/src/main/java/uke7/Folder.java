@@ -107,16 +107,21 @@ public class Folder {
     // System.out.println(andreas.getFolders());
     // System.out.println(home.contains(borgeh));    
     // System.out.println(borgeh.contains2(home));
-    cdiv.move(bdiv);
+    // cdiv.move(bdiv);
     // home.printTree();
     // System.out.println(cdiv);
     // File homefile = new File("home.txt", home);
     // home.printTree();
     // borgeh.move(cdiv);
     // borgeh.printTree();
-    System.out.println(home.contains2(borgeh));
+    System.out.println("Sjekke contains: ");
+    System.out.println(home.contains(bdiv)); // Her får vi med alle folderne...
+    
+    // Se på utskriften under. Hvorfor skrives Contains2-utskriften som er inni
+    // contains2-metoden ut før denne linjen kommer ut?
+    System.out.println("Sjekke contains2: "+home.contains2(bdiv));
     Folder foo = new Folder("Ikkeno", null);
-    System.out.println(home.contains2(foo));
+    System.out.println("Sjekke contains mot noe som ikke finnes i treet: "+home.contains2(foo));
     
     }
 
