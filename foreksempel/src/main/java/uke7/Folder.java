@@ -50,14 +50,22 @@ public class Folder {
     }
 
     private boolean contains(Folder destination) {
-        System.out.println("Er i "+this);
+        System.out.println("Contains: Er i "+this);
         if (this == destination) return true;
         for (Folder folder : folders) {
             if (folder.contains(destination))
-            System.out.println("Sjekker "+this+" mot "+destination);
+            System.out.println("Contains: Sjekker "+this+" mot "+destination);
                 return true;
         }
         return false;
+    }
+
+    private boolean contains2(Folder destination) {
+        System.out.println("Contains2: sjekker"+this+" mot "+destination);
+        if (this == destination) return true;
+        if (null == destination) return false;
+        else return this.contains2(destination.parent);
+
     }
 
     public void move(Folder destination) {
@@ -106,9 +114,9 @@ public class Folder {
     // home.printTree();
     // borgeh.move(cdiv);
     // borgeh.printTree();
-    System.out.println(home.contains(borgeh));
+    System.out.println(home.contains2(borgeh));
     Folder foo = new Folder("Ikkeno", null);
-    System.out.println(home.contains(foo));
+    System.out.println(home.contains2(foo));
     
     }
 
