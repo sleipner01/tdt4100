@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TodoApp",
+            "request": "launch",
+            "mainClass": "todolist/todolist.fxui.TodoApp",
+            "projectName": "todolist-example"
+        },
+        {
+            "type": "java",
+            "name": "Launch GameApp",
+            "request": "launch",
+            "mainClass": "foreksempel/snakebird.GameApp",
+            "projectName": "snakebird"
+        },
+        {
+            "type": "java",
             "name": "Launch CardDeck",
             "request": "launch",
             "mainClass": "ovinger/oving4.card.CardDeck",
