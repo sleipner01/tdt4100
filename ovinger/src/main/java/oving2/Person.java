@@ -107,7 +107,7 @@ public class Person {
         String[] nameArray = this.name.split(" ");
         String emailPrefix = nameArray[0].toLowerCase() + "." + nameArray[1].toLowerCase();
         if(!email.startsWith(emailPrefix))
-        throw new IllegalArgumentException("The email must start with: " + emailPrefix);
+            throw new IllegalArgumentException("The email must start with: " + emailPrefix);
         
         String[] emailParts = email.split("[.]");
         if(!landCodes.contains(emailParts[emailParts.length - 1]))
