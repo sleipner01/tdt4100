@@ -32,16 +32,16 @@
             </Pane>
             <Pane maxHeight="124.0" minHeight="75.0" prefHeight="124.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Button fx:id="deleteItem" layoutX="208.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleItemDeletion" prefHeight="27.0" prefWidth="77.0" text="Slett vare" visible="false" />
+                  <Button fx:id="deleteItem" layoutX="208.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="Slett vare" visible="false" />
                   <TextField fx:id="phoneNumber" layoutY="75.0" prefHeight="27.0" prefWidth="194.0" promptText="Telefonnummer" />
-                  <Button fx:id="login" layoutX="208.0" layoutY="75.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="27.0" prefWidth="77.0" text="Logg inn" />
-                  <Button fx:id="adminMode" layoutX="208.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAdminActivation" prefHeight="27.0" prefWidth="77.0" text="Admin" />
+                  <Button fx:id="login" layoutX="208.0" layoutY="75.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="Logg inn" />
+                  <Button fx:id="adminMode" layoutX="208.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="Admin" />
                   <ImageView fitHeight="58.0" fitWidth="194.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@oopmini.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="backButton" layoutX="208.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleAdminDeactivation" prefHeight="27.0" prefWidth="77.0" text="&lt; Tilbake" visible="false" />
+                  <Button fx:id="backButton" layoutX="208.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="&lt; Tilbake" visible="false" />
                </children>
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0">
