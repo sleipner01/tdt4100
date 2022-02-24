@@ -2,7 +2,7 @@
  * @author hal
  *
  */
-open module snakebird {
+open module selfcheckout {
 	requires javafx.base;
 	requires javafx.controls;
 	requires javafx.fxml;
