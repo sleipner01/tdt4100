@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardHand {
-    
+
     private List<Card> hand = new ArrayList<>();
 
     public void addCard(Card card) {
@@ -12,8 +12,8 @@ public class CardHand {
     }
 
     public Card play(int n) {
-        Card card = hand.get(n);
-        hand.remove(n);
+        Card card = this.hand.get(n);
+        this.hand.remove(n);
         return card;
     }
 
@@ -27,7 +27,7 @@ public class CardHand {
 
     @Override
     public String toString() {
-        return "CardHand [hand=" + hand + "]";
+        return "CardHand [hand=" + this.hand + "]";
     }
 
 }
