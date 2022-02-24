@@ -21,32 +21,33 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="600.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="426.0" minHeight="10.0" prefHeight="384.0" vgrow="ALWAYS" />
-          <RowConstraints maxHeight="116.0" minHeight="70.0" prefHeight="116.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="426.0" minHeight="10.0" prefHeight="364.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="137.0" minHeight="70.0" prefHeight="136.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Pane prefHeight="114.0" prefWidth="300.0" GridPane.rowIndex="1">
                <children>
-                  <TextArea fx:id="checkoutText" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="88.0" prefWidth="270.0" />
+                  <TextArea fx:id="checkoutText" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="108.0" prefWidth="270.0" />
                </children>
             </Pane>
             <Pane maxHeight="124.0" minHeight="75.0" prefHeight="124.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Button fx:id="deleteItem" layoutX="208.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="Slett vare" visible="false" />
-                  <TextField fx:id="phoneNumber" layoutY="75.0" prefHeight="27.0" prefWidth="194.0" promptText="Telefonnummer" />
-                  <Button fx:id="login" layoutX="208.0" layoutY="75.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="Logg inn" />
-                  <Button fx:id="adminMode" layoutX="208.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="Admin" />
-                  <ImageView fitHeight="58.0" fitWidth="194.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <Button fx:id="deleteItem" layoutX="215.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" text="Slett vare" visible="false" />
+                  <TextField fx:id="phoneNumber" layoutY="89.0" prefHeight="27.0" prefWidth="201.0" promptText="Telefonnummer" />
+                  <Button fx:id="login" layoutX="215.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" text="Logg inn" />
+                  <ImageView fitHeight="60.0" fitWidth="121.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@oopmini.png" />
+                        <Image url="@oopmini_small.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="backButton" layoutX="208.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="&lt; Tilbake" visible="false" />
+                  <Button fx:id="backButton" layoutX="215.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" text="&lt; Tilbake" visible="false" />
+                  <Button fx:id="checkout" layoutX="131.0" layoutY="15.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="70.0" text="Ferdig" />
+                  <Button fx:id="adminMode" layoutX="215.0" layoutY="15.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="70.0" text="Admin" />
                </children>
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ListView fx:id="scannedItemsList" layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="270.0" />
+                  <ListView fx:id="scannedItemsList" layoutX="14.0" layoutY="14.0" prefHeight="350.0" prefWidth="270.0" />
                </children>
             </Pane>
             <Pane prefHeight="200.0" prefWidth="300.0" GridPane.columnIndex="1">
