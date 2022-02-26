@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 public class SelfCheckoutController {
@@ -80,6 +82,7 @@ public class SelfCheckoutController {
         dialog.setTitle("Admin login");
         dialog.setHeaderText("Skriv inn admin-passord for denne enheten for å fortsette");
         dialog.setContentText("Passord:");
+        dialog.setGraphic(new ImageView(this.getClass().getResource("lock_open.png").toString()));
         String password = dialog.showAndWait().get();
         if (password != null) {
             selfCheckout.activateAdminMode(password);
@@ -111,11 +114,13 @@ public class SelfCheckoutController {
 
     private Button createItemButton(Item item) {
         Button button = new Button(item.toString());
-        button.setOnAction((event) -> {
-            handleItemSelect(item);
-        });
-        button.setMaxHeight(Double.MAX_VALUE);
+        button.wrapTextProperty().setValue(true);
+        button.setStyle("-fx-text-alignment: center;");
+        button.setCursor(Cursor.HAND);
+        button.setOnAction((event) -> handleItemSelect(item));
         button.setMaxWidth(Double.MAX_VALUE);
+        button.setMaxHeight(Double.MAX_VALUE);
+
         return button;
     }
 
