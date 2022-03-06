@@ -1,8 +1,9 @@
-package uke10;
+package uke10.streng;
 
 import java.util.Iterator;
 
-public class Streng implements Iterator<Character>{
+// Denne klassen er som kombinasjonen av Streng og StrengIterator.
+public class StrengMedIterator implements Iterator<Character>{
 
     String streng;
     int pointer;
@@ -25,7 +26,7 @@ public class Streng implements Iterator<Character>{
 
 
     public static void main(String[] args) {
-        Streng foo = new Streng();
+        StrengMedIterator foo = new StrengMedIterator();
         foo.setStreng("Hei på meg");
 
         while (foo.hasNext()) {
