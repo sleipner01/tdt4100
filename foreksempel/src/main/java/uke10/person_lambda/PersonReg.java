@@ -17,7 +17,7 @@ public class PersonReg implements Iterable<Person> {
     List<Person> persons = new ArrayList<>();
 
     @Override
-    public Iterator iterator() {
+    public Iterator<Person> iterator() {
         return persons.iterator();
     }
 
@@ -47,7 +47,7 @@ public class PersonReg implements Iterable<Person> {
         pr.addPersons(a,b,c,d,e,f,g,h,i,j); // Enkel måte ja!
 
         // Comparator som egen klasse
-        // pr.sortPersons(new NameLengthSorter());
+        pr.sortPersons(new NameLengthSorter());
         // pr.sortPersons(new NameComparator());
         System.out.println(pr);
 
@@ -85,6 +85,5 @@ public class PersonReg implements Iterable<Person> {
 
     }
 
-    
 
 }
