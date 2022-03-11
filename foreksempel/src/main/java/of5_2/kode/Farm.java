@@ -2,9 +2,10 @@ package of5_2.kode;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
-public class Farm {
+public class Farm implements Iterable<Animal> {
 
     List<Animal> animals = new ArrayList<>();
 
@@ -27,19 +28,33 @@ public class Farm {
         return animals.get(index);
     }
 
-    public static void main(String[] args) {
-        List<Animal> animals = new ArrayList<>(List.of(
-                new Dog("Ludo", 2),
-                new Chicken("Albert", 1),
-                new Dog("Ollie", 6),
-                new Chicken("Ringo", 6),
-                new Dog("Buddy", 8),
-                new Chicken("Kjell", 5)));
-
-        Collections.sort(animals, new AnimalTypeComparator());
-
-        for (Animal animal : animals) {
-            System.out.println(animal.makeSound());
-        }
+    @Override
+    public Iterator<Animal> iterator() {
+        return animals.iterator();
     }
+
+    public List<String> getAnimalNames() {
+        return animals.stream()
+                .map((animal) -> animal.getName())
+                .distinct()
+                .toList();
+    }
+
+    public static void main(String[] args) {
+        Farm farm = new Farm();
+        farm.addAnimal(new Dog("Ludo", 12));
+        farm.addAnimal(new Dog("Fido", 0));
+        farm.addAnimal(new Chicken("Peter", 1));
+        farm.addAnimal(new Chicken("Albert", 4));
+
+        Iterator<Animal> iterator = new FilterAnimalsIterator(farm, new DogPredicate());
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next().makeSound());
+        }
+        System.out.println();
+        farm.getAnimals().stream().filter(new DogPredicate()).forEach(animal -> {
+            System.out.println(animal.makeSound());
+        });
+    }
+
 }

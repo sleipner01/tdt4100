@@ -25,4 +25,9 @@ public class Chicken implements Animal {
         return name + " sier klukk!";
     }
 
+    @Override
+    public int compareTo(Animal other) {
+        return this.getAge() - other.getAge();
+    }
+
 }

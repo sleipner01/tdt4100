@@ -25,4 +25,9 @@ public class Dog implements Animal {
         return name + " sier bjeff!";
     }
 
+    @Override
+    public int compareTo(Animal other) {
+        return this.getAge() - other.getAge();
+    }
+
 }
