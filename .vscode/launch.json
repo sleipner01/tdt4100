@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TwitterAccount",
+            "request": "launch",
+            "mainClass": "ovinger/oving5.twitter.TwitterAccount",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch TodoApp",
             "request": "launch",
             "mainClass": "todolist/todolist.fxui.TodoApp",
