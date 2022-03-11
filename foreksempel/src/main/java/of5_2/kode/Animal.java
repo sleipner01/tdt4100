@@ -1,6 +1,6 @@
 package of5_2.kode;
 
-public interface Animal extends Comparable<Animal> {
+public interface Animal {
 
     String getName();
 
