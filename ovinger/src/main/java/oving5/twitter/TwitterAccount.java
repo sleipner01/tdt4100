@@ -124,7 +124,7 @@ public class TwitterAccount {
         System.out.println(sleipner.getUserName());
 
         sleipner.tweet("Har du noen gang tenkt på at jorda er flat?");
-        sleipner.tweet("Vedum er kul");
+        sleipner.tweet("Jeg er jævlig kul");
         System.out.println(sleipner.getTweet(1).getText());
         System.out.println(sleipner.getTweet(2).getText());
         System.out.println(sleipner.getTweet(1).getOwner().getUserName());
@@ -139,6 +139,20 @@ public class TwitterAccount {
         System.out.println(helligTonne.getTweet(1).getOriginalTweet().getOwner().getUserName());
         System.out.println(helligTonne.getTweet(1).getOriginalTweet().getRetweetCount());
 
+
+        TwitterAccount tarald = new TwitterAccount("Tarald");
+        TwitterAccount nissen = new TwitterAccount("Nissen");
+        helligTonne.follow(sleipner);
+        tarald.follow(sleipner);
+        nissen.follow(sleipner);
+
+        Comparator<TwitterAccount> comparator = new UserNameComparator();
+        List<TwitterAccount> unsorted = new ArrayList<>(sleipner.getFollowers());
+        List<TwitterAccount> sorted = new ArrayList<>(sleipner.getFollowers(comparator));
+        for(TwitterAccount account : unsorted)
+            System.out.println(account.getUserName());
+        for(TwitterAccount account : sorted)
+            System.out.println(account.getUserName());
     }
 
 }
