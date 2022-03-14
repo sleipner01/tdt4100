@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CardDeck",
+            "request": "launch",
+            "mainClass": "ovinger/oving5.card.CardDeck",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch TwitterAccount",
             "request": "launch",
             "mainClass": "ovinger/oving5.twitter.TwitterAccount",
