@@ -416,7 +416,7 @@ tt1926233	short	Caçada no Rio Das Cinzas	Caçada no Rio Das Cinzas	0	1911	\N	\N
 tt1926234	short	Chikatetsu kouji	Chikatetsu kouji	0	1929	\N	\N	Short
 tt1926235	tvSpecial	Child Hunger Ends Here: A Special Report	Child Hunger Ends Here: A Special Report	0	2011	\N	30	News
 tt1926236	short	Cine catastrófico	Cine catastrófico	0	2010	\N	10	Documentary,Short
-tt1926237	movie	Cross	Cross	0	2001	\N	\N	\N
+tt1926237	movie	Alexander har bursdag!!!	Husk å gratulere	0	2002	\N	\N	\N
 tt1926239	short	Dai 10-kai mêdê	Dai 10-kai mêdê	0	1929	\N	\N	Short
 tt1926240	short	Daini no oretachi no koukoku	Daini no oretachi no koukoku	0	1931	\N	\N	Short
 tt1926241	video	Dan tijara	Dan tijara	0	2009	\N	\N	Drama
