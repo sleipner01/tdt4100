@@ -12,7 +12,11 @@ public class TwitterAccountComparator implements Comparator<TwitterAccount> {
 
         Comparator<TwitterAccount> tweetsComparator = new TweetsCountComparator();
         int secondTry = tweetsComparator.compare(account1, account2);
-        if()
+        if(secondTry != 0) return secondTry;
+
+        Comparator<TwitterAccount> userNameComparator = new UserNameComparator();
+        int thirdTry = userNameComparator.compare(account1, account2);
+        return thirdTry;
     }
     
 }

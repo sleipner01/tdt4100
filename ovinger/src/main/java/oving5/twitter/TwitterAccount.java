@@ -1,7 +1,6 @@
 package oving5.twitter;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -118,41 +117,73 @@ public class TwitterAccount {
         return new ArrayList<>(followers);
     }
 
+    @Override
+    public String toString() {
+        return "TwitterAccount [followers=" + followers.size() + ", following=" + following.size() + ", tweets=" + tweets.size()
+                + ", userName=" + userName + "]";
+    }
+
     public static void main(String[] args) {
         
         TwitterAccount sleipner = new TwitterAccount("Sleipner");
-        System.out.println(sleipner.getUserName());
+        TwitterAccount helligTonne = new TwitterAccount("Hellig Tønne");
+        TwitterAccount tarald = new TwitterAccount("Tarald");
+        TwitterAccount nissen = new TwitterAccount("Nissen");
+        // System.out.println(sleipner.getUserName());
 
         sleipner.tweet("Har du noen gang tenkt på at jorda er flat?");
         sleipner.tweet("Jeg er jævlig kul");
-        System.out.println(sleipner.getTweet(1).getText());
-        System.out.println(sleipner.getTweet(2).getText());
-        System.out.println(sleipner.getTweet(1).getOwner().getUserName());
+        // helligTonne.retweet(sleipner.getTweet(1));
 
 
-        TwitterAccount helligTonne = new TwitterAccount("Hellig Tønne");
-        System.out.println(helligTonne.getUserName());
-
-        helligTonne.retweet(sleipner.getTweet(1));
-        System.out.println(helligTonne.getTweet(1).getText());
-        System.out.println(helligTonne.getTweet(1).getOwner().getUserName());
-        System.out.println(helligTonne.getTweet(1).getOriginalTweet().getOwner().getUserName());
-        System.out.println(helligTonne.getTweet(1).getOriginalTweet().getRetweetCount());
+        // System.out.println(sleipner.getTweet(1).getText());
+        // System.out.println(sleipner.getTweet(2).getText());
+        // System.out.println(sleipner.getTweet(1).getOwner().getUserName());
 
 
-        TwitterAccount tarald = new TwitterAccount("Tarald");
-        TwitterAccount nissen = new TwitterAccount("Nissen");
+        // System.out.println(helligTonne.getUserName());
+
+        // System.out.println(helligTonne.getTweet(1).getText());
+        // System.out.println(helligTonne.getTweet(1).getOwner().getUserName());
+        // System.out.println(helligTonne.getTweet(1).getOriginalTweet().getOwner().getUserName());
+        // System.out.println(helligTonne.getTweet(1).getOriginalTweet().getRetweetCount());
+
+
+
         helligTonne.follow(sleipner);
         tarald.follow(sleipner);
         nissen.follow(sleipner);
 
-        Comparator<TwitterAccount> comparator = new UserNameComparator();
+        System.out.println();
+        System.out.println();
+        System.out.println("________________________");
+        System.out.println();
+
+        System.out.println(sleipner);
+        System.out.println(helligTonne);
+        System.out.println(tarald);
+        System.out.println(nissen);
+
+        System.out.println();
+        System.out.println("________________________");
+        System.out.println();
+
+
+        Comparator<TwitterAccount> comparator = new TwitterAccountComparator();
         List<TwitterAccount> unsorted = new ArrayList<>(sleipner.getFollowers());
         List<TwitterAccount> sorted = new ArrayList<>(sleipner.getFollowers(comparator));
         for(TwitterAccount account : unsorted)
             System.out.println(account.getUserName());
+        System.out.println();
         for(TwitterAccount account : sorted)
             System.out.println(account.getUserName());
+
+
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
     }
 
 }
