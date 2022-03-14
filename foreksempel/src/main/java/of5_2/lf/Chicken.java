@@ -1,4 +1,4 @@
-package of5_2.kode;
+package of5_2.lf;
 
 public class Chicken implements Animal {
 
@@ -23,6 +23,11 @@ public class Chicken implements Animal {
     @Override
     public String makeSound() {
         return name + " sier klukk!";
+    }
+
+    @Override
+    public int compareTo(Animal other) {
+        return this.getAge() - other.getAge();
     }
 
 }

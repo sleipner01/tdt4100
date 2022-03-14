@@ -1,4 +1,4 @@
-package of5_2.kode;
+package of5_2.lf;
 
 import java.util.function.Predicate;
 

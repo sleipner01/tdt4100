@@ -1,20 +1,23 @@
-package of5_2.kode;
+package of5_2.lf;
 
 import java.util.Iterator;
+import java.util.function.Predicate;
 
-public class YoungAnimalsIterator implements Iterator<Animal> {
+public class FilterAnimalsIterator implements Iterator<Animal> {
 
     private int index = 0;
     private Farm farm;
+    private Predicate<Animal> animalPredicate;
 
-    public YoungAnimalsIterator(Farm farm) {
+    public FilterAnimalsIterator(Farm farm, Predicate<Animal> animalPredicate) {
         this.farm = farm;
+        this.animalPredicate = animalPredicate;
     }
 
     @Override
     public boolean hasNext() {
         while (index < farm.numberOfAnimals()) {
-            if (farm.getAnimal(index).getAge() <= 2) {
+            if (animalPredicate.test(farm.getAnimal(index))) {
                 return true;
             }
             index++;
