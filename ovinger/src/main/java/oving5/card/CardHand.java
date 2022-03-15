@@ -3,7 +3,7 @@ package oving5.card;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardHand {
+public class CardHand implements CardContainer {
 
     private List<Card> hand = new ArrayList<>();
 

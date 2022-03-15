@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class CardDeck {
+public class CardDeck implements CardContainer {
 
     private List<Card> cardDeck = new ArrayList<>();
     private char[] suits = {'S', 'H', 'D', 'C'};
