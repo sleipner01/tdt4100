@@ -1,6 +1,7 @@
 package oving5.card;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -69,6 +70,12 @@ public class CardDeck implements CardContainer {
     public List<Card> getCards(Predicate<Card> predicate) {
         return this.cardDeck.stream().filter(predicate).toList();
     }
+    
+    @Override
+    public Iterator<Card> iterator() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
     public static void main(String[] args) {
         CardDeck deck = new CardDeck(13);
@@ -80,5 +87,6 @@ public class CardDeck implements CardContainer {
         System.out.println(deck.getCardCount(c -> c.getSuit() == 'H'));
         System.out.println(deck.getCards(c -> c.getFace() == 1));
     }
+
     
 }
