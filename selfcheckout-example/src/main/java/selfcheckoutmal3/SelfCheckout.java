@@ -245,15 +245,15 @@ public class SelfCheckout {
     public String toString() {
         List<Item> uniqueItems = new ArrayList<>();
         String receipt = """
-                --------------------------------------
-                Hva             Pris    MVA     Total
+                -----------------------------------------------
+                Hva                     Pris    MVA     Total
                 """;
         for (Item item : shoppingCart) {
             // ArrayList.contains bruker object.equals internt,
             // Som gjør at vi sammenligner strenger på riktig måte
             if (!uniqueItems.contains(item)) {
                 int count = this.getNumberOfEqualItemsInCart(item);
-                receipt += String.format("%dx %s\t%.2f\t%.2f\t%.2f\n",
+                receipt += String.format("%dx %-20.20s %.2f\t%.2f\t%.2f\n",
                         count,
                         item.getName(),
                         this.getPriceWithoutMVAForItem(item),
@@ -264,12 +264,12 @@ public class SelfCheckout {
         }
         receipt += String.format(
                 """
-                        --------------------------------------
-                        Total MVA                       %.2f
-                        Total                           %.2f
-                                Takk for at du handlet
-                                    hos oss i OOP!
-                        --------------------------------------
+                        -----------------------------------------------
+                        Total MVA                               %.2f
+                        Total                                   %.2f
+                                     Takk for at du handlet
+                                         hos oss i OOP!
+                        -----------------------------------------------
                         """,
                 this.getTotalMVAForCart(),
                 this.getTotalPriceForCart());
