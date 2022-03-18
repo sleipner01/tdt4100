@@ -5,6 +5,7 @@ import java.util.Iterator;
 public class CardContainerIterator implements Iterator<Card> {
 
     private CardContainer cardContainer;
+    private int position;
 
     public CardContainerIterator(CardContainer cardContainer) {
         this.cardContainer = cardContainer;
@@ -12,14 +13,16 @@ public class CardContainerIterator implements Iterator<Card> {
 
     @Override
     public boolean hasNext() {
-        // TODO Auto-generated method stub
-        return false;
+        if(position == cardContainer.getCardCount())
+            return false;
+        return true;
     }
 
     @Override
     public Card next() {
-        // TODO Auto-generated method stub
-        return null;
+        if(!hasNext())
+            return null;
+        return cardContainer.getCard(position++);
     }
     
 }

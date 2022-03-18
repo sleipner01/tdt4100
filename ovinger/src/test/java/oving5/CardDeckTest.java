@@ -12,6 +12,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import oving5.card.Card;
+import oving5.card.CardDeck;
+import oving5.card.CardContainer;
+
 public class CardDeckTest {
 	CardDeck deck;
 	Card s1;
@@ -47,7 +51,7 @@ public class CardDeckTest {
 	@Test
 	@DisplayName("Sjekker at iterator fungerer med CardDeck")
 	void testDeckIterator() throws Exception {
-		testCards(deck, expected.iterator());
+		testCards(deck, expected.iterator()); // Mulig feil her??
 	}
 
 	private void testCards(CardContainer it, Collection<Card> expected) {

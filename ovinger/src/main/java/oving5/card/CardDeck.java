@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
-
 public class CardDeck implements CardContainer {
 
     private List<Card> cardDeck = new ArrayList<>();
@@ -83,9 +82,18 @@ public class CardDeck implements CardContainer {
         // deck.shufflePerfectly();
         // deck.deal(magnus, 2);
 
-        System.out.println(deck.hasCard(c -> c.getSuit() == 'S' && c.getFace() == 12));
-        System.out.println(deck.getCardCount(c -> c.getSuit() == 'H'));
-        System.out.println(deck.getCards(c -> c.getFace() == 1));
+        // System.out.println(deck.hasCard(c -> c.getSuit() == 'S' && c.getFace() == 12));
+        // System.out.println(deck.getCardCount(c -> c.getSuit() == 'H'));
+        // System.out.println(deck.getCards(c -> c.getFace() == 1));
+
+        Iterator<Card> iterator = new CardContainerIterator(deck);
+        System.out.println(deck);
+        System.out.println();
+
+        while(iterator.hasNext()) {
+            System.out.println(iterator.hasNext() + " " + iterator.next());
+        }
+        System.out.println(iterator.hasNext());
     }
 
     
