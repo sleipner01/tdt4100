@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class CardHand implements CardContainer, Iterable<Card> {
+public class CardHand implements CardContainer {
 
     private List<Card> hand = new ArrayList<>();
 
