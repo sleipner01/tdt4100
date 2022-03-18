@@ -75,6 +75,7 @@ public class SelfCheckout {
         return phoneNumber != null;
     }
 
+    // Denne linja ble endret i uke 11 for å gi tilgang til phoneNumber eksternt.
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
@@ -233,7 +234,9 @@ public class SelfCheckout {
     private int getNumberOfEqualItemsInCart(Item item) {
         int equalItems = 0;
         for (Item cartItem : shoppingCart) {
-            if (item == cartItem) {
+            // Denne linjen ble endret for uke 11
+            // Se Item.java og .equals-metoden for forklaring.
+            if (item.equals(cartItem)) {
                 equalItems++;
             }
         }
@@ -245,15 +248,16 @@ public class SelfCheckout {
     public String toString() {
         List<Item> uniqueItems = new ArrayList<>();
         String receipt = """
-                --------------------------------------
-                Hva             Pris    MVA     Total
+                -----------------------------------------------
+                Hva                     Pris    MVA     Total
                 """;
         for (Item item : shoppingCart) {
             // ArrayList.contains bruker object.equals internt,
             // Som gjør at vi sammenligner strenger på riktig måte
             if (!uniqueItems.contains(item)) {
                 int count = this.getNumberOfEqualItemsInCart(item);
-                receipt += String.format("%dx %s\t%.2f\t%.2f\t%.2f\n",
+                // Denne linja ble endret i uke 11 for å gi bedre formattering i JavaFX:
+                receipt += String.format("%dx %-20.20s %.2f\t%.2f\t%.2f\n",
                         count,
                         item.getName(),
                         this.getPriceWithoutMVAForItem(item),
@@ -264,12 +268,12 @@ public class SelfCheckout {
         }
         receipt += String.format(
                 """
-                        --------------------------------------
-                        Total MVA                       %.2f
-                        Total                           %.2f
-                                Takk for at du handlet
-                                    hos oss i OOP!
-                        --------------------------------------
+                        -----------------------------------------------
+                        Total MVA                               %.2f
+                        Total                                   %.2f
+                                     Takk for at du handlet
+                                         hos oss i OOP!
+                        -----------------------------------------------
                         """,
                 this.getTotalMVAForCart(),
                 this.getTotalPriceForCart());
