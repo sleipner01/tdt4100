@@ -1,6 +1,8 @@
 package uke12.boss;
 
-public interface Worker {
+public class Worker {
 
-	public String work();
+	public String work() {
+		return "basis work";
+	}
 }
