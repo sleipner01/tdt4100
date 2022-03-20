@@ -22,7 +22,7 @@ import javafx.scene.text.Font;
 public class SelfCheckoutController {
 
     private SelfCheckout selfCheckout;
-    private ICheckoutReceipt checkoutReceipt = new CheckoutReceipt();
+    private IReceiptHandler checkoutReceipt = new ReceiptHandler();
     private List<Item> selectableItemsList;
 
     @FXML

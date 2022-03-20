@@ -2,7 +2,7 @@ package selfcheckout;
 
 import java.io.FileNotFoundException;
 
-public interface ICheckoutReceipt {
+public interface IReceiptHandler {
 
     SelfCheckout readReceipt(String filename, SelfCheckout selfCheckout) throws FileNotFoundException;
 

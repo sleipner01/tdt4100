@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class CheckoutReceipt implements ICheckoutReceipt {
+public class ReceiptHandler implements IReceiptHandler {
 
     @Override
     public SelfCheckout readReceipt(String filename, SelfCheckout selfCheckout) throws FileNotFoundException {
