@@ -1,6 +1,6 @@
-package uke12.boss;
+package uke12.boss.uteninterface;
 
-public class Boss implements Worker {
+public class Boss extends Worker {
 
 	Worker secretary = new Secretary();
 	

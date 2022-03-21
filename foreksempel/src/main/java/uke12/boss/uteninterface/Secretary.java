@@ -1,6 +1,6 @@
-package uke12.boss;
+package uke12.boss.uteninterface;
 
-public class Secretary implements Worker {
+public class Secretary extends Worker {
 
 	@Override
 	public String work() {
