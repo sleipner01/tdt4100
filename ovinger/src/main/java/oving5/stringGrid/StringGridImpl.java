@@ -1,13 +1,12 @@
 package oving5.stringGrid;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class StringGridImpl implements StringGrid {
 
-    List<List<String>> grid;
-
-    
+    private List<List<String>> grid;
 
     public StringGridImpl(int rows, int columnCount) {
         this.grid = new ArrayList<>();
@@ -51,6 +50,12 @@ public class StringGridImpl implements StringGrid {
 
         this.grid.get(row).remove(column);
         this.grid.get(row).add(column, element);
+    }
+
+    @Override
+    public Iterator<String> iterator() {
+        // TODO Auto-generated method stub
+        return null;
     }
     
 }
