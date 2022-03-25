@@ -9,5 +9,5 @@ Denne mappen inneholder øvingstekster for TDT4100 - Objektorientert programmeri
 | [Øving 3](oving3/README.md) | Klasser og testing                 |
 | [Øving 4](oving4/README.md) | Objektstrukturer                   |
 | [Øving 5](oving5/README.md) | Grensesnitt                        |
-| Øving 6                     | Observatør-observert og delegering |
-| Øving 7                     | Arv og abstrakte klasser           |
+| [Øving 6](oving6/README.md) | Observatør-observert og delegering |
+| [Øving 7](oving7/README.md) | Arv og abstrakte klasser           |
