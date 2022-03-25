@@ -1,4 +1,4 @@
-package of6.observable.kode;
+package of6.observable.lf;
 
 public interface AppListener {
 

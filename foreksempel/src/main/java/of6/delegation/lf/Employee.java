@@ -1,4 +1,4 @@
-package of6.delegation.kode;
+package of6.delegation.lf;
 
 public class Employee implements CallRecipient {
 

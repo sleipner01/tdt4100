@@ -1,4 +1,4 @@
-package of6.delegation.kode;
+package of6.delegation.lf;
 
 import java.util.ArrayList;
 import java.util.List;
