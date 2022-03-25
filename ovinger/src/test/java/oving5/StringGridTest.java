@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import oving5.stringGrid.StringGrid;
 import oving5.stringGrid.StringGridImpl;
+import oving5.stringGrid.StringGridIterator;
 
 public class StringGridTest {
 
