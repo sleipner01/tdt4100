@@ -1,4 +1,4 @@
-package of6.observable.kode;
+package of6.observable.lf;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,8 +55,6 @@ public class Phone implements AppListener {
         System.out.println(iPhone11Pro.printPushNotifications());
         System.out.println();
         System.out.println(SamsungGalaxy.printPushNotifications());
-
-        BinaryOperator<Double> op = (a, b) -> a + b;
     }
 
 }
