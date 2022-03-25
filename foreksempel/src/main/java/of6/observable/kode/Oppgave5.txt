@@ -1,0 +1,19 @@
+public static void main(String[] args) {
+    Phone iPhone11Pro = new Phone("Magnus sin iPhone");
+    Phone SamsungGalaxy = new Phone("Kjetils Android");
+    App OOPmini = new App();
+    App OOPbank = new App();
+    iPhone11Pro.install(OOPmini);
+    iPhone11Pro.install(OOPbank);
+    SamsungGalaxy.install(OOPmini);
+
+    OOPmini.sendPushNotification("Nå har vi 40% rabatt på Hummus!");
+    System.out.println(iPhone11Pro.printPushNotifications());
+    System.out.println();
+    System.out.println(SamsungGalaxy.printPushNotifications());
+    System.out.println();
+    OOPbank.sendPushNotification("Søk om høyere kredittgrense idag!");
+    System.out.println(iPhone11Pro.printPushNotifications());
+    System.out.println();
+    System.out.println(SamsungGalaxy.printPushNotifications());
+}
