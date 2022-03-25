@@ -99,6 +99,11 @@ public class StringGridIterator implements Iterator<String> {
         while(iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+
+        // Funker ikke???
+        for (String s:grid) {
+            System.out.println(s);
+        }
     }
     
 }
