@@ -1,4 +1,4 @@
-package arv;
+package uke13.arv;
 
 public class Tegneseriealbum extends Bok {
 

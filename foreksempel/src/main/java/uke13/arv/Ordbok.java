@@ -1,4 +1,4 @@
-package arv;
+package uke13.arv;
 
 public class Ordbok extends Bok {
 
@@ -33,20 +33,20 @@ public class Ordbok extends Bok {
 
 
 		//		System.out.println("Ordbok.setTittel");
-		if (! isValidTittel(tittel))
+		if (! isValidTitle(tittel))
 			throw new IllegalArgumentException(tittel +
 					" er ikke rett navn på en ordbok");
-		// this.tittel = tittel; // Men nå tester en ikke for feil tegn... Da må en:
+		// this.tittel = tittel; // Men da tester en ikke for feil tegn... Da må en:
 		super.setTittel(tittel);
 	}
 
 
-	// isValidTittel overskygger Bok sin, men den sjekker på noe annet...
+	// isValidTitle overskygger Bok sin, men den sjekker på noe annet...
 	// Det nye kravet er at en ordbok må slutte på "ordbok". Vi må allikevel
 	// også huske på å sjekke at den følger super sine krav, så det kan sjekkes først:
-	public boolean isValidTittel(String tittel) {
+	public boolean isValidTitle(String tittel) {
 //		System.out.println("Ordbok.isValidTitle");
-		if (! super.isValidTittel(tittel)) {
+		if (! super.isValidTitle(tittel)) {
 			return false;
 		}
 		return tittel.endsWith("ordbok");

@@ -1,4 +1,4 @@
-package arv;
+package uke13.arv;
 
 public class NameValidationException extends IllegalArgumentException{
 	private final Person person;
@@ -8,6 +8,8 @@ public class NameValidationException extends IllegalArgumentException{
 		this.person = person;
 		this.illegalName = illegalName;
 	}
+
+	// Merk at vi ikke har noen toString() her. Det har ingen unntak, så vi må helt opp til Throwable
 
 	@Override
 	// Denne skrives ut i catch-metoden i person. Via Throwable sin getLocalizedMessage().

@@ -1,14 +1,12 @@
-package arv;
+package uke13.arv;
 
 public class Bok {
 
 	private String tittel; 
 	private String specialCharacters = " -,.%";
-	
-	// Vi sjekket først for ulovlige bokstaver, men gikk over til å sjekke for
-	// lovlige ting: bokstaver, tall og specialCharacters (se over)
-	private String ulovligeBokstaver = "#¤([]) {]}";
+	private String ulovligeBokstaver = "#¤([]){]}";
 
+	
 	@Override
 	public String toString() {
 		// Den første skriver bare ut for bok. Men dersom du lager en
@@ -24,9 +22,12 @@ public class Bok {
 
 	protected String GetToStringAttributes() {
 		return "tittel=" + tittel;	}
+	
+	public Bok() {
+		super();
+	}
 
 	public Bok(String tittel) {
-//		System.out.println("Bok.kons");
 		setTittel(tittel);
 	}
 
@@ -36,14 +37,22 @@ public class Bok {
 
 	public void setTittel(String tittel) {
 //		System.out.println("Bok.setTittel");
+		for (int i = 0; i < tittel.length(); i++) {
+			char c = tittel.charAt(i);
+			if (! (Character.isLetter(c) || Character.isDigit(c) || 
+					specialCharacters.indexOf(c) >= 0)) {
+				return;
+			}
+		}
 
-		if (!isValidTittel(tittel)) {
+
+		if (!isValidTitle(tittel)) {
 			throw new IllegalArgumentException(tittel+" er ikke en gyldig boktittel.");
 		}
 		this.tittel = tittel;
 	}
 
-	public boolean isValidTittel(String tittel) {
+	public boolean isValidTitle(String tittel) {
 //		System.out.println("Bok.isValidTittel");
 		for (int i = 0; i < tittel.length(); i++) {
 			char c = tittel.charAt(i);
@@ -54,5 +63,18 @@ public class Bok {
 		}
 		return true;
 
+	}
+
+	public static void main(String[] args) {
+		Bok bok = new Bok("Titten tei på eventyr");
+		System.out.println(bok);
+
+		// Sjekk av tittel i setTitle, som kalles i konstruktøren
+		Bok bok2 = new Bok("Hei{");
+		System.out.println(bok2); // Vil bli null
+
+		// For isValidTitle()
+		Bok bok3 = new Bok("Titten tei på eventyr @");
+		// System.out.println(bok3);
 	}
 }
