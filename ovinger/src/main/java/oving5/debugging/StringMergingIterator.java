@@ -28,8 +28,11 @@ public class StringMergingIterator implements Iterator<String> {
 			throw new NoSuchElementException();
 		}
 
-		// Massiv syntaksfeil. TurnSwitch returnerte ikke, så to elementer ville blitt lagt til hver eneste gang.
+		// Massiv syntaksfeil. TurnSwitch ble byttet om inni ifsene, som gjorde at både first og second ble kjørt i første iterasjon.
 		// De to første ifsene satte seg selv til result selv om den ikke hadde noen next. 
+
+		// Nå har jeg gjort om slik at annenhver funksjonen kjører fram til en av listene ikke har flere elementer.
+		// Da vil result være null. Så ser vi hvilken iterator som har flere elementer, og returnerer dem direkte.
 
 		String result = null;
 
