@@ -2,6 +2,7 @@ package oving5.debugging;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class StringMergingIterator implements Iterator<String> {
 
@@ -27,25 +28,24 @@ public class StringMergingIterator implements Iterator<String> {
 			throw new NoSuchElementException();
 		}
 
+		// Massiv syntaksfeil. TurnSwitch returnerte ikke, så to elementer ville blitt lagt til hver eneste gang.
+		// De to første ifsene satte seg selv til result selv om den ikke hadde noen next. 
+
 		String result = null;
 
-		if (!first.hasNext()) {
-			result = first.next();
-		} else if (!second.hasNext()) {
-			result = second.next();
-		} else {
-			if (turnSwitch) {
-				result = first.next();
-				turnSwitch = false;
-			}
-			if (!turnSwitch) {
-				result = second.next();
-				turnSwitch = true;
-			}
+		if (turnSwitch && first.hasNext()) result = first.next();
+		if (!turnSwitch && second.hasNext()) result = second.next();
 
+		if(Objects.isNull(result)) {
+			if (!first.hasNext()) return second.next();	
+			if (!second.hasNext()) return first.next();
 		}
+		
+		if (turnSwitch) turnSwitch = false;
+		else turnSwitch = true;
 
 		return result;
+
 	}
 
 }
