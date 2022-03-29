@@ -1,0 +1,23 @@
+public static void main(String[] args) {
+    CallCenter callCenter = new CallCenter();
+    List<Employee> employeeList = List.of(
+            new Employee("Børge", "Teamleder"),
+            new Employee("Magnus", "Junior"),
+            new Employee("Nora", "Junior"),
+            new Employee("Jostein", "Junior"),
+            new Employee("Mattias", "Teamleder"),
+            new Employee("Eirik", "HR"));
+    employeeList.forEach(employee -> callCenter.addEmployee(employee));
+
+    callCenter.answerCall("klage");
+    callCenter.answerCall("klage");
+    callCenter.answerCall("internt");
+    callCenter.answerCall("eskalering");
+    callCenter.answerCall("spørsmål");
+    callCenter.answerCall("klage");
+    callCenter.answerCall("eskalering");
+    callCenter.answerCall("spørsmål");
+    callCenter.answerCall("spørsmål");
+    employeeList.forEach(
+            employee -> System.out.println(employee.getName() + " " + employee.getNumberOfCallsAnswered()));
+}
