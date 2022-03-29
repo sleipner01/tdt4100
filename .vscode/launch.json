@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch StringGridIterator",
+            "request": "launch",
+            "mainClass": "ovinger/oving5.stringGrid.StringGridIterator",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
+            "name": "Launch PersonSupplier",
+            "request": "launch",
+            "mainClass": "foreksempel/uke10.person_lambda_ferdig.PersonSupplier",
+            "projectName": "foreksempel"
+        },
+        {
+            "type": "java",
+            "name": "Launch CardDeck",
+            "request": "launch",
+            "mainClass": "ovinger/oving5.card.CardDeck",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
+            "name": "Launch TwitterAccount",
+            "request": "launch",
+            "mainClass": "ovinger/oving5.twitter.TwitterAccount",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch TodoApp",
             "request": "launch",
             "mainClass": "todolist/todolist.fxui.TodoApp",
