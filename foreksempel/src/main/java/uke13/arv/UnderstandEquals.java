@@ -8,6 +8,37 @@ public class UnderstandEquals {
 		this.streng = ting;
 	}
 
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((streng == null) ? 0 : streng.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UnderstandEquals other = (UnderstandEquals) obj;
+		if (streng == null) {
+			if (other.streng != null)
+				return false;
+		} else if (!streng.equals(other.streng))
+			return false;
+		return true;
+	}
+
+
+
 	public static void main(String[] args) {
 		// Kommentarer for utvidelse nederst
 
