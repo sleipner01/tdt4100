@@ -9,7 +9,8 @@ public class NameValidationException extends IllegalArgumentException{
 		this.illegalName = illegalName;
 	}
 
-	// Merk at vi ikke har noen toString() her. Det har ingen unntak, så vi må helt opp til Throwable
+	// Merk at vi ikke har noen toString() her. Det har ingen unntak, så vi må helt opp til Throwable 
+	// (se F4)
 
 	@Override
 	// Denne skrives ut i catch-metoden i person. Via Throwable sin getLocalizedMessage().

@@ -31,8 +31,8 @@ public class Person {
 	}
 
 	// Trenger ikke returnere noe, den utløser unntak hvis den finner noe.
-	// Unntaket skriver ikke automatisk ut, men det 
-	// Det skrives ut der en fanger opp feilen, se catch i main.
+	// Unntaket skriver ikke automatisk ut, men det skrives ut der en fanger opp feilen,
+	// se catch i main.
 	private void checkName(final String name) {
 		for (int i = 0; i < name.length(); i++) {
 			final char c = name.charAt(i);
@@ -55,7 +55,7 @@ public class Person {
 			System.out.println(c.contains(new Person("Anne"))); // Nope
 			System.out.println(c.contains(new Person("Per")));  // Yay, siden alt vi sjekker for likhet er navnet.
 
-			// Lysark 21
+			// Lysark NameValidationException
 			Person p2 = new Person("Per Berg-Hansen"); // Lovlig grunnet indexOf-sjekken.
 			Person p3 = new Person("Per@Hansen"); // ulovlig
 			System.out.println(p.getName());

@@ -1,6 +1,6 @@
 package uke13.arv;
 
-// Records har ingen kostruktører, gettere eller settere. 
+// Records har ingen konstruktører, gettere eller settere. 
 // Ingen verdier kan endres, det er kun lagring. OG den har
 // automatisk likhetskontroll som sjekker alle felt.
 public record Point(double x, double y) {
