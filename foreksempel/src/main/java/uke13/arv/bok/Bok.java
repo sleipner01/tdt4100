@@ -50,13 +50,6 @@ public class Bok {
 		Bok bok = new Bok("Titten tei på eventyr");
 		System.out.println(bok);
 
-		// Sjekk av tittel i setTitle, som kalles i konstruktøren
-		// Bok bok2 = new Bok("Hei{");
-		// System.out.println(bok2); // Vil utløse unntak
-
-		// For isValidTitle()
-		Bok bok3 = new Bok("Titten tei på eventyr");
-		System.out.println(bok3);
 
 		Bok ordbok = new Ordbok("Engelsk-norsk ordbok", 33);
 		Bok tegneseriealbum = new Tegneseriealbum("Asterix og romerne", 43);
@@ -70,13 +63,21 @@ public class Bok {
         System.out.println("ordbok er classen Bok: "+(ordbok.getClass() == Bok.class));
         System.out.println("ordbok er classen Ordbok: "+(ordbok.getClass() == Ordbok.class));
 
-        // Substitusjonsprinsippet:
-        Bok bok4 = new Ordbok();
-        bok.setTittel("Egentlig ikke noen ordbok");
-        System.out.println(bok4.toString()); // Hva skjer her?
+		// Sjekk av tittel i setTitle, som kalles i konstruktøren
+		// Bok bok2 = new Bok("Hei{");
+		// System.out.println(bok2); // Vil utløse unntak
+
+		// For isValidTitle()
+		// Bok bok3 = new Bok("Titten tei på eventyr");
+		// System.out.println(bok3);
+
+		// Substitusjonsprinsippet:
+        // Bok bok4 = new Ordbok();
+        // bok.setTittel("Egentlig ikke noen ordbok");
+        // System.out.println(bok4.toString()); // Hva skjer her?
         
-        Bok bok5 = new Ordbok("Ikke ordbok", 234);
-        System.out.println(bok5.toString()); // Hva skjer her?
+        // Bok bok5 = new Ordbok("Ikke ordbok", 234);
+        // System.out.println(bok5.toString()); // Hva skjer her?
 	}
 
 }

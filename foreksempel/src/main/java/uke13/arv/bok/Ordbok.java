@@ -27,9 +27,12 @@ public class Ordbok extends Bok{
 	}
 
     public static void main(String[] args) {
+
+        Bok bok = new 
+
         Bok bok = new Ordbok();
         bok.setTittel("Lawrence of Arabia");
-        System.out.println(bok);
+        System.out.println(bok); 
 
         Ordbok ordbok = new Ordbok("Nynorsk ordbok", 654);
         System.out.println(ordbok);
