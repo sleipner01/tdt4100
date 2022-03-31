@@ -14,6 +14,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import oving5.card.Card;
+import oving5.card.CardDeck;
+
 public class CardComparatorTest {
 	CardDeck deck;
 	Card s1;

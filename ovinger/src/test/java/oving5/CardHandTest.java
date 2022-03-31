@@ -13,8 +13,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import oving5.card.Card;
-import oving5.card.CardHand;
 import oving5.card.CardContainer;
+import oving5.card.CardHand;
 
 public class CardHandTest {
 	CardHand hand;

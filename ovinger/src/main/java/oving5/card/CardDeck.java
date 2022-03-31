@@ -72,8 +72,7 @@ public class CardDeck implements CardContainer {
     
     @Override
     public Iterator<Card> iterator() {
-        // TODO Auto-generated method stub
-        return null;
+        return cardDeck.iterator();
     }
 
     public static void main(String[] args) {
