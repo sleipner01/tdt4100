@@ -47,14 +47,92 @@ public class Manager implements Employee {
     }
 
     public static void main(String[] args) {
-        Printer printer = new Printer();
-        Employee clerk = new Clerk(printer);
-        Employee manager = new Manager(Arrays.asList(clerk));
 
-        manager.printDocument("Aids");
-        System.out.println(manager.getTaskCount());
-        manager.doCalculations((x, y) -> x+y, 1, 2);
-        System.out.println(manager.getTaskCount());
+        // First 
+        List<Employee> clerks = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            clerks.add(new Clerk(new Printer()));
+        }
+        Employee manager = new Manager(clerks);
+
+        System.out.println();
+        System.out.println("First");
+        System.out.println();
+
+        for (int i = 0; i < 100; i++) {
+            manager.doCalculations((x, y) -> x+y, 1, 1);
+            System.out.println(manager.getTaskCount() / manager.getResourceCount());
+        }
+
+        System.out.println();
+        System.out.println("______________");
+        System.out.println();
+
+
+
+
+
+        // Second 
+        List<Employee> managers = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            List<Employee> clerksTemp = new ArrayList<>();
+            for (int j = 0; j < 5; j++) {
+                clerksTemp.add(new Clerk(new Printer()));
+            }
+            managers.add(new Manager(clerksTemp));
+        }
+
+        Employee cfo = new Manager(managers);
+
+        System.out.println();
+        System.out.println("Second");
+        System.out.println();
+
+        for (int i = 0; i < 100; i++) {
+            cfo.doCalculations((x, y) -> x+y, 1, 1);
+            System.out.println(cfo.getTaskCount() / cfo.getResourceCount());
+        }
+
+        System.out.println();
+        System.out.println("______________");
+        System.out.println();
+
+
+
+
+
+        // Third 
+        List<Employee> cfos = new ArrayList<>();
+
+        for (int k = 0; k < 5; k++) {
+            List<Employee> managersTemp = new ArrayList<>();
+    
+            for (int i = 0; i < 5; i++) {
+                List<Employee> clerksTemp = new ArrayList<>();
+                for (int j = 0; j < 5; j++) {
+                    clerksTemp.add(new Clerk(new Printer()));
+                }
+                managersTemp.add(new Manager(clerksTemp));
+            }
+
+            cfos.add(new Manager(managers));
+        }
+
+        Employee ceo = new Manager(cfos);
+
+        System.out.println();
+        System.out.println("Third");
+        System.out.println();
+
+        for (int i = 0; i < 100; i++) {
+            ceo.doCalculations((x, y) -> x+y, 1, 1);
+            System.out.println(ceo.getTaskCount() / ceo.getResourceCount());
+        }
+
+        System.out.println();
+        System.out.println("______________");
+        System.out.println();
     }
     
 }
