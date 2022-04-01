@@ -1,4 +1,4 @@
-package of7.kode.pushnotifications;
+package of7.lf.pushnotifications;
 
 import java.time.LocalDate;
 

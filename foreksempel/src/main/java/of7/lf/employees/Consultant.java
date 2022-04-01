@@ -1,4 +1,4 @@
-package of7.kode.employees;
+package of7.lf.employees;
 
 public class Consultant extends Employee {
 
