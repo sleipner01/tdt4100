@@ -1,6 +1,5 @@
-package selfcheckout;
+package selfcheckoutmal4;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ import javafx.scene.text.Font;
 public class SelfCheckoutController {
 
     private SelfCheckout selfCheckout;
-    private IReceiptHandler checkoutReceipt = new HomeFolderReceiptHandler();
+    private IReceiptHandler checkoutReceipt = new ReceiptHandler();
     private List<Item> selectableItemsList;
 
     @FXML

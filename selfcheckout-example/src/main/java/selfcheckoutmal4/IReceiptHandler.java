@@ -1,4 +1,4 @@
-package selfcheckout;
+package selfcheckoutmal4;
 
 import java.io.IOException;
 
