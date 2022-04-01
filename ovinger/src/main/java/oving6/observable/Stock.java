@@ -18,8 +18,9 @@ public class Stock {
     public void setPrice(double sharePrice) {
         if(sharePrice <= 0) 
             throw new IllegalArgumentException("The price has to be above 0.");
-        this.listeners.forEach(listener -> listener.stockPriceChanged(this, this.getPrice(), sharePrice));
+        double oldSharePrice = this.getPrice();
         this.sharePrice = sharePrice;
+        this.listeners.forEach(listener -> listener.stockPriceChanged(this, oldSharePrice, sharePrice));
     }
 
     public String getTicker() {
