@@ -1,11 +1,11 @@
 package selfcheckout;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public interface IReceiptHandler {
 
-    SelfCheckout readReceipt(String filename, SelfCheckout selfCheckout) throws FileNotFoundException;
+    SelfCheckout readReceipt(String filename, SelfCheckout selfCheckout) throws IOException;
 
-    void writeReceipt(String filename, SelfCheckout selfCheckout) throws FileNotFoundException;
+    void writeReceipt(String filename, SelfCheckout selfCheckout) throws IOException;
 
 }

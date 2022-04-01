@@ -1,6 +1,7 @@
 package selfcheckout;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import javafx.scene.text.Font;
 public class SelfCheckoutController {
 
     private SelfCheckout selfCheckout;
-    private IReceiptHandler checkoutReceipt = new ReceiptHandler();
+    private IReceiptHandler checkoutReceipt = new HomeFolderReceiptHandler();
     private List<Item> selectableItemsList;
 
     @FXML
@@ -89,8 +90,9 @@ public class SelfCheckoutController {
             phoneNumber.clear();
             phoneNumber.disableProperty().set(false);
             login.disableProperty().set(false);
-        } catch (FileNotFoundException e) {
-            showErrorMessage("Kvitteringen kunne ikke skrives til feil!");
+        } catch (IOException e) {
+            System.out.println(e);
+            showErrorMessage("Kvitteringen kunne ikke skrives til fil!");
         } catch (NoSuchElementException e) {
             // Do nothing
         }
@@ -151,7 +153,7 @@ public class SelfCheckoutController {
                 phoneNumber.disableProperty().set(true);
                 login.disableProperty().set(true);
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             showErrorMessage("Kvitteringen ble ikke funnet!");
             selfCheckout = tempCheckout;
         } catch (NoSuchElementException e) {
