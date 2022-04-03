@@ -1,15 +1,16 @@
 package selfcheckout;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
 
-public class ReceiptHandler implements IReceiptHandler {
+public class HomeFolderReceiptHandler implements IReceiptHandler {
 
     @Override
-    public SelfCheckout readReceipt(String filename, SelfCheckout selfCheckout) throws FileNotFoundException {
-        try (Scanner scanner = new Scanner(getFile(filename))) {
+    public SelfCheckout readReceipt(String filename, SelfCheckout selfCheckout) throws IOException {
+        try (Scanner scanner = new Scanner(getReceiptFolderPath())) {
             String phoneNumber = scanner.nextLine();
             if (!phoneNumber.equals("null")) {
                 selfCheckout.registerPhoneNumber(phoneNumber);
@@ -23,8 +24,9 @@ public class ReceiptHandler implements IReceiptHandler {
     }
 
     @Override
-    public void writeReceipt(String filename, SelfCheckout selfCheckout) throws FileNotFoundException {
-        try (PrintWriter writer = new PrintWriter(getFile(filename))) {
+    public void writeReceipt(String filename, SelfCheckout selfCheckout) throws IOException {
+        Files.createDirectories(getReceiptFolderPath());
+        try (PrintWriter writer = new PrintWriter(getReceiptFolderPath().resolve(filename + ".txt").toFile())) {
             writer.println(selfCheckout.getPhoneNumber());
             for (Item item : selfCheckout.getShoppingCartItems()) {
                 writer.println(String.format("%s;%s;%s", item.getName(), item.getPrice(), item.getCategory()));
@@ -33,8 +35,8 @@ public class ReceiptHandler implements IReceiptHandler {
 
     }
 
-    private static File getFile(String filename) {
-        return new File("selfcheckout-example\\src\\main\\resources\\selfcheckoutmal3\\receipts\\" + filename + ".txt");
+    private static Path getReceiptFolderPath() {
+        return Path.of(System.getProperty("user.home"), "tdt4100files", "receipts");
     }
 
 }

@@ -1,0 +1,8 @@
+public static void main(String[] args) {
+    Consultant employee = new Consultant("Magnus", "Sommerjobber", 2);
+    employee.performTask("Svare på mail");
+    System.out.println(employee.getRole());
+    employee.performTask("Svare på mail");
+    System.out.println(employee.getRole());
+    employee.performTask("Svare på mail");
+}

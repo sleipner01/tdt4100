@@ -1,0 +1,11 @@
+public static void main(String[] args) {
+    Assistant assistant = new Assistant("Magnus");
+    Consultant temp = new Consultant("Trine", "IT Consultant", 1);
+
+    Boss boss = new Boss("Børge", assistant, temp);
+
+    boss.performTask("Arrange meeting");
+    boss.performTask("Order stock");
+    boss.performTask("Pay salaries");
+
+}
