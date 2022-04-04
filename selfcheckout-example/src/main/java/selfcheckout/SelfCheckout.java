@@ -28,19 +28,27 @@ public class SelfCheckout {
         this.campaigns = new ArrayList<>(campaigns);
     }
 
+    public SelfCheckout(String day, String password) {
+        validateDay(day);
+        validatePassword(password);
+        this.day = day;
+        this.password = password;
+        this.adminMode = false;
+        this.shoppingCart = new ArrayList<>();
+        this.campaigns = new ArrayList<>();
+    }
+
     public List<Item> getShoppingCartItems() {
         return new ArrayList<>(this.shoppingCart);
     }
 
-    // Del 4 a)
     public void removeFromCart(int index) {
-        if (!this.adminMode) {
+        if (!this.adminMode || this.shoppingCart.size() < 1) {
             throw new IllegalStateException("Illegal operation");
         }
         this.shoppingCart.remove(index);
     }
 
-    // Del 2 a)
     public void activateAdminMode(String password) {
         if (this.adminMode) {
             throw new IllegalStateException("Admin mode is already active!");
