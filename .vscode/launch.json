@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Train",
+            "request": "launch",
+            "mainClass": "ovinger/oving7.Train",
+            "projectName": "ovinger"
+        },
+        {
+            "type": "java",
             "name": "Launch Manager",
             "request": "launch",
             "mainClass": "ovinger/oving6.delegation.office.Manager",
