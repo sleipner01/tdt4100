@@ -1,6 +1,5 @@
 package selfcheckout;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -27,22 +26,22 @@ public class SelfCheckoutController {
     private List<Item> selectableItemsList;
 
     @FXML
-    public Button login, adminMode, deleteItem, backButton, checkout, scanReceipt;
+    private Button login, adminMode, deleteItem, backButton, checkout, scanReceipt;
 
     @FXML
-    public TextArea checkoutText;
+    private TextArea checkoutText;
 
     @FXML
-    public TextField phoneNumber;
+    private TextField phoneNumber;
 
     @FXML
-    public GridPane itemGrid;
+    private GridPane itemGrid;
 
     @FXML
-    public ListView<String> scannedItemsList;
+    private ListView<String> scannedItemsList;
 
     @FXML
-    public void initialize() {
+    private void initialize() {
         initializeSelectableItemsList();
         selfCheckout = initializeSelfCheckout();
         updateCartDisplay();
@@ -54,7 +53,7 @@ public class SelfCheckoutController {
     }
 
     @FXML
-    public void handleLogin() {
+    private void handleLogin() {
         try {
             selfCheckout.registerPhoneNumber(phoneNumber.getText());
             updateCartDisplay();
@@ -66,7 +65,7 @@ public class SelfCheckoutController {
     }
 
     @FXML
-    public void handleCheckout() {
+    private void handleCheckout() {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Write receipt");
         dialog.setHeaderText("Gi et navn til kvitteringen slik at du kan hente den frem igjen senere");
@@ -99,7 +98,7 @@ public class SelfCheckoutController {
     }
 
     @FXML
-    public void handleAdminActivation() {
+    private void handleAdminActivation() {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Admin login");
         dialog.setHeaderText("Skriv inn admin-passord for denne enheten for å fortsette");
@@ -123,7 +122,7 @@ public class SelfCheckoutController {
     }
 
     @FXML
-    public void handleAdminDeactivation() {
+    private void handleAdminDeactivation() {
         selfCheckout.deactivateAdminMode();
         adminMode.visibleProperty().set(true);
         backButton.visibleProperty().set(false);
@@ -133,7 +132,7 @@ public class SelfCheckoutController {
     }
 
     @FXML
-    public void handleScanReceipt() {
+    private void handleScanReceipt() {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Read receipt");
         dialog.setHeaderText("Skriv inn navn på kvitteringen du vil scanne inn");
@@ -162,7 +161,7 @@ public class SelfCheckoutController {
     }
 
     @FXML
-    public void handleItemDeletion() {
+    private void handleItemDeletion() {
         int selectedIndex = scannedItemsList.getSelectionModel().getSelectedIndex();
         if (selectedIndex != -1) {
             selfCheckout.removeFromCart(selectedIndex);

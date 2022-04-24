@@ -41,7 +41,7 @@ public class Item {
     public boolean equals(Object other) {
         if (other instanceof Item) {
             Item otherItem = (Item) other;
-            return this.name.equals(getName()) && this.price == otherItem.getPrice()
+            return this.name.equals(otherItem.getName()) && this.price == otherItem.getPrice()
                     && this.category.equals(otherItem.getCategory());
         }
         return false;

@@ -10,7 +10,7 @@ public class HomeFolderReceiptHandler implements IReceiptHandler {
 
     @Override
     public SelfCheckout readReceipt(String filename, SelfCheckout selfCheckout) throws IOException {
-        try (Scanner scanner = new Scanner(getReceiptFolderPath())) {
+        try (Scanner scanner = new Scanner(getReceiptPath(filename).toFile())) {
             String phoneNumber = scanner.nextLine();
             if (!phoneNumber.equals("null")) {
                 selfCheckout.registerPhoneNumber(phoneNumber);
@@ -26,13 +26,18 @@ public class HomeFolderReceiptHandler implements IReceiptHandler {
     @Override
     public void writeReceipt(String filename, SelfCheckout selfCheckout) throws IOException {
         Files.createDirectories(getReceiptFolderPath());
-        try (PrintWriter writer = new PrintWriter(getReceiptFolderPath().resolve(filename + ".txt").toFile())) {
+        try (PrintWriter writer = new PrintWriter(getReceiptPath(filename).toFile())) {
             writer.println(selfCheckout.getPhoneNumber());
             for (Item item : selfCheckout.getShoppingCartItems()) {
                 writer.println(String.format("%s;%s;%s", item.getName(), item.getPrice(), item.getCategory()));
             }
         }
 
+    }
+
+    @Override
+    public Path getReceiptPath(String filename) {
+        return getReceiptFolderPath().resolve(filename + ".txt");
     }
 
     private static Path getReceiptFolderPath() {
