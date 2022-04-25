@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SelfCheckoutApp",
+            "request": "launch",
+            "mainClass": "selfcheckout/selfcheckoutmal4.SelfCheckoutApp",
+            "projectName": "selfcheckout-example"
+        },
+        {
+            "type": "java",
             "name": "Launch ObservableHighscoreList",
             "request": "launch",
             "mainClass": "ovinger/oving7.ObservableHighscoreList",
