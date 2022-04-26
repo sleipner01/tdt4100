@@ -7,9 +7,7 @@ public class Train {
     
     List<TrainCar> carts = new ArrayList<>();
 
-    public Train() {
-
-    }
+    public Train() {}
 
     public void addTrainCar(TrainCar trainCar) {
         carts.add(trainCar);
