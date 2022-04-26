@@ -1,4 +1,0 @@
-null
-Egg, 6 stk;41.59;breakfast
-Hvitost, Synnøve;90.0;diary
-Leverpostei;29.99;breakfast

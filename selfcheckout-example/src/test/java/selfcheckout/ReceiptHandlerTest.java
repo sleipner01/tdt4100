@@ -24,7 +24,7 @@ public abstract class ReceiptHandlerTest {
             Egg, 6 stk;41.59;breakfast
             Hvitost, Synnøve;90.0;diary
             Leverpostei;29.99;breakfast
-            """.replaceAll("\\R", "\n");
+            """.replaceAll("\\R", System.getProperty("line.separator"));
 
     private static final String invalid_receipt_file_content = """
             Egg, 6 stk;;breakfast
@@ -32,7 +32,7 @@ public abstract class ReceiptHandlerTest {
             ;90.0;
             ;;
             Leverpostei;
-            """.replaceAll("\\R", "\n");
+            """.replaceAll("\\R", System.getProperty("line.separator"));
 
     protected abstract IReceiptHandler getReceiptHandler();
 
