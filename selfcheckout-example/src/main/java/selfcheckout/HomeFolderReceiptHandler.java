@@ -41,7 +41,7 @@ public class HomeFolderReceiptHandler implements IReceiptHandler {
         return getReceiptFolderPath().resolve(filename + ".txt").toFile();
     }
 
-    private static Path getReceiptFolderPath() {
+    public static Path getReceiptFolderPath() {
         return Path.of(System.getProperty("user.home"), "tdt4100files", "receipts");
     }
 

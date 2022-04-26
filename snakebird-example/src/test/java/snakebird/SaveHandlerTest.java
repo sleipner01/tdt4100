@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 
@@ -88,13 +87,13 @@ public class SaveHandlerTest {
 		byte[] testFile = null, newFile = null;
 
 		try {
-			testFile = Files.readAllBytes(Path.of(SaveHandler.getFilePath("test-save")));
+			testFile = Files.readAllBytes(SaveHandler.getFile("test-save").toPath());
 		} catch (IOException e) {
 			fail("Could not load test file");
 		}
 
 		try {
-			newFile = Files.readAllBytes(Path.of(SaveHandler.getFilePath("test-save-new")));
+			newFile = Files.readAllBytes(SaveHandler.getFile("test-save-new").toPath());
 		} catch (IOException e) {
 			fail("Could not load saved file");
 		}
@@ -106,7 +105,7 @@ public class SaveHandlerTest {
 
 	@AfterAll
 	static void teardown() {
-		File newTestSaveFile = new File(SaveHandler.getFilePath("test-save-new"));
+		File newTestSaveFile = SaveHandler.getFile("test-save-new");
 		newTestSaveFile.delete();
 	}
 
