@@ -1,7 +1,7 @@
 package selfcheckout;
 
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 
 public interface IReceiptHandler {
 
@@ -9,6 +9,6 @@ public interface IReceiptHandler {
 
     void writeReceipt(String filename, SelfCheckout selfCheckout) throws IOException;
 
-    Path getReceiptPath(String filename);
+    File getReceiptFile(String filename);
 
 }
