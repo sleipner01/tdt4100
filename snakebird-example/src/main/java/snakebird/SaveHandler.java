@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class SaveHandler implements ISaveHandler {
 
 	public void save(String filename, Game game) throws FileNotFoundException {
-		try (PrintWriter writer = new PrintWriter(new File(getFilePath(filename)))) {
+		try (PrintWriter writer = new PrintWriter(getFile(filename))) {
 			writer.println(game.getWidth());
 			writer.println(game.getHeight());
 			writer.println(game.isGameOver());
@@ -34,7 +34,7 @@ public class SaveHandler implements ISaveHandler {
 	}
 
 	public Game load(String filename) throws FileNotFoundException {
-		try (Scanner scanner = new Scanner(new File(getFilePath(filename)))) {
+		try (Scanner scanner = new Scanner(getFile(filename))) {
 			int width = scanner.nextInt();
 			int height = scanner.nextInt();
 			Game game = new Game(width, height);
@@ -68,8 +68,8 @@ public class SaveHandler implements ISaveHandler {
 		}
 	}
 
-	public static String getFilePath(String filename) {
-		return SaveHandler.class.getResource("saves/").getFile() + filename + ".txt";
+	public static File getFile(String filename) {
+		return new File(SaveHandler.class.getResource("saves/").getFile() + filename + ".txt");
 	}
 
 }
