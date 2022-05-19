@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://www.ntnu.no/wiki/plugins/viewsource/viewpagesrc.action?pageId=235998528 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>View Source</title>
+        <link rel="canonical" href="https://www.ntnu.no/wiki/pages/viewpage.action?pageId=$action.page.id">
+        <script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\u0022\u005C/wiki\u0022";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="./Eksamen2021_files/batch.css" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Eksamen2021_files/batch(1).css" data-wrm-key="plugin.viewsource,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Eksamen2021_files/batch(2).css" data-wrm-key="page,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Eksamen2021_files/batch(3).css" data-wrm-key="editor-content,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Eksamen2021_files/colors.css" media="all">
+
+    </head>
+
+    <body class="mceContentBody aui-theme-default wiki-content fullsize" data-new-gr-c-s-check-loaded="14.1062.0" data-gr-ext-installed="">
+        <p>&nbsp;</p>         <p>Her ligger løsningsforslaget til eksamen 2021. Vi vil senere legge til ofte forekommende feil og misforståelser i kombinasjon med kildekoden&nbsp;.</p><p>På&nbsp;<a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2021/exam-2021/-/tree/lf">gitlab</a>&nbsp;finner dere full kode til alle deler i oppgaven.</p><p><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="2b223b35-8010-47f3-b362-9095b6285785" data-macro-parameters="title=Del 1 - VaccineTrial og VaccineTrialVolunteer (15 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMSAtIFZhY2NpbmVUcmlhbCBvZyBWYWNjaW5lVHJpYWxWb2x1bnRlZXIgKDE1ICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target">Oppgaven handler om å holde oversikt over et pågaende vaksinestudie.</p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="1818966b-00b5-4bec-8529-d7541485fcac" data-macro-parameters="title=Skjelett til del 1" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Ta2plbGV0dCB0aWwgZGVsIDF9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="94b642c0-2c40-479f-b324-b19c5d3636ce" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public class VaccineTrialVolunteer {
+
+	public VaccineTrialVolunteer(String id, boolean placebo) {
+		...
+	}
+
+	public String getId() {
+		...
+	}
+
+	/* Whether the volunteer was given a placebo or the actual vaccine */
+	public boolean isPlacebo() {
+		...
+	}
+
+	/* Whether the volunteer got sick during the trial period, 
+	 * the default value for this should be false */
+	public boolean gotSick() {
+		...
+	}
+
+	/*
+	 * Updates whether the participant got sick during the trial period
+	 */
+	public void setGotSick(boolean gotSick) {
+		...
+	}
+
+}
+
+
+public class VaccineTrial {
+
+	// Add any needed fields here
+
+	/**
+	 * Adds a new VaccineTrialVolunteer to the trial
+	 * 
+	 * @param id      The id of the volunteer
+	 * 
+	 * @param placebo Whether the volunteer was given a placebo, or the actual
+	 *                vaccine
+	 */
+
+	public void addVolunteer(String id, boolean placebo) {
+		// TODO
+	}
+
+	/**
+	 * Returns whether the vaccine's effectiveness rate is higher than the provided
+	 * limit. The effectiveness of the vaccine is calculated as follows: 
+	 * 
+	 * 1- (number of people that received the vaccine and got sick/
+	 *         number of people that got sick)
+	 * 
+	 * If there is no sick people, the vaccine is not effective
+	 * 
+	 * @param limit A limit to compare against
+	 * 
+	 * @throws IllegalArgumentException If limit is not between (including) 0 and 1.
+	 * 
+	 * @return Whether the vaccine effectiveness rate is higher than the limit
+	 */
+	public boolean isMoreEffectiveThanLimit(double limit) {
+		...
+
+	}
+
+	/**
+	 * Updates the sick state of a VaccineTrialVolunteer
+	 * 
+	 * @param id The id of the volunteer to set sick.
+	 * @throws IllegalArgumentException if there is no volunteer with the given id
+	 */
+	public void setSick(String id) {
+		...
+	}
+
+	/**
+	 * Get's the volunteer with the given ID
+	 * 
+	 * @param id The id of the volunteer to set sick.
+	 * 
+	 * @return The vaccine trial volunteer with the given ID. If the ID is not valid
+	 *         for any volunteer, return null
+	 */
+	public VaccineTrialVolunteer getVolunteer(String id) {
+		...
+	}
+
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><strong>Oppgave a)</strong> Utfyll klassen <strong>VaccineTrialVolunteer</strong> og alle metodene i denne klassen. Legg til nødvendige felt. <strong>VaccineTrialVolunteer</strong> skal ha følgende metoder:</p><ul><li><em>VaccineTrialVolunteer(String id, boolean placebo)</em> - Oppretter en ny frivillig deltaker, med den gitte ID-en og hvorvidt deltakeren fikk placebo eller faktiske vaksinen.</li><li><em>getId()</em> - Henter ut ID-en til deltakeren.</li><li><em>isPlacebo()</em> - Returnere hvorvidt deltakeren fikk placebo eller vaksine.</li><li><em>gotSick()</em> - Returnere hvorvidt deltakeren ble syk i løpet av studien.</li><li><em>setGotSick(boolean gotSick)</em> - Oppdaterer om deltakeren ble syk i løpet av studien.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="96c38e0f-1170-48b4-a398-cffe2ebb0104" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="56d939e6-50ed-4676-aa50-319a7e31f58c" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public class VaccineTrialVolunteer {
+
+	private final String id;
+	private final boolean placebo; 
+	private boolean gotSick;
+	
+	public VaccineTrialVolunteer(String id, boolean placebo) {
+		this.id = id;
+		this.placebo = placebo;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	/* Whether the volunteer was given a placebo or the actual vaccine */
+	public boolean isPlacebo() {
+		return this.placebo;
+	}
+
+	/* Whether the volunteer got sick during the trial period, 
+	 * the default value for this should be false */
+	public boolean gotSick() {
+		return this.gotSick;
+	}
+
+	/*
+	 * Updates whether the participant got sick during the trial period
+	 */
+	public void setGotSick(boolean gotSick) {
+		this.gotSick = gotSick;
+	}
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><strong>Oppgave b)</strong></p><p>&nbsp;Fyll ut klassen <strong>VaccineTrial</strong>, og alle metodene i denne klassen. Legg til egne nødvendige felt. <strong>VaccineTrial</strong> skal ha følgende metoder:</p><ul><li><em>addVolunteer(String id, boolean placebo)</em> - Legger til en deltaker i studien.</li><li><em>isMoreEffectiveThanLimit(double limit)</em> - Hvorvidt vaksinen var mer effektiv enn den oppgitte grensen.</li><li><em>setSick(String id)</em> - Oppdaterer deltakeren med den gitte ID-en til å ha blitt syk i løpet av studien.</li><li><em>VaccineTrialVolunteer getVolunteer(String id)</em> - Returnerer deltakeren med den gitte ID-en.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="73f43b5a-34af-40ad-9007-2e2a99638c8d" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="e65613af-c93c-4c8b-8102-b14f0a7a820d" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.util.ArrayList;
+import java.util.Collection;
+
+public class VaccineTrial {
+
+	// Add any needed fields here
+	private Collection&lt;VaccineTrialVolunteer&gt; volunteers = new ArrayList&lt;&gt;();
+
+	/**
+	 * Adds a new VaccineTrialVolunteer to the trial
+	 * 
+	 * @param id      The id of the volunteer
+	 * 
+	 * @param placebo Whether the volunteer was given a placebo, or the actual
+	 *                vaccine
+	 */
+	public void addVolunteer(String id, boolean placebo) {
+		this.volunteers.add(new VaccineTrialVolunteer(id, placebo));
+
+	}
+
+	/**
+	 * Returns whether the vaccine's effectiveness rate is higher than the provided
+	 * limit. The effectiveness of the vaccine is calculated as follows: 
+	 * 
+	 * 1- (number of people that received the vaccine and got sick/
+	 *         number of people that got sick)
+	 * 
+	 * If there is no sick people, the vaccine is not effective
+	 * 
+	 * @param limit A limit to compare against
+	 * 
+	 * @throws IllegalArgumentException If limit is not between (including) 0 and 1.
+	 * 
+	 * @return Whether the vaccine effectiveness rate is higher than the limit
+	 */
+	public boolean isMoreEffectiveThanLimit(double limit) {
+		if (limit &lt; 0 || limit &gt; 1) {
+			throw new IllegalArgumentException("Invalid limit");
+		}
+		double numberOfSick = 0;
+		double numberOfSickWithVaccine = 0;
+		for (VaccineTrialVolunteer volunteer: volunteers) {
+			if (volunteer.gotSick()) {
+				numberOfSick++;
+				if (!volunteer.isPlacebo()) {
+					numberOfSickWithVaccine++;
+				}
+			}
+		}
+		double ratio  = 1.0-(numberOfSickWithVaccine/numberOfSick);
+		return ratio &gt; limit;
+	}
+
+	/**
+	 * Updates the sick state of a VaccineTrialVolunteer
+	 * 
+	 * @param id The id of the volunteer to set sick.
+	 * @throws IllegalArgumentException if there is no volunteer with the given id
+	 */
+	public void setSick(String id) {
+		VaccineTrialVolunteer volunteer = this.getVolunteer(id);
+		if (volunteer == null) {
+			throw new IllegalArgumentException("invalid ID");
+		}
+		volunteer.setGotSick(true);
+	}
+
+	/**
+	 * Get's the volunteer with the given ID
+	 * 
+	 * @param id The id of the volunteer to set sick.
+	 * 
+	 * @return The vaccine trial volunteer with the given ID. If the ID is not valid
+	 *         for any volunteer, return null
+	 */
+	public VaccineTrialVolunteer getVolunteer(String id) {
+		for (VaccineTrialVolunteer volunteer: volunteers) {
+			if (volunteer.getId().equals(id)) {
+				return volunteer;
+			}
+		}
+		return null;
+	}
+}</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p><br></p><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="3bd76354-8ecf-4a8e-ac32-143e5c5fecb9" data-macro-parameters="title=Del 2 - Innkapsling og objektstrukturer (5 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMiAtIElubmthcHNsaW5nIG9nIG9iamVrdHN0cnVrdHVyZXIgKDUgJSl9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Fyll inn set og get-metodene i <strong>Person</strong>-klassen. Du skal gjøre dette uten å endre kode i <strong>Address</strong>-klassen.</p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="54e8480d-043a-480c-bc2b-19c215925f47" data-macro-parameters="title=Skjelett til del 2" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Ta2plbGV0dCB0aWwgZGVsIDJ9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="06e76fa5-9f1b-488c-a6f9-9df9aead9135" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>// DO NOT MODIFY THIS CLASS
+public class Address {
+
+	private String streetName;
+	private int streetNumber;
+
+	public Address(String streetName, int streetNumber) {
+		this.streetName = streetName;
+		this.streetNumber = streetNumber;
+	}
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public int getStreetNumber() {
+		return streetNumber;
+	}
+
+}
+
+
+public class Person {
+
+	// No other fields should be added to this class
+	private Address address;
+
+	
+	// You do not need to consider the edge case of passing null into the constructor here
+	public Person(Address address) {
+		this.address = address;
+	}
+	
+	/**
+	 * 
+	 * @return the street name of this person
+	 */
+	public String getStreetName() {
+		...
+	}
+
+	/**
+	 * Updates the street name of this person
+	 * 
+	 * @param streetName The street name to update
+	 */
+	public void setStreetName(String streetName) {
+		...
+	}
+	
+	
+	public int getStreetNumber() {
+		...
+	}
+
+	/**
+	 * Updates the street number of this person
+	 * 
+	 * @param streetNumber A positive integer.
+	 * 
+	 * @throws IllegalArgumentException If number is not larger than 0.
+	 */
+	public void setStreetNumber(int streetNumber) {
+		...
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="b3fbd1ac-3f0c-495d-950f-90106f6a6f20" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="2f17879a-8209-4415-8d83-3d346f11607d" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public class Person {
+
+	// No other fields should be added to this class
+	private Address address;
+
+	
+	// You do not need to consider the edge case of passing null into the constructor here
+	public Person(Address address) {
+		this.address = address;
+	}
+	
+	/**
+	 * 
+	 * @return the street name of this person
+	 */
+	public String getStreetName() {
+		return this.address.getStreetName();
+	}
+
+	/**
+	 * Updates the street name of this person
+	 * 
+	 * @param streetName The street name to update
+	 */
+	public void setStreetName(String streetName) {
+		this.address = new Address(streetName, this.address.getStreetNumber());
+	}
+	
+	
+	public int getStreetNumber() {
+		return this.address.getStreetNumber();
+	}
+
+	/**
+	 * Updates the street number of this person
+	 * 
+	 * @param streetNumber A positive integer.
+	 * 
+	 * @throws IllegalArgumentException If number is not larger than 0.
+	 */
+	public void setStreetNumber(int streetNumber) {
+		if (streetNumber &lt;= 0) {
+			throw new IllegalArgumentException();
+		}
+		this.address = new Address(this.address.getStreetName(), streetNumber);
+
+	}
+}</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="fc2a05d5-5ed0-40a4-a430-856d2e5b1377" data-macro-parameters="title=Del 3 - Delegering (10 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMyAtIERlbGVnZXJpbmcgKDEwICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Følgende vedlagte klasser/interfaces brukes, men skal ikke endres i denne oppgaven. Du trenger ikke forstå hvordan metodene er implementert, bare benytte deg direkte av de.</p><ul><li><strong>SomeServiceImpl</strong> - Implementasjon av <strong>SomeService</strong>.</li><li><strong>SomeService</strong> - Grensesnitt som implementers i både <strong>SomeServiceImpl</strong> og <strong>LoggingSomeService</strong>.</li><li><strong>Logger</strong> - En hjelpeklasse for å logge resultater.</li></ul><p>Du skal fylle ut <strong>LoggingSomeService</strong> og metodene/konstruktør i denne klassen. <strong>LoggingSomeService</strong> skal delegere videre til en delegat, som skal utføre arbeidet, og deretter logge resultatet før det returneres. Følgende metoder skal implementeres:</p><ul><li><em>LoggingSomeService(SomeService delegate, Logger logger)</em> - Oppretter et objekt av <strong>LoggingSomeService</strong> med en delegat og en logger.</li><li><em>getAMagicString()</em> - Returnerer en magisk String. Det er den delegertes oppgave å hente ut Stringen, og den skal logges før det returneres.</li><li><em>getAMagicNumber()</em> - Returnerer et magisk tall. Det er den delegertes oppgave å hente ut tallet, og det skal logges før det returneres.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="4f89c823-ddc9-43d8-8853-28942c5195f1" data-macro-parameters="title=Kodesskjelett del 3" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc3NramVsZXR0IGRlbCAzfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="d8472b81-86da-42bc-8099-e09cecaa2579" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public interface SomeService {
+
+	public String getAMagicString();
+
+	public int getAMagicNumber();
+}
+
+
+public class Logger {
+
+	// This is only for testing
+	Collection&lt;String&gt; hasLogged = new ArrayList&lt;&gt;();
+
+	public void log(String log) {
+		System.out.println(log);
+		hasLogged.add(log);
+	}
+}
+public class SomeServiceImpl implements SomeService {
+
+	@Override
+	public String getAMagicString() {
+		return "magic";
+	}
+
+	@Override
+	public int getAMagicNumber() {
+		return 42;
+	}
+
+}
+
+
+public class LoggingSomeService implements SomeService {
+
+	// Add needed fields here
+
+	/*
+	 * Creates a LoggingSomeService object with the given delegate and logger
+	 */
+	public LoggingSomeService(SomeService delegate, Logger logger) {
+		...
+	}
+
+	@Override
+	/**
+	 * Delegates the job of calculating a magic string to the delegate, and logs the
+	 * result before returning it
+	 * 
+	 * @return A string
+	 */
+	public String getAMagicString() {
+		...
+	}
+
+	/**
+	 * Delegates the job of calculating a magic number to the delegate, and logs the
+	 * result before returning it
+	 * 
+	 * @return An integer
+	 */
+	@Override
+	public int getAMagicNumber() {
+		...
+	}
+}
+
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="8071b3c3-04c7-4059-a4c8-edd239f1f8ca" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="7630969b-dea0-4e01-8327-caeaa2e384fe" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public interface SomeService {
+
+	public String getAMagicString();
+
+	public int getAMagicNumber();
+}
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class Logger {
+
+	// This is only for testing
+	Collection&lt;String&gt; hasLogged = new ArrayList&lt;&gt;();
+
+	public void log(String log) {
+		System.out.println(log);
+		hasLogged.add(log);
+	}
+}
+public class SomeServiceImpl implements SomeService {
+
+	@Override
+	public String getAMagicString() {
+		return "magic";
+	}
+
+	@Override
+	public int getAMagicNumber() {
+		return 42;
+	}
+
+}
+public class LoggingSomeService implements SomeService {
+
+	// Add needed fields here
+	private SomeService delegate;
+	private Logger logger;
+	/*
+	 * Creates a LoggingSomeService object with the given delegate and logger
+	 */
+	public LoggingSomeService(SomeService delegate, Logger logger) {
+		this.delegate = delegate;
+		this.logger = logger;
+	
+	}
+
+	@Override
+	/**
+	 * Delegates the job of calculating a magic string to the delegate, and logs the
+	 * result before returning it
+	 * 
+	 * @return A string
+	 */
+	public String getAMagicString() {
+		String magic = delegate.getAMagicString();
+		logger.log(magic);
+		return magic;
+	}
+
+	/**
+	 * Delegates the job of calculating a magic number to the delegate, and logs the
+	 * result before returning it
+	 * 
+	 * @return An integer
+	 */
+	@Override
+	public int getAMagicNumber() {
+		int magicNumber = delegate.getAMagicNumber();
+		logger.log(Integer.toString(magicNumber));
+		return magicNumber;
+	}
+}
+
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="c20c695b-c2db-4241-9323-946929891f79" data-macro-parameters="title=Del 4 - Interfaces og Comparators (15 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgNCAtIEludGVyZmFjZXMgb2cgQ29tcGFyYXRvcnMgKDE1ICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Fyll inn vedlagte <strong>AthleteComparators</strong> og de to metodene der. Du skal ta utgangspunkt i, men ikke trenge å endre <strong>Athlete</strong> og <strong>Medal</strong> som ligger vedlagt.</p><p>Det er tillatt å legge til metoder i disse klassene dersom du mener det er hjelpemetoder som vil være til hjelp. Ingen ekstra metoder du legger til bør endre tilstanden til objektene.</p><p>Følgende metoder skal implementeres:</p><ul><li><em>getSimpleComparator()</em> - Returner en <strong>comparator</strong> som skal brukes til å sammenlikne <strong>Athletes</strong> basert på navnet deres alfabetisk. Det vil si at Ane kommer før Berit, som igjen kommer før Daniel.</li><li><em>getAdvancedComparator</em> Returner en <strong>comparator</strong> som skal brukes til å sammenlikne <strong>Athletes</strong> basert på antall medaljer de har. En atlet som har to gullmedaljer, vil komme før en atlet som har en gullmedalje og en sølvmedalje. Dersom de har likt antall medaljer av en type går man videre til neste medaljetype, og hvis de har likt antall medaljer av alle typer skal man sammenlikne basert på navnet som i <em>getSimpleComparator</em>.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="b5b2cccb-2543-4f74-8ad9-316622cf628b" data-macro-parameters="title=Skjelett til del 3" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Ta2plbGV0dCB0aWwgZGVsIDN9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="464e3a0e-a89b-42c0-84cf-1482ec5a0b36" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.util.ArrayList;
+import java.util.List;
+
+public class Athlete {
+	
+	private List&lt;Medal&gt; medals = new ArrayList&lt;Medal&gt;();
+	private String country;
+	private String name;
+
+	public Athlete(String country, String name, List&lt;Medal&gt; medals) {
+		this.name = name;
+		this.country = country;
+		this.medals = new ArrayList&lt;&gt;(medals);
+	}
+
+	public List&lt;Medal&gt; getMedals() {
+		return new ArrayList&lt;&gt;(medals);
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+}
+import java.util.Arrays;
+import java.util.List;
+
+public class Medal {
+	
+	private String metal;
+	public static List&lt;String&gt; validMetals = Arrays.asList("Gold", "Silver", "Bronze");
+
+	public Medal(String metal) {
+		if (!validMetals.contains(metal)) {
+			throw new IllegalArgumentException("Invalid medal");
+		}
+		this.metal = metal;
+	}
+
+	public String getMetal() {
+		return metal;
+	}
+}
+
+
+public class AthleteComparators {
+
+	/**
+	 * @return a comparator that compares athletes based on their name. Using this
+	 *          comparator, Ane should come before Berit
+	 */
+	public static Comparator&lt;Athlete&gt; getSimpleComparator() {
+		...
+	}
+
+	/**
+	 * @return A comparator that compares athletes based on the number of medals of
+	 *          different valour. The comparator will be used for sorting athletes
+	 *          based on putting the athlete with the highest number of medals of the best valour
+	 *          first.
+	 * 
+	 *          If one athlete has more "Gold" medals than the other athlete it
+	 *          should come before that one. If they have equal number of "Gold"
+	 *          medals they should be compared on the number of "Silver" medals, and
+	 *          if that is equal on the number of "Bronze" medals. If they have the
+	 *          same number of medals of all valour, they should be compared based
+	 *          on the name similar to getSimpleComparator
+	 *          
+	 *          The spelling and order of the medals can be seen in the list validMetals in the Medal class. 
+	 */
+	public static Comparator&lt;Athlete&gt; getAdvancedComparator() {
+		...
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="a39ca92b-9d6d-41a7-ba28-14f1010233d8" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="de594b01-458d-4ec3-82ab-0743bfcf6539" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class AthleteComparators {
+
+	/**
+	 * @return a comparator that compares athletes based on their name. Using this
+	 *          comparator, Ane should come before Berit
+	 */
+	public static Comparator&lt;Athlete&gt; getSimpleComparator() {
+		return new Comparator&lt;Athlete&gt;() {
+			public int compare(Athlete a, Athlete b) {
+				return a.getName().compareTo(b.getName());
+			}
+		};
+	}
+
+	/**
+	 * @return A comparator that compares athletes based on the number of medals of
+	 *          different valour. The comparator will be used for sorting athletes
+	 *          based on putting the athlete with the highest number of medals of the best valour
+	 *          first.
+	 * 
+	 *          If one athlete has more "Gold" medals than the other athlete it
+	 *          should come before that one. If they have equal number of "Gold"
+	 *          medals they should be compared on the number of "Silver" medals, and
+	 *          if that is equal on the number of "Bronze" medals. If they have the
+	 *          same number of medals of all valour, they should be compared based
+	 *          on the name similar to getSimpleComparator
+	 *          
+	 *          The spelling and order of the medals can be seen in the list validMetals in the Medal class. 
+	 */
+	public static Comparator&lt;Athlete&gt; getAdvancedComparator() {
+		return new Comparator&lt;Athlete&gt;() {
+			public int compare(Athlete a, Athlete b) {
+
+				for (String metal : Medal.validMetals) {
+					int numberOfMedalsA = (int) a.getMedals().stream().filter(medal -&gt; medal.getMetal().equals(metal))
+							.count();
+					int numberOfMedalsB = (int) b.getMedals().stream().filter(medal -&gt; medal.getMetal().equals(metal))
+							.count();
+					if (numberOfMedalsA != numberOfMedalsB) {
+						return numberOfMedalsB - numberOfMedalsA;
+					}
+				}
+				return a.getName().compareTo(b.getName());
+			}
+		};
+	}
+}</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p><br></p><p><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="120bac8d-cb9a-4aa6-981b-e9787c9a2eec" data-macro-parameters="title=Del 5 - Observatør-Observert (20 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgNSAtIE9ic2VydmF0w7hyLU9ic2VydmVydCAoMjAgJSl9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Ta utgangspunkt i <strong>LoyaltyUser</strong>-klassen. <strong>LoyaltyUser</strong> er en klasse som implementerer en bruker som kan samle statuspoeng, og som kan gå opp og ned i status basert på dette.</p><p>Lojalitetsprogrammet samarbeider med andre og det er derfor ønskelig at andre kan lytte på statusen til en bruker. Grensesnittet for dette er definert i <strong>StatusListener</strong>.</p><p>Oppgave A) Fyll ut nødvendige metoder og felt for å støtte lytting i <strong>LoyaltyUser</strong> klassen, for å gjøre det mulig å lytte på endring i statusen til et brukernavn.</p><p>Viktig:</p><ul><li>En lytter vil kun være interessert i en status, og dersom lytteren registreres på nytt er det en ny status den skal lytte på.</li><li>Selv om lytteren kun er interessert i en status, vil den være interessert i både når brukeren oppnår denne statusen og når den mister den.</li></ul><p>Følgende metoder skal endres/implementeres:</p><ul><li><em>checkForStatusUpgrade()</em> - sjekker om brukeren kvalifiserer seg til en endring i statusnivå. Dersom statusen endres bør den si ifra til alle lytterne.</li><li><em>addListener(StatusListener listener, String status)</em> - Registrerer en lytter som lytter på <em>status</em>.</li><li><em>removeListener(StatusListener listener)</em> - fjerner lytteren.</li><li><em>fireStatusChanged(String oldStatus, String newStatus)</em> - Sier ifra til alle lytterne som lytter på enten <em>oldStatus</em> eller <em>newStatus</em> om at statusen er endret.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="b838bd8c-c224-42af-9271-857cc7bb919d" data-macro-parameters="title=Kodesskjelett del 5" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc3NramVsZXR0IGRlbCA1fQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="e1929734-1aac-46d2-9957-d753e068d97a" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public interface StatusListener {
+	
+	/**
+	 * 
+	 * @param username The username of the user
+	 * @param oldStatus The old status of the user
+	 * @param newStatus The new status of the user
+	 */
+	public void statusChanged(String username, String oldStatus, String newStatus);
+
+}
+
+
+
+import java.util.Arrays;
+import java.util.List;
+
+public class LoyaltyUser {
+	private String username;
+	private int points;
+	private String status;
+	public static List&lt;String&gt; validStatuses = Arrays.asList("Basic", "Gold", "Silver", "Platinum");
+	// TODO - Add any extra needed fields here
+
+	public LoyaltyUser(String username) {
+		this.username = username;
+		this.status = "Basic";
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * Adds point to this user
+	 * @param points the points to add. Can also be a negative number
+	 */
+	public void addPoints(int points) {
+		this.points += points;
+		this.checkForStatusUpgrade();
+	}
+
+	/**
+	 * Checks whether the user qualifies for a status upgrade/downgrade.
+	 * 
+	 * TODO: If the user qualifies for a new status all observers interested in the new or old
+	 * status should be notified
+	 */
+	public void checkForStatusUpgrade() {
+		if (this.points &lt;= 1000) {
+			this.status = "Basic";
+		}
+		if (this.points &gt; 1000) {
+			this.status = "Silver";
+		}
+		if (this.points &gt; 5000) {
+			this.status = "Gold";
+		}
+		if (this.points &gt; 10000) {
+			this.status = "Platinum";
+		}
+	}
+
+	/**
+	 * Adds a listener that listens on when this specific status is obtained or
+	 * lost. If the user has been previously added, the old status should be
+	 * overridden and the listener should listen on the new status
+	 * 
+	 * @param listener The listener that will observe
+	 * 
+	 * @param status   The status the listener will listen to
+	 * 
+	 * @throws IllegalArgumentException If the status is not valid
+	 */
+	public void addListener(StatusListener listener, String status) {
+		...
+
+	}
+
+	/**
+	 * Remove the listener
+	 * 
+	 * @param listener The listener to remove
+	 */
+	public void removeListener(StatusListener listener) {
+		...
+	}
+
+	/**
+	 * Updates all listeners that were interested in either the old or the new
+	 * status that the status of the user has changed. Observers should only be
+	 * notified if oldStatus and newStatus is different
+	 * 
+	 * @param oldStatus The old status of the user
+	 * 
+	 * @param newStatus The new status of the user
+	 */
+	private void fireStatusChanged(String oldStatus, String newStatus) {
+		...
+	}
+}
+
+
+/* RentalCar listeners listens to changes in Status for all userNames.*/
+public class RentalCarListener implements StatusListener {
+
+	// TODO - Add any needed fields here
+
+	@Override
+	/**
+	 * Method that should be called when a given userName has updated its status.
+	 */
+	public void statusChanged(String username, String oldStatus, String newStatus) {
+		/// TODO
+	}
+
+	/**
+	 * Get's the discount of a user. Should be a 100 if the user currently has Gold
+	 * status, otherwise should be 0.
+	 * 
+	 * @param username The username of the user
+	 * 
+	 * @return The discount the user qualifies for.
+	 */
+	public int getDiscount(String username) {
+		// TODO
+		return 0;
+	}
+}</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="ca220df7-71c4-4299-a0b6-e0c33cbd6e39" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="b628233c-f7c8-4daf-910d-c04014ddc010" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class LoyaltyUser {
+	private String username;
+	private int points;
+	private String status;
+	public static List&lt;String&gt; validStatuses = Arrays.asList("Basic", "Gold", "Silver", "Platinum");
+	// TODO - Add any extra needed fields here
+	private Map&lt;StatusListener, String&gt; statusListeners = new HashMap&lt;&gt;();
+
+	public LoyaltyUser(String username) {
+		this.username = username;
+		this.status = "Basic";
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * Adds point to this user
+	 * @param points the points to add. Can also be a negative number
+	 */
+	public void addPoints(int points) {
+		this.points += points;
+		this.checkForStatusUpgrade();
+	}
+
+	/**
+	 * Checks whether the user qualifies for a status upgrade/downgrade.
+	 * 
+	 * TODO: If the user qualifies for a new status all observers interested in the new or old
+	 * status should be notified
+	 */
+	public void checkForStatusUpgrade() {
+		String oldStatus = this.status;
+
+		if (this.points &lt;= 1000) {
+			this.status = "Basic";
+		}
+		if (this.points &gt; 1000) {
+			this.status = "Silver";
+		}
+		if (this.points &gt; 5000) {
+			this.status = "Gold";
+		}
+		if (this.points &gt; 10000) {
+			this.status = "Platinum";
+		}
+		if (oldStatus != this.status) {
+			this.fireStatusChanged(oldStatus, this.status);
+		}
+	}
+	
+	private void checkIsValidStatus(String status) {
+		if (!validStatuses.contains(status)) {
+			throw new IllegalArgumentException("Invalid status");
+		}
+	}
+
+	/**
+	 * Adds a listener that listens on when this specific status is obtained or
+	 * lost. If the user has been previously added, the old status should be
+	 * overridden and the listener should listen on the new status
+	 * 
+	 * @param listener The listener that will observe
+	 * 
+	 * @param status   The status the listener will listen to
+	 * 
+	 * @throws IllegalArgumentException If the status is not valid
+	 */
+	public void addListener(StatusListener listener, String status) {
+		checkIsValidStatus(status);
+		this.statusListeners.put(listener, status);
+
+	}
+
+	/**
+	 * Remove the listener
+	 * 
+	 * @param listener The listener to remove
+	 */
+	public void removeListener(StatusListener listener) {
+		this.statusListeners.remove(listener);
+
+	}
+
+	/**
+	 * Updates all listeners that were interested in either the old or the new
+	 * status that the status of the user has changed. Observers should only be
+	 * notified if oldStatus and newStatus is different
+	 * 
+	 * @param oldStatus The old status of the user
+	 * 
+	 * @param newStatus The new status of the user
+	 */
+	private void fireStatusChanged(String oldStatus, String newStatus) {
+		for (StatusListener listener: this.statusListeners.keySet()) {
+			String status = this.statusListeners.get(listener);
+			if (oldStatus.equals(status) || newStatus.equals(status)) {
+				listener.statusChanged(this.username, oldStatus, newStatus);
+			}
+		}
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p><strong>Oppgave b)</strong> Implementer <strong>RentalCarListener</strong>. <strong>RentalCarListener</strong> lytter på endringer i status til LoyaltyUser i <strong>LoyaltyUser</strong> for å kunne gi gullmedlemmer rabatt.</p><ul><li><em>statusChanged(String username, String oldStatus, String newStatus)</em> - Registerer endringen i status for et gitt brukernavn.</li><li><em>getDiscount(String username</em>) Returnerer rabatten til et brukernavn. Skal være 100 hvis brukeren innehar gullnivå, ellers 0.</li></ul><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="bb4cf9ab-e9c0-477f-ab92-023eb765e0a2" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.util.HashMap;
+import java.util.Map;
+
+/* RentalCar listeners listens to changes in Status for all userNames.*/
+public class RentalCarListener implements StatusListener {
+
+	// TODO - Add any needed fields here
+	// Many will probably have solved this using a list instead, which is also a good solution
+	private Map&lt;String, Integer&gt; rebates = new HashMap&lt;&gt;();
+	private final String GOLD_STATUS = "Gold";
+	@Override
+	/**
+	 * Method that should be called when a given userName has updated its status.
+	 */
+	public void statusChanged(String username, String oldStatus, String newStatus) {
+		if (newStatus.equals(GOLD_STATUS)) {
+			rebates.put(username, 100);
+		}
+		else {
+			rebates.remove(username);
+		}
+	}
+
+	/**
+	 * Get's the discount of a user. Should be a 100 if the user currently has Gold
+	 * status, otherwise should be 0.
+	 * 
+	 * @param username The username of the user
+	 * 
+	 * @return The discount the user qualifies for.
+	 */
+	public int getDiscount(String username) {
+		return rebates.getOrDefault(username, 0);
+
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="cc2411c9-60e4-4ef7-bcad-2a00b595d30b" data-macro-parameters="title=Del 6 - Arv og Debugging (10 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgNiAtIEFydiBvZyBEZWJ1Z2dpbmcgKDEwICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Ta utgangspunkt i den abstrakte klassen <a href="https://www.ntnu.no/tdt4100/v2021/exam-2021/-/blob/lf/src/main/java/del5_og_6/LoyaltyAward.java">LoyaltyAward</a> og klassen <a href="https://www.ntnu.no/tdt4100/v2021/exam-2021/-/blob/lf/src/main/java/del5_og_6/CarRentalAwards.java">CarRentalAwards</a>. Disse klassene implementerer metoder for å tildele poeng til en bruker ut ifra hvilket bilmerke den har leid.</p><p>Under implementasjonen av disse klassene har det kommet inn to feil som eksponeres ved kjøring av main-metoden i <a href="https://www.ntnu.no/tdt4100/v2021/exam-2021/-/blob/lf/src/main/java/del5_og_6/CarRentalAwards.java">CarRentalAwards</a>.</p><p>Rett opp feilene (dette vil innebære både at koden ikke krasjer og at riktig logikk utføres).</p><p>Følgende metoder finnes i <strong>LoyaltyAward</strong>:</p><ul><li><em>LoyaltyAward(String awardName)</em> - Oppretter et <strong>LoyaltyAward</strong> objekt med det gitte navnet.</li><li><em>setAwardName(String awardName)</em> - Oppdaterer navnet på prisen.</li><li><em>awardPoints(int points, LoyaltyUser loyaltyUser)</em> Gir antall poeng til den gitte brukeren.</li></ul><p>Følgende metoder finnes i <strong>CarRentalAwards</strong>:</p><ul><li><em>CarRentalAwards(String awardName</em> Oppretter et <strong>CarRentalAwards</strong> objekt med det gitte navnet.</li><li><em>setAwardName(String awardName)</em> - Oppdaterer navnet på prisen dersom det er gyldig.</li><li><em>awardPoints(int carBrand, LoyaltyUser loyaltyUser)</em> - Gir et visst antall poeng til den gitte brukeren. Antall poeng er beregnet ut ifra hvilket bilmerke brukeren har leid.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="0521b931-79ab-4694-a390-7dcd7213f219" data-macro-parameters="title=Kodeskjelett del 6" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDZ9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="e930cc14-4ef5-44c2-b090-e4ebff9b8e4a" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public abstract class LoyaltyAward {
+
+	private String awardName;
+
+	public LoyaltyAward(String awardName) {
+		this.setAwardName(awardName);
+	}
+
+	/**
+	 * Updates the name of the award
+	 * @param awardName the new award name
+	 */
+	public void setAwardName(String awardName) {
+		this.awardName = awardName;
+	}
+
+	/**
+	 * Adds the points to the given loyalty user.
+	 *
+	 * @param points      The points to award to the user
+	 * @param loyaltyUser The user that rented the car
+	 */
+
+	public void awardPoints(int points, LoyaltyUser loyaltyUser) {
+		loyaltyUser.addPoints(points);
+	}
+}
+
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+public class CarRentalAwards extends LoyaltyAward {
+
+	private Map&lt;Integer, Integer&gt; carBrandToPoints = Map.of(1, 1, 2, 10, 3, 100, 4, 200, 5, 500);
+	private List&lt;String&gt; validNames = Arrays.asList("CarRentalAgency1", "CarRentalAgency2");
+
+	public CarRentalAwards(String awardName) {
+		super(awardName);
+	}
+
+	@Override
+	/**
+	 * Updates the award name
+	 * @param: awardName The name of the award
+	 * 
+	 * @throws IllegalArgumentException If the award name is not part of the valid
+	 *                                  names
+	 */
+	public void setAwardName(String awardName) {
+		if (!validNames.contains(awardName)) {
+			throw new IllegalArgumentException("Invalid award name");
+		}
+		super.setAwardName(awardName);
+	}
+
+	/**
+	 * Updates the status of the given LoyaltyUser with points based on the map
+	 * above. The map means that carBrand 1 will award 1 points, carBrand 2 will
+	 * award 10 points etc
+	 * 
+	 * @param carBrand:    The brand of the car the user has rented. If the brand
+	 *                     does not exist 0 points should be awarded
+	 * 
+	 * @param loyaltyUser: The user that rented the car
+	 * 
+	 * 
+	 */
+	public void awardPoints(int carBrand, LoyaltyUser loyaltyUser) {
+		Integer points = carBrandToPoints.get(carBrand);
+		if (points != null) {
+			awardPoints(points, loyaltyUser);
+		}
+	}
+
+	public static void main(String[] args) {
+		LoyaltyUser user = new LoyaltyUser("Name");
+		// What goes wrong here
+		LoyaltyAward award = new CarRentalAwards("CarRentalAgency1");
+		// What goes wrong here
+		award.awardPoints(1, user);
+		System.out.println(user.getPoints());
+	}
+
+}</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="ed6ef435-9e45-49f4-a1cf-ebb44b15b7b1" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Mangler</p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="bb0a134d-826c-4a42-b827-387a43f293cd" data-macro-parameters="title=Del 7 - Filhåndtering (15 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgNyAtIEZpbGjDpW5kdGVyaW5nICgxNSAlKX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Ta utgangspunkt i den vedlagte <a href="https://www.ntnu.no/tdt4100/v2021/exam-2021/-/blob/master/src/main/java/del7_og_8/Course.java">Course</a>-klassem. Denne klassen trengs ikke å endres for oppgaven. Course-klassen har oversikt over:</p><ul><li>Et navn.</li><li>Gjennomsnittskarakter.</li><li>Andre emner som er forkunnskapskrav til dette emnet.</li></ul><p>Du skal fylle ut <a href="https://www.ntnu.no/tdt4100/v2021/exam-2021/-/blob/master/src/main/java/del7_og_8/UniversityHandbook.java">UniversityHandbook</a> -klassen sine metoder for å kunne lese emner fra fil og holde oversikt over disse emenene. Det vil bli gitt poeng etter følgende oppnåelse, så dersom du ikke får til hele oppgaven vil du få uttelling for delvis løsning.</p><ol><li>Lese inn emners navn og gjennomsnittskarakter fra fil.</li><li>Støtte å legge til forkunnskapskrav om emner som har vært tidligere i filen.</li><li>Støtte å legge til forkunnskapskrav om emner som kommer senere i filen.</li></ol><p>Følgende metoder skal fullføres/implementeres:</p><ul><li><em>readFromInputStream(InputStream stream)</em> - Leser inn emner fra en gitt inputStream. (Se eksempelfilen i src/main/resources/del7_og_8/courses.txt for hvordan disse kan se ut.)</li><li><em>getCourse(String courseName)</em> - Returnerer emnet med det gitte navnet.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="932c93a3-e1b8-4759-8dcc-b4de3dbfa4d5" data-macro-parameters="title=Kodeskjelett del 7" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDd9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="1bc8a524-007a-4bb9-9b55-119244701952" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class Course {
+	// The name of the course
+	private String courseName;
+	// A list of course prerequisites for this course. This means that all the courses in this list should be taken before this one. 
+	private List&lt;Course&gt; prerequisites = new ArrayList&lt;&gt;();
+	// The average grade of the course
+	private double averageGrade;
+
+	public Course(String courseName, double averageGrade) {
+		this(courseName);
+		this.averageGrade = averageGrade;
+	}
+
+	public Course(String courseName) {
+		this.courseName = courseName;
+	}
+	
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setAverageGrade(double averageGrade) {
+		this.averageGrade = averageGrade;
+	}
+	
+	public double getAverageGrade() {
+		return averageGrade;
+	}
+	
+	/**
+	 * Adds a new prerequisite to this course
+	 * @param course The course to add
+	 */
+	public void addPrequisite(Course course) {
+		this.prerequisites.add(course);
+	}
+	
+	/**
+	 * 
+	 * @return A copy of the list of prerequisites
+	 */
+	public Collection&lt;Course&gt; getPrerequisites() {
+		return new ArrayList&lt;&gt;(prerequisites);
+	}
+	
+	public String toString() {
+		return this.courseName;
+	}
+
+}
+
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class UniversityHandbook {
+
+	private List&lt;Course&gt; courses = new ArrayList&lt;&gt;();
+
+	/**
+	 * Reads all the courses from a given input stream. The courses are on this
+	 * form: courseName, averageGrade, prerequisite 1, prerequisite 2,
+	 * prerequisite 3....
+	 * 
+	 * See courses.txt in src/main/resources/del7_og_8 for an example file.
+	 * 
+	 * Calling this method should remove any existing courses from the handbook.
+	 * 
+	 * A given course can have anything from 0 to unlimited number of prerequisites.
+	 * The courses do not necessary come in order. Meaning that a course may appear
+	 * in the prerequisite list as a never before seen course. The method should read
+	 * in all courses, and set the courseName, averageGrade and prerequisites of all
+	 * courses and add the courses to the courses field of this class.
+	 * 
+	 * A skeleton code to read from file is provided to you but feel free to write
+	 * your own code for this.
+	 * 
+	 * You can assume that all lines from the file will be on the correct format.
+	 * 
+	 * @param stream InputStream containing the course data
+	 */
+	public void readFromInputStream(InputStream stream) {
+		try (Scanner scanner = new Scanner(stream)) {
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				String[] details = line.split(",");
+				// TODO - Continue implementation here
+			}
+		}
+	}
+
+	/**
+	 * Gets the course with the courseName
+	 * 
+	 * @param courseName The name of the course
+	 * 
+	 * @return The course with the given name
+	 */
+	public Course getCourse(String courseName) {
+		...
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="5d9e265a-364c-4e09-bb98-bf4b69e25ed9" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="fe59e694-0d49-46fc-b83b-9e6064a008fe" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Scanner;
+
+public class UniversityHandbook {
+
+	private Collection&lt;Course&gt; courses = new ArrayList&lt;&gt;();
+
+	/**
+	 * Reads all the courses from a given input stream. The courses are on this
+	 * form: courseName, averageGrade, prerequisite 1, prerequisite 2,
+	 * prerequisite 3....
+	 * 
+	 * See courses.txt in src/main/resources/del7_og_8 for an example file.
+	 * 
+	 * Calling this method should remove any existing courses from the handbook.
+	 * 
+	 * A given course can have anything from 0 to unlimited number of prerequisites.
+	 * The courses do not necessary come in order. Meaning that a course may appear
+	 * in the prerequisite list as a never before seen course. The method should read
+	 * in all courses, and set the courseName, averageGrade and prerequisites of all
+	 * courses and add the courses to the courses field of this class.
+	 * 
+	 * A skeleton code to read from file is provided to you but feel free to write
+	 * your own code for this.
+	 * 
+	 * You can assume that all lines from the file will be on the correct format.
+	 * 
+	 * @param stream InputStream containing the course data
+	 */
+	public void readFromInputStream(InputStream stream) {
+		this.courses = new ArrayList&lt;&gt;();
+		try (Scanner scanner = new Scanner(stream)) {
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				String[] details = line.split(",");
+				String courseName = details[0];
+				double averageGrade = Double.parseDouble(details[1]);
+				Course course = this.findOrCreateCourse(courseName);
+				course.setAverageGrade(averageGrade);
+				
+				for (int i=2;i&lt;details.length; i++) {
+					String prequesite = details[i];
+					Course coursePrequesite = findOrCreateCourse(prequesite);
+					course.addPrequisite(coursePrequesite);
+				}
+				
+			}
+		}
+	}
+
+
+	/**
+	 * Get's the course with the courseName
+	 * 
+	 * @param courseName The name of the course
+	 * 
+	 * @return The course with the given name
+	 */
+	public Course getCourse(String courseName) {
+		for(Course course: courses) {
+			if (course.getCourseName().equals(courseName)) {
+				return course;
+			}
+		}
+		return null;
+	}
+
+	private Course findOrCreateCourse(String name) {
+		Course course = getCourse(name);
+		if (course != null) {
+			return course;
+		}
+		course = new Course(name);
+		this.courses.add(course);
+		return course;
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="8969b46a-f06c-4cb3-8faf-42c26054b2af" data-macro-parameters="title=Del 8 - Funksjonelle grensesnitt og lister (10 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgOCAtIEZ1bmtzam9uZWxsZSBncmVuc2Vzbml0dCBvZyBsaXN0ZXIgKDEwICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Fyll ut <strong>UniversityHandbookUtils</strong> sine metoder for operasjoner på en liste med <strong>Course</strong>-objekter.</p><p>Følgende metoder skal implementeres:</p><ul><li><em>getCoursesWithPredicate(Collection courses, Predicate p)</em> - Returnerer alle emner i samlingen som tilfredstiller predikatet.</li><li><em>getNonPrequisiteCourses(Collection courses)</em> - Returnerer alle emner i samlingen som ikke har noen forkunnskapskrav.</li><li><p class="auto-cursor-target"><em>containsImpossibleCourse(Collection courses)</em> - Returnerer hvorvidt samlingen av emner inneholder et emne som er umulig. Et umulig emne er definert som et emne X som har et forkunnskaps krav, som har emnet X som forkunnskapskrav.</p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="ea643aab-90a1-47cf-8bc4-d6c47b474f39" data-macro-parameters="title=Kodeskjelett del 8" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDh9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="775f2095-fe4c-4e96-af32-43e54c5e4659" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class UniversityHandbookUtils {
+
+	/**
+	 * Get all courses that matches the given predicate
+	 * 
+	 * @param courses The list of courses to check for
+	 * @param p       The predicate that should be matched on
+	 *
+	 * @return A collection of courses that satisfy the predicate.
+	 */
+	public static Collection&lt;Course&gt; getCoursesWithPredicate(Collection&lt;Course&gt; courses, Predicate&lt;Course&gt; p) {
+		...
+	}
+
+	/**
+	 * Get all courses that does not have any prerequisites
+	 * 
+	 * @param courses The list of courses to check for
+	 * @return A collection of course without any prerequisites
+	 */
+	public static Collection&lt;Course&gt; getNonPrequisiteCourses(Collection&lt;Course&gt; courses) {
+		...
+
+	}
+	
+	/**
+	 * Returns whether the handbook contains an impossible course. A course is
+	 * deemed impossible if any of the prerequisite of the course has the current
+	 * course as a prerequisite. Only direct dependencies need to be checked. You
+	 * do not need to worry about transitive dependencies. That means if TDT4100 has
+	 * a dependency on TDT4110 and TDT4110 has a dependency on TDT4100 it is impossible.
+	 * 
+	 * A transitive dependency that does not need to be checked is if TDT4100 has a
+	 * dependency on TDT4110, TDT4110 has dependency on TDT4200 and TDT4200 has a
+	 * dependency on TDT4100.
+	 * 
+	 * @param courses The list of courses to check for
+	 * @return whether the courses contains an impossible course
+	 */
+	public static boolean containsImpossibleCourse(Collection&lt;Course&gt; courses) {
+		...
+	}
+}</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="01697dd0-639e-423c-8877-6dc0ecba0b64" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="403e3c60-f5d6-46d9-984c-01b5fb7ab73c" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+public class UniversityHandbookUtils {
+
+	/**
+	 * Get all courses that matches the given predicate
+	 * 
+	 * @param courses The list of courses to check for
+	 * @param p       The predicate that should be matched on
+	 *
+	 * @return A collection of courses that satisfy the predicate.
+	 */
+	public static Collection&lt;Course&gt; getCoursesWithPredicate(Collection&lt;Course&gt; courses, Predicate&lt;Course&gt; p) {
+		return courses.stream().filter(p).collect(Collectors.toList());
+
+	}
+
+	/**
+	 * Get all courses that does not have any prerequisites
+	 * 
+	 * @param courses The list of courses to check for
+	 * @return A collection of course without any prerequisites
+	 */
+	public static Collection&lt;Course&gt; getNonPrequisiteCourses(Collection&lt;Course&gt; courses) {
+		return courses.stream().filter(course -&gt; course.getPrerequisites().size() == 0).collect(Collectors.toList());
+	}
+	
+	/**
+	 * Returns whether the handbook contains an impossible course. A course is
+	 * deemed impossible if any of the prerequisite of the course has the current
+	 * course as a prerequisite. Only direct dependencies need to be checked. You
+	 * do not need to worry about transitive dependencies. That means if TDT4100 has
+	 * a dependency on TDT4110 and TDT4110 has a dependency on TDT4100 it is impossible.
+	 * 
+	 * A transitive dependency that does not need to be checked is if TDT4100 has a
+	 * dependency on TDT4110, TDT4110 has dependency on TDT4200 and TDT4200 has a
+	 * dependency on TDT4100.
+	 * 
+	 * @param courses The list of courses to check for
+	 * @return whether the courses contains an impossible course
+	 */
+	public static boolean containsImpossibleCourse(Collection&lt;Course&gt; courses) {
+		return courses.stream().anyMatch(course -&gt; course.getPrerequisites().stream().anyMatch(prerequesite -&gt; prerequesite.getPrerequisites().contains(course)));
+
+	}
+}</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><p class="auto-cursor-target"><br></p></li></ul></td></tr></tbody></table><p><br></p><p><br></p>
+        <p>&nbsp;</p>
+    
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

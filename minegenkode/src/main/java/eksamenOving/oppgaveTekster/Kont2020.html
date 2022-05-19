@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://www.ntnu.no/wiki/plugins/viewsource/viewpagesrc.action?pageId=197918982 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>View Source</title>
+        <link rel="canonical" href="https://www.ntnu.no/wiki/pages/viewpage.action?pageId=$action.page.id">
+        <script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\u0022\u005C/wiki\u0022";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="./Kont2020_files/batch.css" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Kont2020_files/batch(1).css" data-wrm-key="plugin.viewsource,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Kont2020_files/batch(2).css" data-wrm-key="page,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Kont2020_files/batch(3).css" data-wrm-key="editor-content,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Kont2020_files/colors.css" media="all">
+
+    </head>
+
+    <body class="mceContentBody aui-theme-default wiki-content fullsize" data-new-gr-c-s-check-loaded="14.1062.0" data-gr-ext-installed="">
+        <p>&nbsp;</p>         <p>Her ligger løsningsforslaget til konteeksamen 2020. I kombinasjon med kildekoden vil vi beskrive hva oppgaven spurt etter, samt ofte forekommende feil og misforståelser.</p><p>På <a href="https://gitlab.stud.iie.ntnu.no/tdt4100/v2020/kont2020/-/tree/master/kont2020">gitlab</a> finner dere full kode til alle deler i oppgaven - lenker nedover i denne teksten refererer til filer her. Løsningsforslaget ligger inne som en egen gren kalt 'lf'.</p><p>Eksamen ble kortere enn vårens, så kandidatene fikk nok vist mer hva de kunne. Koden var mer oppdelt, så en ikke hadde mulighet til følgefeil. Eksempelvis ble fxml trukket ut til stuff.</p><p><em>Sensuren viser at for mange har kodet uten å bruke utviklingsverktøyet til noe fornuftig. Når jeg åpner koden til en klasse som bruker en ArrayList i koden, men ArrayList ikke engang er importert, da forteller det meg at koden er skrevet i blinde. Jeg forventer av studenter som har bestått øvingsopplegget på egenhånd at de skal kunne forholde seg til en utviklingsomgivelse - jeg kan ikke forstå at det går an å gjøre så mange øvinger i et verktøy og så gi det opp når det teller som mest. Her gikk det mye tid tapt for enkelte. <img class="emoticon emoticon-sad" data-emoticon-name="sad" border="0" src="./Kont2020_files/sad.svg" alt="(sad)" title="(sad)"> Jeg vet også at det eksisterer en kokekultur. TDT4100 er et fag som det er umulig å beherske godt ved kriselesing i to uker. Det er et forståelsesfag, ikke et huskefag.&nbsp;</em></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="9abe5d53-ed9d-4ceb-abed-1503d9eeda7f" data-macro-parameters="title=Overordnet oppgavebeskrivelse" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1PdmVyb3JkbmV0IG9wcGdhdmViZXNrcml2ZWxzZX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p><span><span><span><span><span><span style="color: rgb(47,84,150);">Eksamensinformasjon</span></span></span></span></span></span></p><p>Eksamenen er delt i to, med flere oppgaver i hver del:</p><ul><li><a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/stuff/README.md">Del 1</a> inneholder separate oppgaver, som hver for seg tester ulik kunnskap i pensum. Del 1 er tenkt å dekke 40% av eksamen.</li><li><a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/README.md">Del 2</a> inneholder en større programmeringsbit, med fire deloppgaver. Disse teller 60% av eksamen.</li></ul><p>Hvis du ikke skulle klare å implementere en metode i en del kan du selvfølgelig bruke denne videre som om den virket (som i tidligere 'papireksamener').</p><p>Oppgavene har en tekstbeskrivelse, men denne er ikke alltid utfyllende. De mest utfyllende kravene til en metode står i dens javadoc-beskrivelse, altså en kommentar som står før metoden selv i kildekoden. Mange av metodene har fått lagt til 'dummy' returverdier - dette er gjort slik at kildekoden vil kompilere. Disse må naturlig nok endres for at metodene skal fungere som beskrevet.</p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="ffced448-9f6b-483b-9c80-a60ff0cc9ab0" data-macro-parameters="title=Del 1 - Småplukk (25%) " data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMSAtIFNtw6VwbHVrayAoMjUlKSB9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p><span><span>I pakken <em>stuff</em> vil du finne en del mindre oppgaver. Disse henger ikke sammen. De tre deloppgavene gir 10-15%, totalt 40% av eksamen.<br></span></span></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="5a822f29-26a6-4997-bcd9-f3e96d4f8bee" data-macro-parameters="title=Oppgave 1: Enkel klasseoppbygging og predikater" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1PcHBnYXZlIDE6IEVua2VsIGtsYXNzZW9wcGJ5Z2dpbmcgb2cgcHJlZGlrYXRlcn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>I <em>stuff</em> finner du skallet til to klasser, Movie og MovieRegister. Les klassebeskrivelsen under nøye.</p><p><a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/stuff/Movie.java">Movie</a> har følgende interne tilstand <em>(her vil du ikke finne noe beskrivelse i javadocen)</em>:</p><ul><li>tittelen til filmen. Denne kan ikke være <em>null</em>, og skal kunne hentes ut med metoden <em>getTitle()</em>.</li><li>hvor mange ganger den er sett, skal kunne hentes ut med metoden <em>getTimesWatched()</em>. Økes med en hver gang man har sett filmen, oppdatert med metoden <em>watch()</em>.</li><li>hvor god var filmen, heltall fra 1-6. Alle filmer trenger ikke ha en rating. Skal kunne hentes ut med metoden <em>getRating()</em></li></ul><p>Det er ikke nødvendig å implementere flere metoder enn de som trengs for fylle kravene gitt over. Main-metoden i Movie viser noen eksempler på bruk av tester mot passende kode.</p><p><a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/stuff/MovieRegister.java">MovieRegister</a> inneholder en samling med <em>Movie</em>-objekter. Følgende metoder finnes:</p><ul><li><em>addMovie(Movie movie)</em>: Mulighet til å legge til nytt <em>Movie</em>-objekt</li><li><em>filterMovies(Predicate pred)</em>: Returnere filmene som tilfredsstiller kravene beskrevet i predikatet pred.</li><li><em>findMovie(String title)</em>: Returnere filmen med denne tittelen, eller <em>null</em> hvis filmen ikke finnes.</li><li><em>watch(String title)</em>: Se filmen med denne tittelen. Øker antallet ganger filmen er sett med 1. Hvis tittelen ikke finnes i registeret skal metoden utløse en <em>IllegalStateException</em>.</li></ul><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="48c04c06-4fe7-47ec-ae90-a13401905a20" data-macro-parameters="collapse=true|language=java|title=Movie" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXx0aXRsZT1Nb3ZpZXxjb2xsYXBzZT10cnVlfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package stuff;
+
+import static org.junit.Assert.assertEquals;
+
+public class Movie {
+
+	// See the README file for a description of what is required for this file.
+	private String title;
+	private int timesWatched;
+	private Integer rating;
+	
+	public Movie(String title) {
+		if (title == null) throw new IllegalArgumentException("Title must not be null");
+		this.title = title;
+		this.timesWatched = 0;
+		this.rating = null;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public int getTimesWatched() {
+		return timesWatched;
+	}
+	
+	public Integer getRating() {
+		return rating;
+	}
+	
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
+	
+	public void watch() {
+		timesWatched += 1;
+	}
+
+	public static void main(String[] args) {
+
+//		Movie db = new Movie("Das Boot");
+//		assertEquals(0, db.getTimesWatched());
+//		assertEquals("Das Boot", db.getTitle());
+//		
+//		db.watch();
+//		assertEquals(1, db.getTimesWatched());
+//		
+//		assertEquals(null, db.getRating());
+//		db.setRating(4);
+//		assertEquals(4, (int)db.getRating());
+	}
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="2163c212-7cb8-4356-b488-3ce6a9f0758f" data-macro-parameters="collapse=true|language=java|title=MovieRegister" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXx0aXRsZT1Nb3ZpZVJlZ2lzdGVyfGNvbGxhcHNlPXRydWV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package stuff;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+public class MovieRegister {
+
+
+	// Add internal variables
+	private Collection&lt;Movie&gt; movies = new ArrayList&lt;&gt;();
+
+
+	/**
+	 * Add movie to register
+	 * @param movie
+	 */
+	public void addMovie(Movie movie) {
+		movies.add(movie);
+	}
+
+	/**
+	 * 
+	 * @param title
+	 * @return the movie with matching title, or null if no such movie exists.
+	 */
+	Movie findMovie(String title) {
+		return movies.stream().filter(m -&gt; m.getTitle().equals(title)).findAny().orElse(null);
+	}
+
+	/**
+	 * Filter all registered movies based on a Predicate, and return them as a Collection.
+	 * @param pred is the filter for which movies to watch
+	 * @return A collection of movies testing true to pred.
+	 */
+	Collection&lt;Movie&gt; filterMovies(Predicate&lt;Movie&gt; pred) {
+		return movies.stream().filter(pred).collect(Collectors.toList());
+	}
+
+	/**
+	 * Watch movie 'title'.
+	 * @param title
+	 * @throws IllegalStateException if the title does not exist.
+	 */
+	public void watch(String title) {
+		try {
+			findMovie(title).watch();
+		} catch (NullPointerException e) {
+			throw new IllegalStateException("Movie does not exsits!");
+		}
+	}
+
+	/**
+	 * Small example of use of the class. Does NOT necessarily cover all uses of methods specified in assignment. 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+				MovieRegister cb = new MovieRegister();
+				cb.addMovie(new Movie("Das Boot"));
+				cb.watch("Das Boot");
+				System.out.println("Should be 1: " + cb.findMovie("Das Boot").getTimesWatched());
+
+	}
+
+}
+
+
+</pre></td></tr></tbody></table><p>Her skulle kandidatene vise at de behersket basisbegrepene i Java og objektorientering. Det var et par ulike småting som kompliserte bildet. Movie skulle holde koll på tre ting: tittelen, rating og hvor mange ganger en har sett på den. Disse tre verdiene hadde ulike bruksmåter. Tittel MÅTTE man ha - så da var det lurt å bare ha en konstruktør som tok inn en tittel. Rating skulle være 1 - 6, men også <em>null</em> dersom man ikke hadde sett den. Her var det ulike løsninger, noen valgte strenger mens andre brukte Integer. Like bra, vi ga ingen krav her. Hvor mange ganger en hadde sett den ble løst ved en teller som starter med 0.</p><p>I MovieRegister la vi også inn predikat, i en slik typisk filtreringsmetode. Her var det helt greit å løse den med for-løkker, men som vanlig sparer en mye tid hvis en bruker Collection sin stream.</p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="e3929182-eecd-49b1-99db-f61497b61a48" data-macro-parameters="title=Oppgave 2 - testing" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1PcHBnYXZlIDIgLSB0ZXN0aW5nfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Klassen <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/stuff/AverageComputer.java">AverageComputer</a> lar en registrere mange heltallsverdier og beregne gjennomsnittet av dem. Det følger med en testklasse, <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/stuff/AverageComputerTest.java">AverageComputerTest</a>, som tester et enkelt tilfelle (beregning av snittet av tallene 3, 4 og 5).</p><p>Tilsynelatende virker klassen fint, men den inneholder to feil, den ene knyttet til beregning av gjennomsnitt, den andre til innkapslingen. Ingen av disse fanges opp av testklassen. Oppgaven går ut på å forbedre testklassen slik at begge feilene rapporteres på en hensiktsmessig måte. Du kan endre den eksisterende testmetoden og evt. legge til nye.</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="9a9e7ed4-5b29-4310-9fb2-72ce8cbe573b" data-macro-parameters="collapse=true|language=java|title=AverageComputerTest" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXx0aXRsZT1BdmVyYWdlQ29tcHV0ZXJUZXN0fGNvbGxhcHNlPXRydWV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package stuff;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class AverageComputerTest {
+
+	private static final double epsilon = 1e-8;
+
+	@Test
+	public void testComputeAverage() {
+		final AverageComputer ac = new AverageComputer(Arrays.asList(3, 4, 5));
+		Assert.assertEquals(4.0, ac.computeAverage(), epsilon);
+	}
+
+	// We can manipulate the list by adding to it from outside after 
+	// it has been added to the method.
+	@Test
+	public void testNewComputerNotModifiedByChangingList() {
+		List&lt;Integer&gt; intVals = new ArrayList&lt;&gt;();
+		intVals.addAll(Arrays.asList(2, 3, 1, 4));
+		AverageComputer avg = new AverageComputer(intVals);
+
+		assertEquals(2.5, avg.computeAverage(), epsilon);
+		intVals.add(5);
+		assertEquals(2.5, avg.computeAverage(), epsilon);
+	}
+
+	// No cast from integer, thereby messing up those numbers...
+	@Test
+	public void testRetValIsCastBeforeDivide() {
+		AverageComputer ac = new AverageComputer(Arrays.asList(3, 4));
+
+		assertEquals(3.5, ac.computeAverage(), epsilon);
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target">Her var det i utgangspunktet to ulike feil vi var ute etter:</p><ul><li>Mangel på innkapsling: Man kunne sende inn en liste, og så manipulere denne fra utsiden etterpå.</li><li>Mangel på cast til double ved beregning av gjennomsnitt: En typisk feil, da ulike programmeringsspråk gjør dette litt ulikt. I Java må du caste for å ikke få et avrundet svar.</li></ul><p>I den grad det ble definert andre typer feil, så kunne det også gi poeng.</p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="0b4f94af-3b2c-4f6d-a03c-503651f9f55d" data-macro-parameters="title=FXML" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1GWE1MfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Filen <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/stuff/Math.fxml">Math.fxml</a> definerer et grensesnitt der brukeren skal kunne:</p><ul><li>skrive inn to flyttall i to tekstfelt</li><li>velge en regningsmetode fra en nedtrekksmeny (pluss, minus, gange, dele)</li><li>trykke på en knapp som så beregner resultatet av regnestykket og skriver svaret inn i et felt</li><li>trykke på en annen knapp som legger inn tilfeldige heltall mellom 1 og 100 i begge tekstfeltene</li></ul><p>Du skal gjøre utvidelser og endringer i filen <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/stuff/MathController.java"><em>MathController.java</em> </a>som gjør at kravene nevnt over oppfylles. Er alle metoder som må finnes allerede definert? Grensesnittet kan sees ved å kjøre filen <em>MathApp.java</em>.</p><p>Slik ser FXML-applikasjonen ut:</p><br><ul><li><img class="confluence-embedded-image confluence-external-resource" height="250" src="./Kont2020_files/Math.jpg" data-image-src="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/raw/lf/kont2020/src/main/java/stuff/Math.jpg"><br><br></li></ul><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="395ee4e5-a126-4c26-b39c-cdcbf0060eaf" data-macro-parameters="collapse=true|language=java|title=MathController" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXx0aXRsZT1NYXRoQ29udHJvbGxlcnxjb2xsYXBzZT10cnVlfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package stuff;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Random;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
+public class MathController {
+	
+	Random rand;
+
+	@FXML
+	private ComboBox&lt;Character&gt; typeSelector;
+
+	@FXML
+	private TextField firstField;
+
+	@FXML
+	private TextField secondField;
+	
+	@FXML
+	private TextArea resultArea;
+
+	@FXML
+	private void initialize() {
+		rand = new Random();
+		Collection&lt;Character&gt; tmp = new ArrayList&lt;&gt;();
+		tmp.add('+');
+		tmp.add('*');
+		tmp.add('/');
+		tmp.add('-');
+		typeSelector.getItems().addAll(tmp);
+		typeSelector.getSelectionModel().select(0);
+	}
+
+
+	/**
+	 * Gather doubles from two textfields, apply a mathematical method, and update a text component.
+	 */
+	@FXML
+	private void onCalculate() {
+		double res;
+		double val1 = Double.parseDouble(firstField.getText());
+		double val2 = Double.parseDouble(secondField.getText());
+		switch (typeSelector.getValue()) { // Could use chained if-elseif-else instead of switch
+			case '+':
+				res = val1 + val2;
+				break;
+			case '-':
+				res = val1 - val2;
+				break;
+			case '*':
+				res = val1 * val2;
+				break;
+			case '/':
+				res = val1 / val2;
+				break;
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + typeSelector.getValue());
+		}
+		
+		resultArea.setText(Double.toString(res));
+	}
+
+	
+	// Is there a method missing here? Where could it be?
+	@FXML
+	private void randomizeNumbers() {
+		firstField.setText(Integer.toString(rand.nextInt(100) + 1));
+		secondField.setText(Integer.toString(rand.nextInt(100) + 1));
+	}
+}
+
+</pre></td></tr></tbody></table><p>Her var en god del ferdig laget. En detalj var at det var et hint om at noe manglet i <em>MathController</em> - en måtte gå inn i fxml-filen, se at det manglet en metode for <em>randomizeNumbers</em>. Så den måtte lages, og inni der måtte en altså legge to tilfeldige heltall inn i <em>firstField</em> og <em>secondField</em>. Selve oppskriften på tilfeldig tall burde være grei (i en åpen bok-eksamen, spesielt!). Når det gjelder <em>onCalculate</em>, så var det mange måter å filtrere hvordan en skal håndtere regneartene. Alle var like gode, så lenge de faktisk virket. Men en måtte altså huske på å caste verdiene fra&nbsp;<em>firstField</em> og&nbsp;<em>secondField</em> før en bruker dem.</p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="c487de12-6fa7-4538-bd1d-2944893f1695" data-macro-parameters="title=Del 2 - Le Petite Chef" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMiAtIExlIFBldGl0ZSBDaGVmfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><h1>Le Petite Chef goes takeaway</h1><p>Restauranten Le Petite Chef har tilpasset seg de nye tidene. De lager matretter som så selges for å nytes hjemme. På grunn av stadige tilbud for å lokke til seg kunder har de gått over til variable priser på matrettene. Til de som tok eksamen i vår: Det er ingen kodemessig kobling mellom de to eksamenene, annet enn i navnet.</p><p>Dette dokumentet beskriver klassene i korte trekk. Vi refererer til dokumentasjonen av metoder og klasser i selve koden for de virkelige kravene om spesifikke metoder etc.</p><p><strong>Viktig</strong>: i pakken <em>food</em> vil dere finne en underpakke <em>food.def</em>. Her ligger det noen grensesnitt som du bare skal bruke, men ikke endre på. Du vil for eksempel se at klassene <em>Customer</em> og Kitchen implementerer grensesnitt som ligger her - dette påvirker ikke deres løsning av oppgavene 2.1 og 2.2. Du vil også finne grensesnittet <em>PriceProvider</em> som skal brukes i oppgave 2.3.</p><p><strong>Også viktig</strong>: Oppgave 2.4 - observatør-observert omhandler delvis å implementere en klasse <em>ObserveToPrintTopRevenue</em>. Denne klassen kan implementeres uten å ha løst noen av oppgavene 2.1 - 2.3, eller å ha gjort selve observatør-inngrepene i Kitchen.</p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="3c2d0139-2535-411d-a2c7-d35a8a555f4f" data-macro-parameters="title=Oppgave 2.1: De enkleste delene: MealOrder og Customer (10%)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1PcHBnYXZlIDIuMTogRGUgZW5rbGVzdGUgZGVsZW5lOiBNZWFsT3JkZXIgb2cgQ3VzdG9tZXIgKDEwJSl9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><ul><li><p><a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/MealOrder.java">MealOrder</a>: Denne klassen inneholder informasjon om et salg. Den lagrer navnet på retten, og hvilken pris retten ble solgt for. Disse verdiene må kunne hentes ut med metodene <em>String getMeal()</em> og <em>double getPrice()</em>.</p></li><li><p><a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/Customer.java">Customer</a>: En som kjøper retter. Kunden har et navn, en oversikt over hvilke retter denne har kjøpt og til hvilken pris. Se javadoc i kildekoden for de definerte kravene.</p></li></ul><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="cd5bb95a-0ce0-49e4-8283-3a094338627f" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package food;
+
+/**
+ * A wrapper class for keeping track of a bought meal.
+ *
+ * The class needs to store the name of meal, as well as the price
+ * it was sold for. And a way of providing these to external users.
+ * 
+ */
+public class MealOrder {
+	
+	// Consult the README for a description of requirements.
+	
+	private String meal;
+	private double price;
+	
+	public MealOrder(String meal, double price) {
+		this.meal = meal;
+		this.price = price;
+	}
+	
+	public String getMeal() {
+		return meal;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+	
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target">MealOrder var en ren hjelpeklasse, for å kunne holde styr på hvor mye ett spesifikt måltid ble kjøpt for. Grunnen til dette er jo, som vi skal se senere, at prisen kan variere avhengig av hvilke rabatter som utløses. Ikke veldig mye spennende eller utfordrende med klassen. Det som derimot var utfordrende var at klassen ikke inneholdt noe som helst. En måtte altså kunne lese seg til i oppgaven hva klassen skulle gjøre, og hvilke metoder som skulle implementeres.</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="1ba82a0e-630b-4b03-8de6-d45664cffccc" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package food;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import food.def.ICustomer;
+
+public class Customer implements ICustomer {
+
+
+	// Add internal variables here:
+	private String name;
+	private List&lt;MealOrder&gt; orders; 
+	
+	
+	/**
+	 * Create a new customer
+	 * 
+	 * @param name The name of the customer
+	 */
+	public Customer(String name) {
+		orders = new ArrayList&lt;&gt;();
+		this.name = name;
+	}
+	
+	
+	/**
+	 * 
+	 * @return A list containing all meals bought by this customer
+	 */
+	public Collection&lt;MealOrder&gt; getMealsOrdered() {
+		return new ArrayList&lt;&gt;(orders); 
+	}
+
+	/**
+	 * Add a bought meal to this customer
+	 * 
+	 * @param meal The name of the meal
+	 * @param price The price the customer paid for the meal
+	 */
+	@Override
+	public void buyMeal(String meal, double price) {
+		orders.add(new MealOrder(meal, price));
+	}
+	
+	
+	/**
+	 * @return The number of meals ordered by this customer
+	 */
+	@Override
+	public int getNumberOfOrderedMeals() {
+		return orders.size();
+	}
+	
+	/**
+	 * @return The name of this customer
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @return A String on the form "&lt;name&gt;: &lt;number of meals ordered&gt;"
+	 */
+	@Override
+	public String toString() {
+		return name + ": " + Integer.toString(getNumberOfOrderedMeals());
+	}
+
+	/**
+	 * @return The most recent meal bought by this customer
+	 * If no meal is ordered, return null.
+	 */
+	@Override
+	public MealOrder getLastOrderedMeal() {
+		if (getNumberOfOrderedMeals() == 0) {
+			return null;
+		}
+		return orders.get(orders.size() - 1);
+	}
+	
+	/**
+	 * Get the number of times the customer has eaten the given meal
+	 * 
+	 * @param meal The name of the meal
+	 * 
+	 * @return The number of times this customer has eaten the given meal
+	 */
+	@Override
+	public int timesEaten(String meal) {
+		return (int)(orders.stream().filter(m -&gt; m.getMeal().equals(meal)).count()); // Can easily be done by a for-loop as well
+	}
+	
+	public static void main(String[] args) {
+		Customer customer = new Customer("Frank");
+		customer.buyMeal("pancakes", 100);
+		customer.buyMeal("pancakes", 75);
+		System.out.println("Skal være 2 kjøp: " + customer.getMealsOrdered().size());
+		System.out.println("Skal være pris 75: " + customer.getLastOrderedMeal().getPrice()); // Som definert i README.
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target">Customer skulle kjenne til hva hen hadde kjøpt, til hvilken pris. Basert på denne informasjonen skal en kunne finne ut de resterende tingene, som hva en kjøpte sist, hvor mange av en bestemt rett og så videre. Her var valget av implementasjon viktig. En liste med MealOrder kunne forsvares med tanke på at en skulle kjenne til den siste, men det er jo mulig å gjøre det med en Collection også. Her var det mulig å bruke noen Collection.stream() om en ønsket. Main-metoden er her for å vise viss bruk av klassen, men ikke nødvendigvis alt.</p></td></tr></tbody></table><p><span><span><span><span><span><span>&nbsp;</span></span></span></span></span></span></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="0ce467fc-66aa-4be6-82f0-ef7fe2697242" data-macro-parameters="title=Oppgave 2.2: Kitchen (20%)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1PcHBnYXZlIDIuMjogS2l0Y2hlbiAoMjAlKX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Kjøkket har som nevnt tidligere forenklet oppskriftene siden sist. <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/Kitchen.java">Kitchen</a>-objekt har følgende tilstand:</p><ul><li>En samling av oppskrifter. Disse vil innimellom bli referert til som matretter.</li><li>En samling av kunder (fra oppgave 2.1).</li><li>Omsetningen så langt - det betyr summen av alle salg som er gjort til nå.</li></ul><p>Følgende metoder eksisterer i Kitchen:</p><ul><li><em>provideMeal(String meal, double price, String name)</em>: Kunden <em>name</em> skal registrere kjøp av rett <em>meal</em> til pris <em>price</em>.</li><li><em>addCustomer(Customer customer)</em>: Legge til en ny kunde.</li><li><em>addRecipe(String recipe)</em>: Legge til en ny oppskrift.</li><li><em>getRecipes()</em>: Returnere en kopi av oppskriftene som er lagret.</li><li><em>getTurnover()</em>: Returnere omsetningen så langt.</li><li><em>getCustomer(String name)</em>: Returnere kunden med navnet <em>name</em>, eller <em>null</em> hvis kunden ikke finnes i systemet.</li></ul><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="17387924-0a3a-4983-a282-808f57738fbb" data-macro-parameters="collapse=true|language=java|title=Kitchen" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXx0aXRsZT1LaXRjaGVufGNvbGxhcHNlPXRydWV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package food;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import food.def.IKitchen;
+import food.def.KitchenObserver;
+import food.def.PriceProvider;
+
+// Important: There is no similarity between Kitchen in the exam v2020 and this one.
+public class Kitchen implements IKitchen {
+
+	// Add internal variables here:
+	private Collection&lt;String&gt; recipes;
+	private Collection&lt;Customer&gt; customers;
+	
+	private Collection&lt;PriceProvider&gt; priceProviders;
+	private Collection&lt;KitchenObserver&gt; observers;
+
+	private double turnover;
+	
+	public Kitchen() {
+		super();
+		recipes = new ArrayList&lt;&gt;();
+		customers = new ArrayList&lt;&gt;();
+		priceProviders = new ArrayList&lt;&gt;();
+		observers = new ArrayList&lt;&gt;();
+		turnover = 0;
+	}
+	
+	
+	/**
+	 * Add a customer
+	 * @param customer The customer to add
+	 * 
+	 * @throws IllegalArgumentException if the customer is already registered
+	 */
+	@Override
+	public void addCustomer(Customer customer) {
+		if (customers.contains(customer)) throw new IllegalArgumentException("Customer already registered");
+		customers.add(customer);
+	}
+
+	/**
+	 * Add a recipe
+	 * @param recipe The recipe to add
+	 */
+	@Override
+	public void addRecipe(String recipe) {
+		recipes.add(recipe);
+	}
+	
+	/**
+	 * @return The turnover of this kitchen - price of all sold meals added together
+	 * If the restaurant has sold for 50, 75 and 100, the turnover is 225.
+	 * (Norsk: omsetning)
+	 */
+	@Override
+	public double getTurnover() {
+		return turnover;
+	}
+
+	
+	/**
+	 * @return A collection of this kitchen's recipes
+	 */
+	@Override
+	public Collection&lt;String&gt; getRecipes() {
+		return new ArrayList&lt;&gt;(recipes);
+	}
+	
+	/**
+	 * @param name The name of the customer to get
+	 * 
+	 * @return The customer with the given name, or null if no such customer is registered
+	 */
+	public Customer getCustomer(String name) {
+		return customers.stream()
+				.filter(c -&gt; c.getName().equals(name))
+				.findAny()
+				.orElse(null);
+	} // A nice exercise would be to make this with a for loop instead.
+
+	/**
+	 * Make a meal, with a given (standard)price and to a given customer.
+	 * 
+	 * This method needs to check that the kitchen knows the given recipe
+	 * and has the given customer registered.
+	 * (Task 2.3): rebates need to be considered
+	 * Finally, data about the sale must be registered in all appropriate places.
+	 * 
+	 * @param meal The name of the meal to make
+	 * @param price The standard price of the meal
+	 * @param customerName The name of the customer that buys the meal
+	 * 
+	 * @throws IllegalStateException if a meal is not successfully made (somehow)
+	 */
+	@Override
+	public void provideMeal(String meal, double price, String customerName) {
+		Customer customer = getCustomer(customerName);
+		if (customer == null || !recipes.contains(meal)) throw new IllegalStateException("Couldn't make meal!");
+		
+		price = computeActualPrice(meal, price, customer); // Added for task 2.3
+		turnover += price; // updating the turnover, ya'know.
+		customer.buyMeal(meal, price);
+		
+		for (var obs : observers) {
+			obs.mealOrder(meal, price); // For task 2.4: inform all observers!
+		}
+}
+		
+	/**
+	 * Exercise 2.3 - Delegation
+	 * Calculate the total rebate of the given meal, using the PriceProviders (said 
+	 * priceDelegates in the exam, fixed afterwards) of this Kitchen
+	 * If more than one rebate exist, each of them applies. See README for example.
+	 * 
+	 * @param meal The name of the meal
+	 * @param price The standard price of the meal
+	 * @param customer The customer buying the meal
+	 * @return The resulting price after all rebates have been considered.
+	 */
+	double computeActualPrice(String meal, double price, Customer customer) {
+		double rebate = 1;
+		for (PriceProvider priceProvider : this.priceProviders) {
+			rebate = rebate * priceProvider.providePrice(meal, price, customer);
+		}
+		return rebate * price;
+	}
+	
+	// Exercise 2.3 - Delegation - these may not be all methods you need to create!
+	@Override
+	public void addPriceProvider(PriceProvider pp) {
+		priceProviders.add(pp);
+	}
+
+	public void removePriceProvider(PriceProvider pp) {
+		priceProviders.remove(pp);
+	}
+
+	// Exercise 2.4 - Observerer - these may not be all methods you need to create!
+	@Override
+	public void addObserver(KitchenObserver ko) {
+		observers.add(ko);
+	}
+
+	
+	public static void main(String[] args) {
+		Kitchen k = new Kitchen();
+		k.addRecipe("pancakes");
+		k.addRecipe("waffles");
+		k.addRecipe("taco");
+		k.addRecipe("spam");
+		Customer per = new Customer("per");
+		k.addCustomer(per);
+//		k.addCustomer(per); // IllegalArgumentException
+		k.addCustomer(new Customer("ida"));
+		k.provideMeal("pancakes", 99.50, "per");
+		System.out.println(k.getTurnover());
+		k.provideMeal("pancakes", 50, "ida");
+		System.out.println(k.getTurnover());
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target">Kitchen var den største av klassene, og den som ble jobbet med over flere oppgaver. Main-metoden viste mulig, men ikke fulstendig, oppførsel. I oppgave 2.2 var den største utfordringen hvordan en skule holde rede på kunder, matretter, og salget av dem. I tillegg skulle Kitchen holde rede på omsetningen totalt. I LF er denne en double som oppdateres hver gang. I ettertid har jeg innsett at dette er 'premature optimization'. Dette betyr at en mye heller burde regne ut omsentning basert på alle registrerte kunder sine kjøp (de kjenner dem, sant!). Og så får en heller skrive det om hvis det viser seg at det blir en flaskehals. Så lær dette: gjør det enkelt i starten!</p><p>Ellers hadde oppgaven spor av slike 'les nøye-ting'... standard sjekker for om en kunde eller matrett faktisk finnes før en forsøker å selge den etc... Kan også nevne at dersom dere droppet innkapsling generelt, så ble det ikke trukket hele tiden. getRecipes() her er en typisk slik kandidat, der dere bør VITE at en skal levere ut en kopi. Slikt skal en slippe å si til dere nå. <img class="emoticon emoticon-smile" data-emoticon-name="smile" border="0" src="./Kont2020_files/smile.svg" alt="(smile)" title="(smile)"></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="dc2e9944-2676-4bce-8046-655159ed22d5" data-macro-parameters="title=Oppgave 2.3: Delegering: implements PriceDelegate (15%)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1PcHBnYXZlIDIuMzogRGVsZWdlcmluZzogaW1wbGVtZW50cyBQcmljZURlbGVnYXRlICgxNSUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>For å finne nye kunder har <em>Le Petite Chef</em> begynt med et avansert rabattsystem. Det finnes ulike typer rabatter, som gir prosentavslag på prisen. Tanken er at rabatter kan utløses av mange faktorer, basert på elementene ved salget: <em>pris</em>, <em>kunde</em> og <em>oppskrift</em>. De ulike rabattene teller sammen på følgende måte:</p><ul><li>Gitt at et produkt egentlig skal selges for 100 kroner.</li><li>Rabatt1 gir 20% avslag. Prisen blir da 100 * 0.8 = 80 kroner.</li><li>Rabatt2 gir 50% avslag. Sluttprisen blir da 80 * 0.5 = 40 kroner. Legg merke til at rabatt2 tar utgangspunkt i prisen fra rabatt1. De virker altså <em>oppå hverandre</em>.</li></ul><p>Du skal lage følgende:</p><ul><li>Rabattklassene skal implementere grensesnittet <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/def/PriceProvider.java">PriceProvider</a> som du vil finne i pakken <em>food.def</em>. Denne skal ikke endres.</li><li>Rabattklassen <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/RebateEveryFifthBuyFromSameCustomer.java">RebateEveryFifthBuyFromSameCustomer</a> gir 50% rabatt på hvert femte kjøp, men med rabatt på første kjøp (lokkemiddel). Det betyr at kunden skal få rabatt på kjøp nummer 0, 5, 10, 15 osv.</li><li>Rabattklassen <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/RebateFreeEveryThousandSale.java">RebateFreeEveryThousandSale</a> skal gi full rabatt hvert tusende salg, uavhengig av hvilken kunde som har kjøpt rettene. Den skal <em>ikke</em> gi rabatt til første salg, men altså for salg 1000, 2000 og så videre.</li><li>Kitchen skal nå kunne legge til og fjerne et vilkårlig antall rabatter.</li><li><em>Kitchen.computeActualPrice(String meal, double price, Customer customer)</em>: Denne metoden skal gå igjennom alle mulige rabatter som finnes, og returnere faktisk sluttpris. En viktig faktor er at hvis et salg utløser to rabatter, en med 20% avslag og en med 50% avslag, så ganges disse faktorene med hverandre og metoden returnerer 0.4 * innpris. Eksempel: En matrett til 200 kroner som har to rabatter på 30% og 50% vil ende opp med en sluttpris på 70 kroner. Legg merke til at denne metoden er en hjelpemetode for <em>provideMeal</em>.</li><li>Gjør de nødvendige endringene som trengs i <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/Kitchen.java">Kitchen</a> for at vurdering av alle rabatter tas med i registrering av salg.</li></ul><p>Endringene i <em>Kitchen</em> (du vil finne koden til dette i forrige deloppgave) som måtte til for å støtte dette var å finne en passende samling for delegatene (en Collection virker passende), og metoder for å legge til og fjerne disse. Til slutt måtte en bruke delegatene inne i provideMeal - hjertet av Kitchenklassen. Dette ble løst litt ulikt. Oppgavene spesifiserte at en delegat skulle ta inn (blant annet) en pris, og så returnere et tall mellom 0 og 1 der 0 var 100% rabatt og 1 var ingen rabatt. Noen endte opp med å gjøre slik at delegatet i stedet returnerte den nye <em>prisen</em>, så et kjøp på 100 kroner ved 20% rabatt ga retur 80.</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="7f87716e-64d5-429a-b42d-377e9da42756" data-macro-parameters="collapse=true|language=java|linenumbers=true|title= RebateEveryFifthBuyFromSameCustomer" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXx0aXRsZT0gUmViYXRlRXZlcnlGaWZ0aEJ1eUZyb21TYW1lQ3VzdG9tZXJ8bGluZW51bWJlcnM9dHJ1ZXxjb2xsYXBzZT10cnVlfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package food;
+
+import food.def.PriceProvider;
+
+/**
+ * A rebate where a customer will get 50% off on every fifth purchase - 
+ * Note: you get a rebate on the first buy, so in essence you end up with rebates on the
+ * 0th, 5th, 10th, 15th etc buys if you start with 0.
+ */
+public class RebateEveryFifthBuyFromSameCustomer implements PriceProvider {
+
+	/**
+	 * Every fifth time a customer buys a meal, including the first time, 
+	 * its price should be reduced to half, return 0.5
+	 * If not, it should return 1 (no rebate)
+	 */
+	@Override
+	public double providePrice(String meal, double price, Customer customer) {
+        if(customer.getMealsOrdered().size()%5==0 || customer.getMealsOrdered().size()==0) {
+            return 0.5;
+        }
+        return 1.0;
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/RebateEveryFifthBuyFromSameCustomer.java">RebateEveryFifthBuyFromSameCustomer</a> var laget for at kandidaten kan vise hvordan man ved delegering kan hente ut informasjon fra klassen som sendes ved som parameter. Det er her altså ikke nødvendig å ha noen intern tilstand å holde rede på. En liten detalj var kravene for reduksjon i pris: hver femte gang, men også den første gangen. Det stod meget tydelig forklart i javadocen til klassen. (Obs: i LF på gitlab står det faktisk feil løsning inntil videre. Sensorene var derimot klar over forskjellen. Ikke at de trakk enormt for dette.)</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="7cfff04e-b84f-48ac-9960-90bc7b228b22" data-macro-parameters="language=java|linenumbers=true|title=RebateFreeEveryThousandSale " data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXx0aXRsZT1SZWJhdGVGcmVlRXZlcnlUaG91c2FuZFNhbGUgfGxpbmVudW1iZXJzPXRydWV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package food;
+
+import food.def.PriceProvider;
+
+/**
+ * A rebate where every thousandth purchase (regardless of meal, price, or customer)
+ * is given away for free. Not the first buy!
+ */
+public class RebateFreeEveryThousandSale implements PriceProvider {
+	
+	// Need an internal counter. We don't need Kithchen to keep track of number
+	// sales, since providePrice is called once every sale!
+	int counter;
+	
+	@Override
+	public double providePrice(String meal, double price, Customer customer) {
+
+		
+		if (counter++ != 0 &amp;&amp; counter % 1000 == 0) {
+			return 0;
+		}
+		return 1;
+
+		
+		//		return counter++ &gt; 0 &amp;&amp; (counter % 1000 == 0) ? 0.0 : 1.0; // This is rather ugly, should perhaps be done on several lines for legibility...
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target">I motsetning til den andre delegaten så trenger man i <em>RebateEveryThousandSale</em> å holde rede på en intern tilstand - hvor mange måltider har restauranten solgt totalt. Nå var det en kandidat som påpekte at den ikke egentlig kunne holde rede på dette, siden restauranten kunne ha solgt måltider <em>før</em> delegaten ble lagt til. Dette er en god kommentar. Jeg vil allikevel si at hvis en kommer til en slik problemstilling, da er det nok lurest å skrive en linje om at en velger å forholde seg til at delegaten legges til med en gang. Og det viser hvor utrolig mange måter det er å tolke oppgaver på, og dermed også hvor krevende det er å lage en eksamen som er perfekt på alle måter!</p><p>Når en først har skjønt hva en skal gjøre her, da er selve koden ganske så enkel. Poenget var altså å se om dere hadde forstått at delegater også kan ha interne tilstander.</p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="4ccaf561-9672-4c1b-b055-90993dfe1496" data-macro-parameters="title=Oppgave 2.4: Observatør-observert: (15%)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1PcHBnYXZlIDIuNDogT2JzZXJ2YXTDuHItb2JzZXJ2ZXJ0OiAoMTUlKX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Nå skal Kitchen utvides til å støtte lyttere:</p><ul><li>Lyttere må implementere grensesnittet <em>KitchenObserver</em> som du finner i pakken <em>food.def</em>. Dette grensesnittet skal ikke endres!</li><li>Kitchen skal kunne legge til og fjerne lyttere som følger grensesnittet <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/def/KitchenObserver.java">KitchenObserver</a>, som ligger i pakken 'food.def'.</li><li>Ved et <em>salg</em> i Kitchen skal alle lytterne kalles med metoden MealOrder(meal, price). Det er altså kun matrett og faktisk pris etter eventuelle rabatter som skal sendes videre til lytterne.</li></ul><p>Du skal også implementere en lytter: klassen <a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2020/kont2020/-/blob/lf/kont2020/src/main/java/food/ObserveToPrintTopRevenue.java">ObserveToPrintTopRevenue</a>, med metodene <em>mealOrder(String meal, double price)</em> og <em>getTopSellers()</em>. Denne klassen skal skrive ut detaljer om <em>den</em> eller <em>de</em> matrettene som har solgt for høyest totalsum (omsetning) hver gang det skjer et nytt salg.</p><p><em>Viktig</em>: Det er ikke nødvendig å ha klart Kitchen eller Recipe-oppgavene for å gjøre denne siste oppgaven - den forholder seg kun til matretter/oppskrifter som strenger og priser som double.</p><p>---</p><p>Som oppgaven med delegering er denne delvis løst med litt kode i Kitchen, og litt utenfor. I Kitchen skulle en holde styr på observatører, og kalle metoden gitt i grensesnittet når det passet. Det passet i metoden <em>provideMeal</em>. Koden for dette kan sees i 2.2 over.</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="030a8b5d-e96d-4a2b-bc5e-479e53c6e723" data-macro-parameters="collapse=true|language=java|linenumbers=true|title=ObserveToPrintTopRevenue" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXx0aXRsZT1PYnNlcnZlVG9QcmludFRvcFJldmVudWV8bGluZW51bWJlcnM9dHJ1ZXxjb2xsYXBzZT10cnVlfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package food;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import food.def.KitchenObserver;
+
+/**
+ * The main point of this implementation of KitchenObserver is to keep track of revenue
+ * from all meals sold. Every time a new meal is sold (and mealOrder is called), 
+ * information about the meal(s) with the highest revenue is printed to System.out.
+ *
+ */
+public class ObserveToPrintTopRevenue implements KitchenObserver {
+
+	// Internal variables go here:
+	Map&lt;String, Double&gt; meals = new HashMap&lt;&gt;();
+
+	
+	/**
+	 * 
+	 * @return A string that contains the string 'meal: price' for all meals that have the highest revenue, 
+	 * separated by a newline. If more than one meal they are sorted in alphabetical order.
+	 * If no meal has been sold: returns an empty string.
+	 */
+	public String getTopSellers() {
+		if (meals.size() == 0) return "";
+		List&lt;String&gt; highestMeals = new ArrayList&lt;&gt;();
+		double highestPrice = 0.0;
+		
+		for (var entry : meals.entrySet()) {
+			if (entry.getValue() &gt; highestPrice) {
+				highestMeals.clear();
+				highestMeals.add(entry.getKey());
+				highestPrice = entry.getValue();
+			} else if (entry.getValue() == highestPrice) {
+				highestMeals.add(entry.getKey());
+			}
+		}
+		Collections.sort(highestMeals);
+		
+		StringBuilder sb = new StringBuilder();
+		for (String meal : highestMeals) {
+			sb.append(meal);
+			sb.append(": ");
+			sb.append(highestPrice);
+			sb.append("\n");
+		}
+		return sb.substring(0, sb.length() - 1).toString();
+	}
+	
+	/**
+	 * When triggered, updates the revenue of 'meal' with 'price'.
+	 * Should then print (System.out) the meal(s) with highest revenue (in alphabetical order), see the method 
+	 * getTopSellers.
+	 */
+	@Override
+	public void mealOrder(String meal, double price) {
+		meals.put(meal, meals.getOrDefault(meal, 0.0) + price);
+		System.out.println(getTopSellers());
+	}
+	
+
+	// A basic use of the class. No need to use Kitchen to make it work. 
+	public static void main(String[] args) {
+		ObserveToPrintTopRevenue test = new ObserveToPrintTopRevenue();
+		System.out.println("&gt; Only waffles: 50.0");
+		test.mealOrder("waffles", 50.0);
+		assertEquals("waffles: 50.0", test.getTopSellers().trim());
+		System.out.println("&gt; Only waffles: 100.0");
+		test.mealOrder("waffles", 50.0);
+		System.out.println("&gt; Pancakes and waffles (two lines): 100.0");
+		test.mealOrder("pancakes", 100.0);
+		System.out.println("&gt; Only waffles: 150.0");
+		test.mealOrder("waffles", 50.0);
+		
+		
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target">Det fantes to metoder som skulle implementeres her: <em>metoden fra grensesnittet, <em>mealOrder</em></em>, og så<em> getTopSellers</em>. I mealOrder var det ikke så mye annet å gjøre enn å lagre det nye salget inn i en passende struktur. Siden målet var å holde rede på alle matretter og hvor mye total omsetning var for hver av dem, da var en <em>Map</em> en passende kandidat. I tillegg måtte <em>mealOrder</em> kalle <em>getTopSellers</em> og skrive ut resultatet! I getTopSellers skulle en finne ut hvilke(n) matrett(er) som hadde solgt for mest, og returnere denne. Her var det åpent hvordan en løste det internt, men i LF brukte vi en liste for å sikre at flere 'vinnere' kan lagres. Listen nulles ut hver gang en matrett med høyere omsetning finnes. Etter dette var det litt standard formatering av streng.</p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><p><br></p><p class="auto-cursor-target"><br></p><p class="auto-cursor-target"><br></p>
+        <p>&nbsp;</p>
+    
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

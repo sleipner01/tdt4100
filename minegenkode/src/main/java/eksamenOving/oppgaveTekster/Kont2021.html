@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://www.ntnu.no/wiki/plugins/viewsource/viewpagesrc.action?pageId=238093023 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>View Source</title>
+        <link rel="canonical" href="https://www.ntnu.no/wiki/pages/viewpage.action?pageId=$action.page.id">
+        <script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\u0022\u005C/wiki\u0022";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="./Kont2021_files/batch.css" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Kont2021_files/batch(1).css" data-wrm-key="plugin.viewsource,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Kont2021_files/batch(2).css" data-wrm-key="page,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Kont2021_files/batch(3).css" data-wrm-key="editor-content,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./Kont2021_files/colors.css" media="all">
+
+    </head>
+
+    <body class="mceContentBody aui-theme-default wiki-content fullsize" data-new-gr-c-s-check-loaded="14.1062.0" data-gr-ext-installed="">
+        <p>&nbsp;</p>         <p>Her ligger løsningsforslaget til kontinuasjonseksamen 2021. Vi vil senere legge til ofte forekommende feil og misforståelser i kombinasjon med kildekoden&nbsp;.</p><p>På&nbsp;<a href="https://gitlab.stud.idi.ntnu.no/tdt4100/v2021/kont-2021/-/tree/lf">gitlab</a>&nbsp;finner dere full kode til alle deler i oppgaven.</p><p><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="2e4d788f-c9e0-486d-b7e7-1f2e7e47d892" data-macro-parameters="title=Del 1 - VoterCounter(10 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMSAtIFZvdGVyQ291bnRlcigxMCAlKX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="1818966b-00b5-4bec-8529-d7541485fcac" data-macro-parameters="title=Skjelett til del 1" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Ta2plbGV0dCB0aWwgZGVsIDF9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="94b642c0-2c40-479f-b324-b19c5d3636ce" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del1;
+
+public class VoterCounter {
+
+	// Add any needed fields here
+	public static final String TIE_RESULT = "TIE";
+
+	/**
+	 * Register a candidate to the poll
+	 * 
+	 * @param candidate the new candidate to add
+	 */
+	public void addCandidate(String candidate) {
+		// TODO
+	}
+
+	/**
+	 * Vote on a given candidate
+	 * 
+	 * @param candidate the candidate to vote on
+	 * 
+	 * @throws IllegalArgumentException if the candidate is not registered
+	 */
+	public void castVote(String candidate) {
+		// TODO
+	}
+
+	/**
+	 * Prints all the results in an arbitrary order. The results should be on the
+	 * format {candidate name}-{number of votes for the candidate} with each
+	 * candidate on a new line
+	 * 
+	 * Example output with two candidates, "Candidate1" with 7 votes, and
+	 * "Candidate2" with 6 votes
+	 * 
+	 * Candidate1-7 
+	 * Candidate2-6
+	 */
+	public String getFormattedResults() {
+		// TODO
+		return null;
+	}
+
+	/**
+	 * Returns the number of votes a candidate has received
+	 * 
+	 * @param candidate the candidate to get number of votes for
+	 * @return the number of votes the candidate has received. Returns null if the
+	 *         candidate is not registered
+	 */
+	public Integer getNumberOfVotes(String candidate) {
+		// TODO
+		return 0;
+	}
+
+	/**
+	 *
+	 * @return the name of the candidate who won the election. If two or more
+	 *         candidates got the same number of maximum votes, return the
+	 *         TIE_RESULT field. Return null if there are no candidates.
+	 */
+	public String getWinner() {
+		// TODO
+		return null;
+	}
+
+	public static void main(String[] args) {
+		String candidate1 = "CANDIDATE1";
+		String candidate2 = "CANDIDATE2";
+		VoterCounter counter = new VoterCounter();
+		counter.addCandidate(candidate1);
+		counter.addCandidate(candidate2);
+		// Should print 0
+		System.out.println(counter.getNumberOfVotes(candidate1));
+		counter.castVote(candidate1);
+		// Should print 1;
+		System.out.println(counter.getNumberOfVotes(candidate1));
+		// Should print CANDIDATE 1
+		System.out.println(counter.getWinner());
+		counter.castVote(candidate2);
+		// Should print TIE
+		System.out.println(counter.getWinner());
+	}
+}
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p>Utfyll klassen&nbsp;<strong>VoterCounter</strong>, og alle metodene i denne klassen. Legg til egne nødvendige felt.&nbsp;<strong>VoterCounter</strong>&nbsp;skal ha oversikt over kandidater som stiller til valg, og antall stemmer de har fått.</p><ul><li><em>addCandidate(String candidateName)</em>&nbsp;- Registrerer en kandidat en kan stemme på</li><li><em>castVote(String candidate)</em>&nbsp;- Gir en stemme til kandidaten</li><li><em>getFormattedResults()</em>&nbsp;- Returnerer antall stemmer hver kandidat har fått</li><li><em>getVotes(String candidate)</em>&nbsp;- Returnerer antall stemmer en kandidat har fått</li><li><em>getWinner()</em>&nbsp;- Returnerer kandidaten som fikk flest stemmer, eventuelt om det ble uavgjort</li></ul><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="73f43b5a-34af-40ad-9007-2e2a99638c8d" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="e65613af-c93c-4c8b-8102-b14f0a7a820d" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del1;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class VoterCounter {
+
+	private Map&lt;String, Integer&gt; votes = new HashMap&lt;&gt;();
+	public static final String TIE_RESULT = "TIE";
+
+	/**
+	 * Register a candidate to the poll
+	 * 
+	 * @param candidate the new candidate to add
+	 */
+	public void addCandidate(String candidate) {
+		votes.put(candidate, 0);
+
+	}
+
+	/**
+	 * Vote on a given candidate
+	 * 
+	 * @param candidate the candidate to vote on
+	 * 
+	 * @throws IllegalArgumentException if the candidate is not registered
+	 */
+	public void castVote(String candidate) {
+		if (!this.votes.containsKey(candidate)) {
+			throw new IllegalArgumentException();
+		}
+		votes.replace(candidate, votes.get(candidate) + 1);
+	}
+
+	/**
+	 * Prints all the results in an arbitrary order. The results should be on the
+	 * format {candidate name}-{number of votes for the candidate} with each
+	 * candidate on a new line
+	 */
+	public String getFormattedResults() {
+		String s = "";
+		for (String candidate : votes.keySet()) {
+			s += (candidate + "-" + votes.get(candidate)) + "\n";
+		}
+		return s;
+	}
+
+	/**
+	 * Get's the number of votes a candidate has received
+	 * 
+	 * @param candidate the candidate to get number of votes for
+	 * @return the number of votes the candidate has received. null if the candidate
+	 *         is not registered
+	 */
+
+	public Integer getNumberOfVotes(String candidate) {
+		return votes.getOrDefault(candidate, null);
+	}
+
+	/**
+	 *
+	 * @return the name of the candidate who won the election. If two or more
+	 *         candidates got the same number of maximum votes, return the
+	 *         TIE_RESULT field. Return null if there is no candidates.
+	 */
+
+	public String getWinner() {
+		int maxValue = 0;
+		String winner = null;
+		for (String candidate : votes.keySet()) {
+			if (votes.get(candidate) &gt; maxValue) {
+				winner = candidate;
+				maxValue = votes.get(candidate);
+			}
+		}
+		for (String candidate : votes.keySet()) {
+			if (votes.get(candidate) == maxValue &amp;&amp; !winner.equals(candidate)) {
+				return TIE_RESULT;
+			}
+		}
+		return winner;
+	}
+
+	public static void main(String[] args) {
+		String candidate1 = "CANDIDATE1";
+		String candidate2 = "CANDIDATE2";
+		VoterCounter counter = new VoterCounter();
+		counter.addCandidate(candidate1);
+		counter.addCandidate(candidate2);
+		// Should print 0
+		System.out.println(counter.getNumberOfVotes(candidate1));
+		counter.castVote(candidate1);
+		// Should print 1;
+		System.out.println(counter.getNumberOfVotes(candidate1));
+		// Should print CANDIDATE 1
+		System.out.println(counter.getWinner());
+		counter.castVote(candidate2);
+		// Should print TIE
+		System.out.println(counter.getWinner());
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p><br></p><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="7ae2e35d-04d8-411b-9092-5b963d168f02" data-macro-parameters="title=Del 2 - Java FX (7.5%)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMiAtIEphdmEgRlggKDcuNSUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p><span style="color: rgb(0,0,0);">Komplementer&nbsp;</span><strong>AppController</strong> <span style="color: rgb(0,0,0);">og&nbsp;</span><strong>UI.fxml</strong><span style="color: rgb(0,0,0);"><strong>&nbsp;</strong>så de fungerer sammen etter hensikten. Dette kan innebære å knytte opp felt/metoder i både Controller og .fxml-filen.</span></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="54e8480d-043a-480c-bc2b-19c215925f47" data-macro-parameters="title=Skjelett til del 2" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Ta2plbGV0dCB0aWwgZGVsIDJ9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="06e76fa5-9f1b-488c-a6f9-9df9aead9135" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del2;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+
+public class AppController {
+
+	// TODO - Add any needed fields here
+	@FXML
+	public TextArea output;
+	public static String logInSuccess = "Gratulerer du har logget inn!";
+	public static String logInFailed = "Feil brukernavn eller passord";
+
+	/**
+	 * TODO - what should be the name of this method? Uncomment this part of the
+	 * code and put it inside the correct function public void { String brukernavn;
+	 * // Extract username from FXML here String passord; // Extract password from
+	 * FXML here
+	 * 
+	 * if (brukernavn.equals("admin") &amp;&amp; passord.equals("admin")) {
+	 * output.setText(logInSuccess); } else { output.setText(logInFailed); } }
+	 */
+
+}
+
+
+package del2;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class App extends Application {
+	
+	@Override
+	public void start(final Stage primaryStage) throws Exception {
+		primaryStage.setTitle("My app");
+		primaryStage.setScene(new Scene(FXMLLoader.load(App.class.getResource("Ui.fxml"))));
+		primaryStage.show();
+	}
+
+	public static void main(String[] args) {
+		App.launch(args);
+	}
+
+}
+//Code for the fxml-file
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;?import javafx.scene.control.Button?&gt;
+&lt;?import javafx.scene.control.Label?&gt;
+&lt;?import javafx.scene.control.TextArea?&gt;
+&lt;?import javafx.scene.control.TextField?&gt;
+&lt;?import javafx.scene.layout.AnchorPane?&gt;
+
+&lt;AnchorPane prefHeight="400.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="del2.AppController"&gt;
+   &lt;children&gt;
+      &lt;Label layoutX="112.0" layoutY="111.0" text="Brukernavn" /&gt;
+      &lt;Label layoutX="272.0" layoutY="111.0" text="Passord" /&gt;
+      &lt;TextField fx:id="username" layoutX="53.0" layoutY="128.0" /&gt;
+      &lt;TextField fx:id="password" layoutX="249.0" layoutY="128.0" /&gt;
+      &lt;TextArea fx:id="output" layoutX="114.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" /&gt;
+      &lt;Button layoutX="464.0" layoutY="128.0" mnemonicParsing="false" onAction="#onLogIn" text="Logg inn" /&gt;
+   &lt;/children&gt;
+&lt;/AnchorPane&gt;
+
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="b3fbd1ac-3f0c-495d-950f-90106f6a6f20" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="2f17879a-8209-4415-8d83-3d346f11607d" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del2;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
+public class AppController {
+	
+	//TODO - Add any needed fields here
+	@FXML 
+	public TextArea output;
+	@FXML
+	private TextField username, password;
+	
+	public static String logInSuccess = "Gratulerer du har logget inn!";
+	public static String logInFailed = "Feil brukernavn eller passord";
+	
+	@FXML
+	public void onLogIn() {
+		String brukernavn = username.getText();// Extract username from FXML here
+		String passord = password.getText(); // Extract password from FXML here
+		
+		if (brukernavn.equals("admin") &amp;&amp; passord.equals("admin")) {
+			output.setText(logInSuccess);
+		}
+		else {
+			output.setText(logInFailed);
+		}
+	}
+	
+}
+
+
+
+//Code for the fxml-file
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;?import javafx.scene.control.Button?&gt;
+&lt;?import javafx.scene.control.Label?&gt;
+&lt;?import javafx.scene.control.TextArea?&gt;
+&lt;?import javafx.scene.control.TextField?&gt;
+&lt;?import javafx.scene.layout.AnchorPane?&gt;
+
+&lt;AnchorPane prefHeight="400.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kortforklart.AppController"&gt;
+   &lt;children&gt;
+      &lt;Label layoutX="112.0" layoutY="111.0" text="Brukernavn" /&gt;
+      &lt;Label layoutX="272.0" layoutY="111.0" text="Passord" /&gt;
+      &lt;TextField fx:id="username" layoutX="53.0" layoutY="128.0" /&gt;
+      &lt;TextField fx:id="password" layoutX="249.0" layoutY="128.0" /&gt;
+      &lt;TextArea fx:id="output" layoutX="114.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" /&gt;
+      &lt;Button layoutX="464.0" layoutY="128.0" mnemonicParsing="false" onAction="#onLogIn" text="Logg inn" /&gt;
+   &lt;/children&gt;
+&lt;/AnchorPane&gt;
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="fc2a05d5-5ed0-40a4-a430-856d2e5b1377" data-macro-parameters="title=Del 3 - Delegering (10 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMyAtIERlbGVnZXJpbmcgKDEwICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Følgende vedlagte klasser/interfaces brukes, men skal ikke endres i denne klassen. Du trenger ikke forstå hvordan metodene er implementert, bare benytte deg direkte av dem.</p><ul><li><strong>CalculationsImpl</strong>&nbsp;- Implementasjon av&nbsp;<strong>Calculations</strong></li><li><strong>Calculations</strong>&nbsp;- Grensesnitt som implementeres i både&nbsp;<strong>CalculationsImpl</strong>&nbsp;og&nbsp;<strong>CachingCalculations</strong></li></ul><p>Du skal fylle ut&nbsp;<strong>CachingCalculations</strong>&nbsp;og metodene/konstruktør i denne klassen.</p><p><strong>CachingCalculations</strong>&nbsp;skal delegere til en delegate, som skal utføre arbeidet og deretter&nbsp;<em>memoisere</em>&nbsp;resultatet. memoisere betyr her at hvis metoden får et argument den tidligere har sett skal den heller returnere det tidligere kalkulerte resultatet, enn å be delegate gjøre beregningen på nytt. Denne teknikken brukes gjerne når beregninger er kostbare å utføre.</p><ul><li><em>CachingCalculations(Calculations delegate)</em>&nbsp;- Oppretter et CachingCalculations objekt</li><li><em>getCalculation1(int number)</em>&nbsp;- Gjør beregning 1</li><li><em>getCalculation2(int number)</em>&nbsp;- Gjør beregning 2.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="53e65ae8-a1e7-4336-8304-e1698e627c03" data-macro-parameters="title=Kodeskjelett del 3" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDN9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="d8472b81-86da-42bc-8099-e09cecaa2579" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del3;
+
+public class CalculationsImpl implements Calculations {
+
+	@Override
+	public int getCalculation1(int number) {
+		return (int) Math.sqrt(number);
+
+	}
+
+	@Override
+	public int getCalculation2(int number) {
+		return number * number;
+	}
+}
+
+package del3;
+
+public interface Calculations {
+	
+	
+	public int getCalculation1(int number);
+	
+	public int getCalculation2(int number);
+}
+
+package del3;
+
+public class CachingCalculations implements Calculations {
+
+	public CachingCalculations(Calculations delegate) {
+		// TODO
+	}
+
+	@Override
+	/**
+	 * Delegates the job of calculating the square root to the delegate If the
+	 * argument has been previously seen, the delegate should not be used and a
+	 * local cached version of the result should be returned
+	 * 
+	 * @returns the calculation applied to the argument
+	 */
+	public int getCalculation1(int number) {
+		// TODO
+		return 0;
+	}
+
+	@Override
+	/**
+	 * Delegates the job of calculating the square to the delegate If the argument
+	 * has been previously seen, the delegate should not be used and a local cached
+	 * version of the result should be returned
+	 * 
+	 * @returns the calculation applied to the argument
+	 */
+	public int getCalculation2(int number) {
+		// TODO
+		return 0;
+
+	}
+
+	public static void main(String[] args) {
+		CachingCalculations calc = new CachingCalculations(new CalculationsImpl());
+		// Should print 81
+		System.out.println(calc.getCalculation2(9));
+		// Should print 81 again, should not use the delegate
+		System.out.println(calc.getCalculation2(9));
+		// Should print 3
+		System.out.println(calc.getCalculation1(9));
+	}
+
+}
+
+
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="8071b3c3-04c7-4059-a4c8-edd239f1f8ca" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="7630969b-dea0-4e01-8327-caeaa2e384fe" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del3;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CachingCalculations implements Calculations {
+
+	private Calculations delegate;
+	private Map&lt;Integer, Integer&gt; cache1 = new HashMap&lt;&gt;();
+	private Map&lt;Integer, Integer&gt; cache2 = new HashMap&lt;&gt;();
+
+	public CachingCalculations(Calculations delegate) {
+		this.delegate = delegate;
+	}
+
+	@Override
+	/**
+	 * Delegates the job of calculating the square root to the delegate If the
+	 * argument has been previously seen, the delegate should not be used and a
+	 * local cached version of the result should be returned
+	 * 
+	 * @returns the square root of the argument
+	 */
+	public int getCalculation1(int number) {
+		if (cache1.containsKey(number)) {
+			return cache1.get(number);
+		}
+		int result = delegate.getCalculation1(number);
+		cache1.put(number, result);
+		return result;
+	}
+
+	@Override
+	/**
+	 * Delegates the job of calculating the square to the delegate If the argument
+	 * has been previously seen, the delegate should not be used and a local cached
+	 * version of the result should be returned
+	 * 
+	 * @returns the square of the argument
+	 */
+	public int getCalculation2(int number) {
+		if (cache2.containsKey(number)) {
+			return cache2.get(number);
+		}
+		int result = delegate.getCalculation2(number);
+		cache2.put(number, result);
+		return result;
+	}
+
+	public static void main(String[] args) {
+		CachingCalculations calc = new CachingCalculations(new CalculationsImpl());
+		// Should print 81
+		System.out.println(calc.getCalculation2(9));
+		// Should print 81 again, should not use the delegate
+		System.out.println(calc.getCalculation2(9));
+		// Should print 3
+		System.out.println(calc.getCalculation1(9));
+	}
+
+}
+
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="932211bf-e9f3-4f78-aedc-61a8239610be" data-macro-parameters="title=Del 4 - Objektstrukturer og delegering (20 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgNCAtIE9iamVrdHN0cnVrdHVyZXIgb2cgZGVsZWdlcmluZyAoMjAgJSl9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p><span style="color: rgb(0,0,0);"><strong>Oppgave a)</strong> <strong>Objektstrukturer (12 %)</strong></span></p><p>Fyll inn vedlagte&nbsp;<strong>Temperature</strong>. Temperature har oversikt over en temperatur som enten er i Fahrenheit eller i Celsius.</p><p>Temperature har følgende metoder</p><ul><li><em>Temperature(double degrees, char scale)</em>&nbsp;- Initialiserer et&nbsp;<strong>Temperature</strong>-objekt med en skala (Fahrenheit/Celsius) og et antall grader</li><li><em>getScale()</em>&nbsp;- Returnerer om temperaturen er i Fahrenheit eller Celsius.</li><li><em>getDegrees()</em>&nbsp;- Returnerer temperaturen i antall grader.</li><li><em>toOther()</em>&nbsp;- Gjør om dette temperatur-objektet til den andre skalaen og returnerer det.</li><li><em>inOther()</em>&nbsp;- Lager et nytt temperatur-objekt i den den andre skalaen og returnerer det.</li><li><em>lower(double amount)</em>&nbsp;- Senker temperaturen med et antall grader.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="2b73aa7f-bf38-4297-a932-8204f2ed1bc3" data-macro-parameters="title=Kodeskjelett 4a" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgNGF9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="464e3a0e-a89b-42c0-84cf-1482ec5a0b36" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del4;
+
+public class Temperature {
+
+	// Add any needed fields
+	/**
+	 * 
+	 * @param degrees an arbitrary number
+	 * @param scale   a character declaring the scale
+	 * 
+	 * @throws IllegalArgumentException if scale is not 'C' or 'F'
+	 */
+	public Temperature(double degrees, char scale) {
+		// TODO
+
+	}
+
+	/**
+	 * 
+	 * @return The current scale
+	 */
+	public char getScale() {
+		// TODO
+		return '0';
+	}
+
+	/**
+	 * 
+	 * @return the current degree of this object
+	 */
+	public double getDegrees() {
+		// TODO
+		return 0;
+	}
+
+	/**
+	 * Converts this temperature object to be the opposite scale of what it
+	 * currently is
+	 * 
+	 * @return this temperature object, converted with value in Celsius if the scale
+	 *         of this temperature object is Fahrenheit, and value in Fahrenheit if
+	 *         this the scale of this temperature object is Celsius
+	 */
+	public Temperature toOther() {
+		// TODO
+		return null;
+	}
+
+	/**
+	 * Creates a new temperature object with values in the other scale of this
+	 * temperature object
+	 * 
+	 * @return a new Temperature object, with value in Celsius if the scale of this
+	 *         temperature object is Fahrenheit, and value in Fahrenheit if the
+	 *         scale of this temperature object is Celsius
+	 */
+	public Temperature inOther() {
+		// TODO
+		return null;
+	}
+
+	/**
+	 * Lowers the temperature
+	 * 
+	 * @param amount the amount to lower by
+	 */
+	public void lower(double amount) {
+		// TODO
+	}
+
+	/**
+	 * 
+	 * @param celsius
+	 * @return the temperature in Fahrenheit
+	 */
+	public static double convertCelsisusToFahrenheit(double celsius) {
+		return (celsius * 1.8 + 32.0);
+	}
+
+	/**
+	 * 
+	 * @param fahrenheit
+	 * @return the temperature in Celsius
+	 */
+	public static double convertFahrenheitToCelsius(double fahrenheit) {
+		return (fahrenheit - 32.0) / 1.8;
+	}
+
+	public static void main(String[] args) {
+		Temperature t = new Temperature(20, 'C');
+		// Should print 20
+		System.out.println(t.getDegrees());
+		t.lower(10);
+		// Should now print 10
+		System.out.println(t.getDegrees());
+		t.toOther();
+		// Should now print 50
+		System.out.println(t.getDegrees());
+		t.toOther();
+
+		Temperature t2 = t.inOther();
+		// Should be 50;
+		System.out.println(t2.getDegrees());
+
+		// Should be 10
+		System.out.println(t.getDegrees());
+	}
+
+}
+
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="a39ca92b-9d6d-41a7-ba28-14f1010233d8" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="de594b01-458d-4ec3-82ab-0743bfcf6539" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del4;
+
+public class Temperature {
+	
+	private char scale; // Only valid values are C or F
+	private double degree;
+	
+	/**
+	 * 
+	 * @param degrees an arbitrary number
+	 * @param scale a character declaring the scale
+	 * 
+	 * @throws IllegalArgumentException if scale is not 'C' or 'F'
+	 */
+	public Temperature(double degrees, char scale) {
+		this.degree = degrees;
+		if (scale != 'C' &amp;&amp; scale != 'F') {
+			throw new IllegalArgumentException();
+		}
+		this.scale = scale;
+	}
+
+	/**
+	 * 
+	 * @return The current scale
+	 */
+	public char getScale() {
+		return scale;
+	}
+
+	
+	/**
+	 * 
+	 * @return the current degree of this object
+	 */
+	public double getDegrees() {
+		return degree;
+	}
+
+	/**
+	 * Converts this temperature object to be the opposite scale of what it
+	 * currently is
+	 * 
+	 * @return this temperature object, converted with value in Celsius if the value
+	 *         of this temperature object is Fahrenheit, and value in Fahrenheit if
+	 *         this temperature object is Celsius
+	 */
+	public Temperature toOther() {
+		if (this.scale == 'C') {
+			this.scale = 'F';
+			this.degree = convertCelsisusToFahrenheit(this.degree);
+		}
+		else {
+			this.scale = 'C';
+			this.degree = convertFahrenheitToCelsius(this.degree);
+		}
+		return this;
+	}
+
+	/**
+	 * Creates a new temperature object with values in the other scale of this
+	 * temperature object.
+	 * 
+	 * @return a new Temperature object, with value in Celsius if the value of this
+	 *         temperature object is Fahrenheit, and value in Fahrenheit if this
+	 *         temperature object is Celsius
+	 */
+	public Temperature inOther() {
+		if (this.scale == 'C') {
+			return new Temperature(convertCelsisusToFahrenheit(this.degree), 'F');
+	
+		}
+		else {
+			return new Temperature(convertFahrenheitToCelsius(this.degree), 'C');
+
+		}
+	}
+
+
+	
+	/**
+	 * Lowers the temperature
+	 * @param amount the amount to lower by
+	 */
+	public void lower(double amount) {
+		this.degree -= amount;
+	}
+	
+	/**
+	 * 
+	 * @param celsius
+	 * @return the temperature in Fahrenheit
+	 */
+	public static double convertCelsisusToFahrenheit(double celsius) {
+		return (celsius * 1.8 + 32.0);
+	}
+	
+	/**
+	 * 
+	 * @param fahrenheit
+	 * @return the temperature in Celsius
+	 */
+	public static double convertFahrenheitToCelsius(double fahrenheit) {
+		return (fahrenheit - 32.0) / 1.8;
+	}
+	
+	public static void main(String[] args) {
+		Temperature t = new Temperature(20, 'C');
+		// Should print 20
+		System.out.println(t.getDegrees());
+		t.lower(10);
+		// Should now print 10
+		System.out.println(t.getDegrees());
+		t.toOther();
+		// Should now print 50
+		System.out.println(t.getDegrees());
+		t.toOther();
+
+		Temperature t2 = t.inOther();
+		// Should be 50;
+		System.out.println(t2.getDegrees());
+
+		// Should be 10
+		System.out.println(t.getDegrees());
+	}
+
+
+	
+	
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p><br></p><p><strong>Oppgave b) Delegering (8%)</strong></p><p>Fyll inn&nbsp;<strong>DelegatingTemperature</strong>. DelegatingTemperature skal delegere til et underliggende Temperature-objekt og ha metodene beskrevet under. Du kan gå ut ifra at alle metodene til delegaten fungerer slik de skal.</p><ul><li><em>DelegatingTemperature(Temperature delegate, char scale)</em>&nbsp;- Oppretter et&nbsp;<strong>DelegatingTemperature</strong>-objekt med en skala (Fahrenheit/Celsisus) og et antall grader som er representert i delegaten.</li><li><em>getScale()</em>&nbsp;- Returnerer om temperaturen er i Fahrenheit eller Celsius.</li><li><em>getDegrees()</em>&nbsp;- Returnerer temperaturen i antall grader.</li><li><em>toOther()</em>&nbsp;- Gjør om dette temperatur-objektet til den andre skalaen og returnerer det.</li><li><em>inOther()</em>&nbsp;- Lager et nytt temperatur-objekt i den den andre skalaen og returnerer det.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="24d253b3-938c-4db7-aa02-ed29ff780f8b" data-macro-parameters="title=Kodeskjelett 4b" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgNGJ9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="d070a3c4-9e6c-4afc-8af5-0bca2470f490" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del4;
+
+public class DelegatingTemperature {
+
+	// Add any needed fields
+	/**
+	 * 
+	 * @param delegate - the Temperature to get degree from
+	 * @param scale    a character declaring the scale of this temperature object
+	 * 
+	 * @throws IllegalArgumentException if scale is not 'C' or 'F'
+	 */
+	public DelegatingTemperature(Temperature delegate, char scale) {
+		// TODO
+	}
+
+	/**
+	 * 
+	 * @return The current scale
+	 */
+	public char getScale() {
+		// TODO
+		return '0';
+	}
+
+	/**
+	 * 
+	 * @return the current degree from the delegate, converted to the correct scale
+	 */
+	public double getDegrees() {
+		// TODO
+		return 0;
+	}
+
+	/**
+	 * 
+	 * @return this temperature object, with scale converted to Celsius if the
+	 *         current scale of this delegatingTemperature object is in Fahrenheit,
+	 *         and value in Fahrenheit if this delegatingTemperature object is in
+	 *         Celsius
+	 */
+	public DelegatingTemperature toOther() {
+		// TODO
+		return null;
+	}
+
+	/**
+	 * 
+	 * @return a new DelegatingTemperature object, with the same delegate, with
+	 *         scale converted to Celsius if the current scale of this
+	 *         delegatingTemperature object is Fahrenheit, and value in Fahrenheit
+	 *         if this delegatingTemperature object is Celsius
+	 */
+	public DelegatingTemperature inOther() {
+		// TODO
+		return null;
+
+	}
+
+	public static void main(String[] args) {
+		Temperature t = new Temperature(10, 'C');
+		DelegatingTemperature dt = new DelegatingTemperature(t, 'F');
+		// Should now print 10
+		System.out.println(t.getDegrees());
+		// Should now print 50
+		System.out.println(dt.getDegrees());
+		dt.toOther();
+		// Should now print 10
+		System.out.println(dt.getDegrees());
+		// Should now print 10
+		System.out.println(t.getDegrees());
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="e718059e-db67-4bde-892e-9cd95f58f730" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="08d84e40-3a71-41db-be49-9a6336d06af3" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del4;
+
+public class DelegatingTemperature {
+
+	// Add any needed fields
+	private Temperature delegate;
+	private char scale;
+	/**
+	 * 
+	 * @param delegate - the Temperature to get degree from
+	 * @param scale    a character declaring the scale of this temperature object
+	 * 
+	 * @throws IllegalArgumentException if scale is not 'C' or 'F'
+	 */
+	public DelegatingTemperature(Temperature delegate, char scale) {
+		this.delegate = delegate;
+		this.setScale(scale);
+	}
+
+	/**
+	 * 
+	 * @return The current scale
+	 */
+	public char getScale() {
+		return this.scale;
+	}
+	
+	private void setScale(char scale) {
+		if (scale != 'F' &amp;&amp; scale != 'C') {
+			throw new IllegalArgumentException() ;
+		}
+		this.scale = scale;
+	}
+
+	/**
+	 * 
+	 * @return the current degree from the delegate, converted to the correct scale
+	 */
+	public double getDegrees() {
+		if (this.scale == this.delegate.getScale()) {
+			return this.delegate.getDegrees();
+		}
+		return this.delegate.inOther().getDegrees();
+	}
+
+	/**
+	 * 
+	 * @return this temperature object, with scale converted to Celsius if the
+	 *         current scale of this delegatingTemperature object is in Fahrenheit, and
+	 *         value in Fahrenheit if this delegatingTemperature object is in Celsius
+	 */
+	public DelegatingTemperature toOther() {
+		this.scale = this.scale == 'C' ? 'F' : 'C';
+		return this;
+	}
+
+	/**
+	 * 
+	 * @return a new DelegatingTemperature object, with the same delegate, with
+	 *         scale converted to Celsius if the current scale of this
+	 *         delegatingTemperature object is Fahrenheit, and value in Fahrenheit
+	 *         if this delegatingTemperature object is Celsius
+	 */
+	public DelegatingTemperature inOther() {
+		return new DelegatingTemperature(this.delegate, this.scale == 'C' ? 'F' : 'C');
+
+	}
+
+	public static void main(String[] args) {
+		Temperature t = new Temperature(10, 'C');
+		DelegatingTemperature dt = new DelegatingTemperature(t, 'F');
+		// Should now print 10
+		System.out.println(t.getDegrees());
+		// Should now print 50
+		System.out.println(dt.getDegrees());
+		dt.toOther();
+		// Should now print 10
+		System.out.println(dt.getDegrees());
+		// Should now print 10
+		System.out.println(t.getDegrees());
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p><span style="color: rgb(0,0,0);"><br></span></p><p><span style="color: rgb(0,0,0);">Del 5, 6, 7 og 8 bygger på hverandre, men kan løses uavhengig av hverandre selv om main-metodene da ikke nødvendigvis vil gi rett resultat. Det vil ofte kreve at du har forstått hva metodene skal gjøre, men du kan gå ut ifra at implementasjonen er rett selv om du ikke har fått til en metode.</span></p><p><span style="color: rgb(0,0,0);"><br></span></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="70870db9-b2db-4e72-b0d5-d5b1659b4287" data-macro-parameters="title=Del 5 - Observatør-Observert (15 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgNSAtIE9ic2VydmF0w7hyLU9ic2VydmVydCAoMTUgJSl9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Ta utgangspunkt i&nbsp;<strong>Property</strong>-klassen.&nbsp;<strong>Property</strong>&nbsp;er en klasse som implementerer en eiendom som kan motta bud for å bli kjøpt.</p><p>Interessenter i eiendommen er interessert i å kunne lytte på nye bud&nbsp;<strong>Bid</strong>&nbsp;på eiendommen.</p><p>Fyll ut nødvendige metoder og felt for å støtte lytting i&nbsp;<strong>Property</strong>&nbsp;klassen, for å gjøre det mulig og lytte på nye bud på eiendommen. Følgende metoder skal implementeres:</p><ul><li><em>setIsSold()</em>&nbsp;- Markerer eiendommen som solgt.</li><li><em>addListener(BidListener listener)</em>&nbsp;- Registrerer en lytter</li><li><em>emoveListener(BidListener listener)</em>&nbsp;- Fjerner en lytter</li><li><em>bidReceived(String bidder, int bid)</em>&nbsp;- Oppretter et nytt&nbsp;<strong>Bid</strong>&nbsp;og registrerer dette, og sier ifra registrerte lyttere avhengig om budet er det høyeste til nå eller ikke.</li><li><em>addListenerForHighestBids(BidListener listener)</em>&nbsp;- Registrerer en lytter som kun skal lytte på bud som er det høyeste budet til nå</li><li><em>notifyListeners(Bid bid)</em>&nbsp;- Sier ifra til alle lytterne om det nye budet</li><li><em>getHighestBid</em>&nbsp;- Returnererer det høyeste budet</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="98696ef0-dcae-4720-8256-b593c30e05c5" data-macro-parameters="title=Kodeskjelett del 5" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="e1929734-1aac-46d2-9957-d753e068d97a" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del5_8;
+
+public class Property {
+
+	// Add any needed fields here
+
+	/**
+	 * 
+	 * @param name  the name of the property to be sold
+	 * @param price the listing price of the property
+	 */
+	public Property(String name, int price) {
+		// TODO
+	}
+
+	/**
+	 * 
+	 * @return the name of the property
+	 */
+	public String getName() {
+		// TODO
+		return null;
+	}
+
+	/**
+	 * 
+	 * @return the price of the property
+	 */
+	public int getPrice() {
+		// TODO
+		return 0;
+	}
+
+	/**
+	 * 
+	 * @return whether the property is sold, default value is false
+	 */
+	public boolean isSold() {
+		// TODO
+		return false;
+	}
+
+	/**
+	 * Sets the property as sold
+	 * 
+	 * @throws IllegalStateException if no bids have been received
+	 */
+	public void setIsSold() {
+		// TODO
+	}
+
+	/**
+	 * 
+	 * @return the number of bids received on this property
+	 */
+	public int getNumberOfBids() {
+		// TODO
+		return 0;
+	}
+
+	/**
+	 * 
+	 * @param listener register listener to be notified of any bids to this property
+	 */
+	public void addListenerForAllBids(BidListener listener) {
+		// TODO
+	}
+
+	/**
+	 * 
+	 * @param listener register listener to be notified of only bids that are new
+	 *                 highest bids You do not need to handle the case where a
+	 *                 listener gets registered both for highest bid and for all
+	 *                 bids
+	 */
+	public void addListenerForHighestBids(BidListener listener) {
+		// TODO
+	}
+
+	/**
+	 * 
+	 * @param listener removes listener from this property, registered with any of
+	 *                 the above methods
+	 */
+	public void removeListener(BidListener listener) {
+		// TODO
+	}
+
+	/**
+	 * Creates a new bid object and notifies all listeners that a bid has been given
+	 * 
+	 * @param bidder the name of the bidder
+	 * @param bid    the amount of the bid
+	 * 
+	 * @throws IllegalStateException - if the property is already sold
+	 */
+	public void bidReceived(String bidder, int bid) {
+		// TODO
+	}
+
+	/**
+	 * Notifies listeners that a bid has been received. There are currently no
+	 * listeners implemented in the main method, but this is used for test purposes
+	 * by us after the exam.
+	 * 
+	 * This is package private for testing purposes
+	 * 
+	 * @param bid the most recent bid
+	 */
+	void notifyListeners(Bid bid) {
+		// TODO
+	}
+
+	/**
+	 * 
+	 * @return the current highest bid. If the property has no bids, return 0
+	 */
+	public int getHighestBid() {
+		// TODO
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		Property p = new Property("name", 1000);
+		p.bidReceived("BIDDER", 500);
+		// 500
+		System.out.println(p.getHighestBid());
+		p.bidReceived("BIDDER2", 1100);
+		// 1100
+		System.out.println(p.getHighestBid());
+		// false
+		System.out.println(p.isSold());
+		p.setIsSold();
+		// true
+		System.out.println(p.isSold());
+
+	}
+}
+
+
+
+
+
+
+
+package del5_8;
+
+public class Bid {
+	
+	private int bid;
+	private Property property;
+	private String bidder;
+	
+	public Bid(String bidder, Property property, int bid) {
+		this.bid = bid;
+		this.property = property;
+		this.bidder = bidder;
+	}
+
+	public int getBid() {
+		return bid;
+	}
+
+	public Property getProperty() {
+		return property;
+	}
+
+	public String getBidder() {
+		return bidder;
+	}
+	
+	public boolean equals(Object otherBid) {
+		
+		if (otherBid instanceof Bid) {
+			Bid bid2 = (Bid) otherBid;
+			boolean isBidEqual = this.bid == bid2.bid;
+			boolean isPropertyEqual = this.property.getName().equals(bid2.property.getName());
+			boolean isBidderEqual = this.bidder.equals(bid2.bidder);
+			boolean isEqual = isBidEqual &amp;&amp;  isPropertyEqual &amp;&amp; isBidderEqual;
+			return isEqual;
+		}
+		return false;
+
+	}
+	
+	public String toString() {
+		return this.property.getName() + bid;
+	}
+	
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="ca220df7-71c4-4299-a0b6-e0c33cbd6e39" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="44e66355-600c-4b71-84e3-155be1eead3f" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del5_8;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Property {
+
+	private String name;
+	private List&lt;BidListener&gt; interests = new ArrayList&lt;&gt;();
+	private List&lt;BidListener&gt; highestBidInterests = new ArrayList&lt;&gt;();
+	private List&lt;Bid&gt; bids = new ArrayList&lt;&gt;();
+	private int price;
+	private boolean isSold = false;
+
+	/**
+	 * 
+	 * @param name  the name of the property to be sold
+	 * @param price the listing price of the property
+	 */
+	public Property(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+
+	/**
+	 * 
+	 * @return the name of the property
+	 */
+	public String getName() {
+		return this.name;
+	}
+
+	/**
+	 * 
+	 * @return the price of the property
+	 */
+	public int getPrice() {
+		return this.price;
+	}
+
+	/**
+	 * 
+	 * @return whether the property is sold, default value is false
+	 */
+	public boolean isSold() {
+		return this.isSold;
+	}
+
+	/**
+	 *
+	 * @return the number of bids received on this property
+	 */
+	public int getNumberOfBids() {
+		return this.bids.size();
+	}
+
+	/**
+	 * Sets the property as sold
+	 * 
+	 * @throws IllegalStateException if no bids have been received
+	 */
+	public void setIsSold() {
+		// TODO
+		if (this.bids.size() == 0) {
+			throw new IllegalStateException("no bids received");
+		}
+		this.isSold = true;
+	}
+
+	/**
+	 * 
+	 * @param listener register listener to be notified of any bids to this property
+	 */
+	public void addListenerForAllBids(BidListener listener) {
+		// TODO
+		this.interests.add(listener);
+	}
+
+	/**
+	 * 
+	 * @param listener register listener to be notified of only bids that are higher
+	 *                 than the current highest bid
+	 */
+	public void addListenerForHighestBids(BidListener listener) {
+		this.highestBidInterests.add(listener);
+	}
+
+	/**
+	 * 
+	 * @param listener removes listener from this property
+	 */
+	public void removeListener(BidListener listener) {
+		// TODO
+		this.interests.remove(listener);
+	}
+
+	/**
+	 * Creates a new bid object and notifies all listeners that a bid has been given
+	 * 
+	 * @param bidder the name of the bidder
+	 * @param bid    the amount of the bid
+	 * 
+	 * @throws IllegalStateException - if the property is already sold.
+	 */
+	public void bidReceived(String bidder, int bid) {
+		// TODO
+		if (this.isSold()) {
+			throw new IllegalStateException();
+		}
+		Bid b = new Bid(bidder, this, bid);
+		this.notifyListeners(b);
+		this.bids.add(b);
+	}
+
+	/**
+	 * Notifies listener that a bid has been received
+	 * 
+	 * @param bid the most recent bid
+	 */
+	public void notifyListeners(Bid bid) {
+		this.interests.forEach(listener -&gt; listener.propertyBid(bid));
+		if (bid.getBid() &gt; this.getHighestBid()) {
+			this.highestBidInterests.forEach(listener -&gt; listener.propertyBid(bid));
+		}
+	}
+
+	/**
+	 * 
+	 * @return the current highest bid. If the property has no bids, return 0
+	 */
+	public int getHighestBid() {
+		return this.bids.stream().mapToInt(b -&gt; b.getBid()).max().orElse(0);
+	}
+
+	public static void main(String[] args) {
+		Property p = new Property("name", 1000);
+		p.bidReceived("BIDDER", 500);
+		// 500
+		System.out.println(p.getHighestBid());
+		p.bidReceived("BIDDER2", 1100);
+		// 1100
+		System.out.println(p.getHighestBid());
+		// false
+		System.out.println(p.isSold());
+		p.setIsSold();
+		// true
+		System.out.println(p.isSold());
+
+	}
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="919957a5-d116-430d-aea6-31197ff33506" data-macro-parameters="title=Del 6 - Arv (7.5 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgNiAtIEFydiAoNy41ICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>BusinessProperty&nbsp;<strong>BusinessProperty</strong>&nbsp;arver fra Property men har noe ulik oppførsel.</p><p><strong>BusinessProperty</strong>&nbsp;tar imot bud på samme måte, men skal registreres som solgt med en gang et bud som er over prisen på eiendommen er satt.</p><p>Gjør nødvendige endringer for å få til dette i&nbsp;<strong>BusinessProperty</strong>.</p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="0521b931-79ab-4694-a390-7dcd7213f219" data-macro-parameters="title=Kodeskjelett del 6" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDZ9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="e930cc14-4ef5-44c2-b090-e4ebff9b8e4a" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del5_8;
+
+public class BusinessProperty extends Property {
+
+	/**
+	 * BusinessProperty should implement the following extensions from Property. As
+	 * soon as a bid is received that is equal to or higher than the price, the
+	 * property should be marked as sold
+	 */
+
+	public BusinessProperty(String name, int price) {
+		super(name, price);
+	}
+
+	public static void main(String[] args) {
+		Property p = new BusinessProperty("name", 1000);
+		p.bidReceived("BIDDER", 500);
+		// 500
+		System.out.println(p.getHighestBid());
+		p.bidReceived("BIDDER2", 1100);
+		// 1100
+		System.out.println(p.getHighestBid());
+		// true
+		System.out.println(p.isSold());
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="ed6ef435-9e45-49f4-a1cf-ebb44b15b7b1" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="7058deff-e69e-49d8-bd78-4f626afe314c" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del5_8;
+
+public class BusinessProperty extends Property {
+
+	/**
+	 * BusinessProperty should implement the following extensions from Prope rty. As
+	 * soon as a bid is received that is equal to or higher than the price, the
+	 * property should be marked as sold
+	 */
+	public BusinessProperty(String name, int price) {
+		super(name, price);
+	}
+
+	@Override
+	/**
+	 * Creates a new bid and notifies any listeners that the bid has been received
+	 * If the bid is higher oe equal than the asking price, the property should be
+	 * registered as sold
+	 * 
+	 * @param bidder the name of the bidder
+	 * @param bid    the amount of the bid
+	 */
+	public void bidReceived(String bidder, int bid) {
+		super.bidReceived(bidder, bid);
+		if (bid &gt;= this.getPrice()) {
+			this.setIsSold();
+		}
+	}
+
+	public static void main(String[] args) {
+		Property p = new BusinessProperty("name", 1000);
+		p.bidReceived("BIDDER", 500);
+		// 500
+		System.out.println(p.getHighestBid());
+		p.bidReceived("BIDDER2", 1100);
+		// 1100
+		System.out.println(p.getHighestBid());
+		// true
+		System.out.println(p.isSold());
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="c100fca6-5cd3-4644-91df-64d006661bc2" data-macro-parameters="title=Del 7 - Objektstrukturer og java-teknikker (10 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgNyAtIE9iamVrdHN0cnVrdHVyZXIgb2cgamF2YS10ZWtuaWtrZXIgKDEwICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Implementer metodene i&nbsp;<strong>Realtor</strong></p><ul><li><em>Realtor(double comission)</em>&nbsp;oppretter et&nbsp;<strong>Realtor</strong>&nbsp;objekt med en gitt provisjon</li><li><em>setCommission(double comission)</em>&nbsp;Oppdaterer provisjonen til megleren</li><li><em>addProperty(Property property)</em>&nbsp;Legger til en eiendom i porteføljen til megleren</li><li><em>calculateTotalCommission()</em>&nbsp;- Regner ut total provisjonslønn basert på alle solgte boliger megleren har</li><li><em>iterator()</em>&nbsp;- Returnerer en iterator for å iterere gjennom alle eiendommene til megleren</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="932c93a3-e1b8-4759-8dcc-b4de3dbfa4d5" data-macro-parameters="title=Kodeskjelett del 7" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDd9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="0f86e2cb-e067-4aad-9cb3-9b4a032afa55" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del5_8;
+
+import java.util.Iterator;
+
+public class Realtor implements Iterable&lt;Property&gt; {
+
+	/**
+	 * Creates a Realtor object
+	 * 
+	 * @param name       the name of the realtor
+	 * @param commission the commission the realtor takes for a sale
+	 */
+	public Realtor(String name, double commission) {
+		// TODO
+	}
+
+	/**
+	 * 
+	 * @return the name of the realtor
+	 */
+	public String getName() {
+		// TODO
+		return null;
+	}
+
+	/**
+	 * 
+	 * @param commission the new commission of the realtor
+	 * 
+	 * @throws IllegalArgumentException if the commission not between (excluding) 0
+	 *                                  and (including) 100.
+	 */
+	public void setCommission(double commission) {
+		// TODO
+	}
+
+	/**
+	 * Adds a property to the realtor's sale collection
+	 * 
+	 * @param property a property
+	 */
+	public void addProperty(Property property) {
+		// TODO
+	}
+
+	/**
+	 * The total commission is calculated as the sum of the highest bid of each sold
+	 * property times the commission rate. The commission rate is calculated based
+	 * on the realtor's current commission rate and does not need to consider
+	 * historical commission rates
+	 * 
+	 * A realtor with commission of 10 %, and two sold properties sold at 1000 each,
+	 * would have a total commission value of 200
+	 * 
+	 * @return the calculated commission of the realtor
+	 */
+	public double calculateTotalCommission() {
+		// TODO
+		return 0;
+	}
+
+	@Override
+	public Iterator&lt;Property&gt; iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/**
+	 * 
+	 * @return an iterator to be able to iterate through all the properties of this
+	 *         realtor
+	 */
+	public Iterator&lt;Property&gt; iterable() {
+		return null;
+	}
+
+	public static void main(String[] args) {
+		Realtor realtor = new Realtor("test", 10);
+		// The following will only work if BusinessProperty and Property has the correct
+		// implementation
+		Property p = new Property("name", 1500);
+		p.bidReceived("BIDDER", 2000);
+		p.setIsSold();
+		realtor.addProperty(p);
+		// Should be 200
+		System.out.println(realtor.calculateTotalCommission());
+	}
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="16e0114c-29e7-4a72-b251-b8e9f25b68dc" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="710313c8-e51d-47fc-8308-40e39c767ef2" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del5_8;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Realtor implements Iterable&lt;Property&gt;{
+
+	private List&lt;Property&gt; properties = new ArrayList&lt;&gt;();
+	private double commission;
+	private String name;
+	/**
+	 * Creates a Realtor object
+	 * 
+	 * @param name      the name of the realtor
+	 * @param comission the commission the realtor takes for a sale
+	 */
+	public Realtor(String name, double commission) {
+		this.setCommission(commission);
+		this.name = name;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+
+	/**
+	 * 
+	 * @param comission the new comission of the realtor
+	 * 
+	 * @throws IllegalArgumentException if the commission not between (excluding) 0
+	 *                                  and (including) 100.
+	 */
+	public void setCommission(double commission) {
+		if (commission &lt;= 0 || commission &gt; 100) {
+			throw new IllegalArgumentException("Comission must be between 0 and 100");
+		}
+		this.commission = commission;
+	}
+
+	/**
+	 * Adds a property to the realtor's sale collection
+	 * 
+	 * @param property a property
+	 */
+	public void addProperty(Property property) {
+		this.properties.add(property);
+	}
+
+	/**
+	 * The total comission is calculated as the sum of the highest bid of each sold
+	 * property times the commission rate The comission rate is calculated based on
+	 * the realtor's current commission rate and does not need to consider
+	 * historical commission rates
+	 * 
+	 * @return the calculated commission of the realtor
+	 */
+	public double calculateTotalCommission() {
+		return this.properties.stream().filter(p -&gt; p.isSold()).mapToDouble(Property::getHighestBid)
+				.map(price -&gt; price * (commission) / 100.0).sum();
+	}
+
+	@Override
+	public Iterator&lt;Property&gt; iterator() {
+		return this.properties.iterator();
+	}
+	
+	public String toString() {
+		return this.name;
+	}	
+	public static void main(String[] args) {
+		Realtor realtor = new Realtor("test", 10);
+		// Will only work if BusinessProperty and Property has the correct
+		// implementation
+		Property p = new Property("name", 1500);
+		p.bidReceived("BIDDER", 2000);
+		p.setIsSold();
+		realtor.addProperty(p);
+		// Should be 200
+		System.out.println(realtor.calculateTotalCommission());
+	}
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="c960f609-d177-4e0b-9014-33a21f469c0b" data-macro-parameters="title=Del 8 - Interfaces og Comparator (5 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgOCAtIEludGVyZmFjZXMgb2cgQ29tcGFyYXRvciAoNSAlKX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Implementer metoden i&nbsp;<strong><span style="letter-spacing: 0.0px;">RealtorComparator</span></strong></p><ul><li><p class="auto-cursor-target"><em>sortRealtorsByHighestBidReceived</em>&nbsp;- Returnerer en&nbsp;<strong>Comparator</strong>&nbsp;som sorterer en liste med&nbsp;<strong>Realtor</strong>-objekter. Disse skal sorteres etter hvilken megler som har oppnådd det høyeste budet basert på&nbsp;alle eiendommene fra høyest til lavest</p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="ea643aab-90a1-47cf-8bc4-d6c47b474f39" data-macro-parameters="title=Kodeskjelett del 8" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDh9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="775f2095-fe4c-4e96-af32-43e54c5e4659" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del5_8;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class RealtorComparator {
+
+	/**
+	 * 
+	 * @return a comparator that sorts Realtor objects based on the highest bid they
+	 *         have received on any of their properties from highest to lowest
+	 * 
+	 *         Example output with a list of one "realtor1" with two properties,
+	 *         property1 with highest bid 1000, and property2 with highest bid 2000,
+	 *         and a second "realtor2" with one property with the highest bid of
+	 *         500, and a third "realtor3" with one property with the highest bid of
+	 *         3000 would yield the following result
+	 * 
+	 *         realtor3
+	 *         realtor1 
+	 *         realtor2
+	 * 
+	 *         I.e: This sorts by the highest, single sale, and not the total of
+	 *         sales for each realtor.
+	 * 
+	 * 
+	 */
+	public static Comparator&lt;Realtor&gt; sortRealtorsByHighestBidReceived() {
+		return null;
+	}
+
+	public static void main(String[] args) {
+		// This may not yield the correct results if Property/BusinessProperty/Realtor
+		// has not been correctly implemented
+		Realtor realtor = new Realtor("test1", 10);
+		Realtor realtor2 = new Realtor("test2", 10);
+		Property p = new BusinessProperty("name", 1500);
+		p.bidReceived("BIDDER", 2000);
+		Property p2 = new BusinessProperty("name2", 1000);
+		p2.bidReceived("BIDDER", 1500);
+		realtor.addProperty(p);
+		realtor2.addProperty(p2);
+		List&lt;Realtor&gt; realtors = Arrays.asList(realtor2, realtor);
+		System.out.println(realtors);
+		Collections.sort(realtors, sortRealtorsByHighestBidReceived());
+		// A more useful to string method or using the debugger might be helpful here
+		// Should be in the opposite direction with realtor, and then realtor2
+		System.out.println(realtors);
+
+	}
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="01697dd0-639e-423c-8877-6dc0ecba0b64" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="403e3c60-f5d6-46d9-984c-01b5fb7ab73c" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del5_8;
+
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class RealtorComparator {
+
+	/**
+	 * 
+	 * @return a comparator that sort Realtor objects based on the highest bid they
+	 *         have received on any of their properties from highest to lowest
+	 * 
+	 *         Example output with a list of one "realtor1" with two properties,
+	 *         property1 with highest bid 1000, and property2 with highest bid 2000,
+	 *         and a second "realtor2" with one property with the highest bid of
+	 *         500, and a third "realtor3" with one property with the highest bid of
+	 *         3000 would yield the following result
+	 * 
+	 *         realtor3 
+	 *         realtor1 
+	 *         realtor2
+	 * 
+	 * 
+	 */
+	public static Comparator&lt;Realtor&gt; sortRealtorsByHighestBidReceived() {
+		return (Realtor r1, Realtor r2) -&gt; {
+			int highestBidR1 = 0;
+			for (Property property: r1) {
+				highestBidR1 = Math.max(highestBidR1, property.getHighestBid());
+			}
+			int highestBidR2 = 0;
+			for (Property property: r2) {
+				highestBidR1 = Math.max(highestBidR2, property.getHighestBid());
+			}
+			return highestBidR2-highestBidR1;
+		};
+	}
+	
+	public static void main(String[] args) {
+		// This may not yield the correct results if Property/BusinessProperty/Realtor has not been correctly implemented
+		Realtor realtor = new Realtor("test1", 10);
+		Realtor realtor2 = new Realtor("test2", 10);
+		Property p = new BusinessProperty("name", 1500);
+		p.bidReceived("BIDDER", 2000);
+		Property p2 = new BusinessProperty("name2", 1000);
+		p2.bidReceived("BIDDER", 1500);
+		realtor.addProperty(p);
+		realtor2.addProperty(p2);
+		List&lt;Realtor&gt; realtors=  Arrays.asList(realtor2, realtor);
+		System.out.println(realtors);
+		Collections.sort(realtors, sortRealtorsByHighestBidReceived());
+		// A more useful to string method or using the debugger might be helpful here
+		System.out.println(realtors);
+		
+	}
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></li></ul></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="4c95dd54-b1e1-4ad9-b80a-c55060164ec5" data-macro-parameters="title=Del 9 - Funksjonelle grensesnitt og lister (10 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgOSAtIEZ1bmtzam9uZWxsZSBncmVuc2Vzbml0dCBvZyBsaXN0ZXIgKDEwICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Fyll ut&nbsp;<strong>UniversityHandbookUtils</strong>&nbsp;sine metoder for operasjoner på en liste med&nbsp;<strong>Course</strong>-objekter.</p><ul><li style="list-style-type: none;background-image: none;"><ul><li><em>getCourseNames(List courses)</em>&nbsp;- Returnerer en liste med navnene til alle emnene</li><li><em>getCourseProperties(List courses, Function&lt;Course, String&gt; function)</em>&nbsp;- Returnerer alle emner transformerte ved hjelp av funksjonen</li><li><em>calculateGradesSummary(List courses, BinaryOperator operator)</em>&nbsp;- Returnerer resultatet av å kjøre operatoren på alle karaktersnittene til emnene</li><li><em>getCoursesYouCanTake(List courses, List takenCourses)</em>&nbsp;- Returnerer alle emnene hvor du tilfredstiller alle forkunnskapskravene (takenCourses representerer her emnene du tidligere har tatt)<br><br></li></ul></li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="8ea2c7c6-924e-40f3-bce7-2aab9f2b1aa2" data-macro-parameters="title=Kodeskjelett del 9" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDl9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="088d7def-e07e-434b-b299-0b493d717a83" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del9;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class Course {
+	private String courseName;
+	private List&lt;Course&gt; prerequisites = new ArrayList&lt;&gt;();
+	private double averageGrade;
+
+	public Course(String courseName, double averageGrade) {
+		this(courseName);
+		this.averageGrade = averageGrade;
+	}
+
+	public Course(String courseName) {
+		this.courseName = courseName;
+	}
+	
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setAverageGrade(double averageGrade) {
+		this.averageGrade = averageGrade;
+	}
+	
+	public double getAverageGrade() {
+		return averageGrade;
+	}
+
+	public void addPrequisite(Course course) {
+		this.prerequisites.add(course);
+	}
+	
+	public Collection&lt;Course&gt; getPrerequisites() {
+		return new ArrayList&lt;&gt;(prerequisites);
+	}
+	
+	public String toString() {
+		return this.courseName;
+	}
+
+}
+
+package del9;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+
+public class UniversityHandbookUtils {
+
+	/**
+	 * 
+	 * @param courses List of course objects
+	 * @return a list of course names
+	 */
+	public static Collection&lt;String&gt; getCourseNames(Collection&lt;Course&gt; courses) {
+		// TODO
+		return Arrays.asList();
+	}
+
+	/**
+	 * 
+	 * @param courses List of course objects
+	 * @return a list of a course objects transformed by the function
+	 */
+	public static Collection&lt;String&gt; getCourseProperties(Collection&lt;Course&gt; courses,
+			Function&lt;Course, String&gt; function) {
+		// TODO
+		return Arrays.asList();
+	}
+
+	/**
+	 * 
+	 * @param courses  a list of course objects
+	 * @param operator a binary operator
+	 * @return the result of applying the operator across all average grades
+	 */
+	public static double calculateGradesSummary(Collection&lt;Course&gt; courses, BinaryOperator&lt;Double&gt; operator) {
+		// TODO
+		return 0;
+	}
+
+	/**
+	 * 
+	 * @param courses      List of course objects
+	 * @param takenCourses List of course objects
+	 * @return a list of courses where takenCourses contains all prerequisites
+	 *         needed to enroll in the course
+	 */
+	public static Collection&lt;Course&gt; getCoursesYouCanTake(Collection&lt;Course&gt; courses, Collection&lt;Course&gt; takenCourses) {
+		// TODO
+		return Arrays.asList();
+	}
+
+	public static void main(String[] args) {
+		Course tdt4109 = new Course("TDT4109", 3.23);
+		Course tdt4100 = new Course("TDT4100", 3.23);
+		Course tdt4120 = new Course("TDT4120", 3.23);
+		Course tdt1337 = new Course("TDT1337", 3.23);
+		Course tdt3713 = new Course("TDT3713", 3.23);
+
+		tdt4100.addPrequisite(tdt4109);
+		tdt4120.addPrequisite(tdt4109);
+		tdt4120.addPrequisite(tdt4100);
+		tdt1337.addPrequisite(tdt3713);
+		tdt3713.addPrequisite(tdt1337);
+		List&lt;Course&gt; courses = Arrays.asList(tdt4109, tdt4100, tdt4120, tdt1337, tdt3713);
+
+		// These two lines should print the same list of course names
+		System.out.println(getCourseNames(courses));
+		System.out.println(getCourseProperties(courses, c -&gt; c.getCourseName()));
+
+		// Should print 16.15
+		System.out.println(calculateGradesSummary(courses, (prevGrade, currentGrade) -&gt; prevGrade + currentGrade));
+
+		// Should print tdt4109, tdt4100 (order does not matter)
+		System.out.println(getCoursesYouCanTake(courses, Arrays.asList(tdt4109)));
+
+	}
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="6ab3ead1-8e94-4f22-9fef-fb5c300a95d7" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="098ba9c9-0f79-4911-9ffd-2a93a6b85ab0" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del9;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class UniversityHandbookUtils {
+
+	/**
+	 * 
+	 * @param courses List of course objects
+	 * @return a list of course names
+	 */
+	public static List&lt;String&gt; getCourseNames(Collection&lt;Course&gt; courses) {
+		return courses.stream().map(Course::getCourseName).collect(Collectors.toList());
+	}
+
+	/**
+	 * 
+	 * @param courses List of course objects
+	 * @return a list of a course objects transformed by the function
+	 */
+	public static Collection&lt;String&gt; getCourseProperties(Collection&lt;Course&gt; courses,
+			Function&lt;Course, String&gt; function) {
+		return courses.stream().map(function).collect(Collectors.toList());
+	}
+
+	/**
+	 * 
+	 * @param courses  a list of course objects
+	 * @param operator a binary operator
+	 * @return a summary of all the grades of the courses by applying the binary
+	 *         operator
+	 */
+	public static double calculateGradesSummary(Collection&lt;Course&gt; courses, BinaryOperator&lt;Double&gt; operator) {
+		return courses.stream().map(Course::getAverageGrade).reduce(operator).get();
+
+	}
+
+	/**
+	 * 
+	 * @param courses      List of course objects
+	 * @param takenCourses List of course objects
+	 * @return a list of courses where takenCourses contains all prerequisites
+	 *         needed to enroll in the course
+	 */
+	public static Collection&lt;Course&gt; getCoursesYouCanTake(Collection&lt;Course&gt; courses, Collection&lt;Course&gt; takenCourses) {
+		return courses.stream().filter(course -&gt; takenCourses.containsAll(course.getPrerequisites()))
+				.collect(Collectors.toList());
+	}
+	
+	public static void main(String[] args) {
+		Course tdt4109 = new Course("TDT4109", 3.23);
+		Course tdt4100 = new Course("TDT4100", 3.23);
+		Course tdt4120 = new Course("TDT4120", 3.23);
+		Course tdt1337 = new Course("TDT1337", 3.23);
+		Course tdt3713 = new Course("TDT3713", 3.23);
+
+		tdt4100.addPrequisite(tdt4109);
+		tdt4120.addPrequisite(tdt4109);
+		tdt4120.addPrequisite(tdt4100);
+		tdt1337.addPrequisite(tdt3713);
+		tdt3713.addPrequisite(tdt1337);
+		List&lt;Course&gt; courses = Arrays.asList(tdt4109, tdt4100, tdt4120, tdt1337, tdt3713);
+		
+		// These two lines should print the same list of course names
+		System.out.println(getCourseNames(courses));
+		System.out.println(getCourseProperties(courses, c -&gt; c.getCourseName()));
+		
+		// Should print 16.15 
+		System.out.println(calculateGradesSummary(courses, (prevGrade, currentGrade) -&gt; prevGrade + currentGrade));
+		
+		// Should print tdt4109, tdt4100 (order does not matter) 
+		System.out.println(getCoursesYouCanTake(courses, Arrays.asList(tdt4109)));
+		
+	}
+
+
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="93f7a3c1-bdd3-4ba4-b783-2528e96f810a" data-macro-parameters="title=Del 10 - Testing (5 %)" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1EZWwgMTAgLSBUZXN0aW5nICg1ICUpfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>Ta utgangspunkt i&nbsp;<strong>TestableClass</strong>. De to metodene utenom konstruktøren har feil i implementasjonen, eller håndterer ikke alle tilfeller like godt.</p><p>Fyll ut testmetodene i&nbsp;<strong>TestableClassTest</strong>&nbsp;i&nbsp;<em>src/test/java/del10</em>&nbsp;som skal eksponere feilene. (Testen bør ikke bestå)</p><ul><li><em>testIsMyStringEqualsToYieldsWrongResult()</em>&nbsp;- Fanger opp et tilfelle hvor&nbsp;<em>isMyStringEqualsTo</em>&nbsp;gir feil resultatet</li><li><em>testIncrementIntegerHandlesEdgeCases()</em>&nbsp;- Fanger opp et tilfelle hvor&nbsp;<em>getMyIntegerIncrement</em>&nbsp;ikke oppfører seg slik den skal.</li></ul><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="c0035439-7b0d-4506-803c-4ea2575cbd2f" data-macro-parameters="title=Kodeskjelett del 10" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Lb2Rlc2tqZWxldHQgZGVsIDEwfQ&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="98aad656-b7f0-4362-8a0d-42b8c73a7805" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del10;
+
+public class TestableClass {
+	
+	private Integer myInteger;
+	private String myString;
+	
+	public TestableClass(Integer myInteger, String myString) {
+		this.myInteger = myInteger;
+		this.myString = myString;
+	}
+	
+	/**
+	 * 
+	 * @param otherString a string
+	 * @return whether myString text value is equal to the otherString
+	 */
+	public boolean isMyStringEqualTo(String otherString) {
+		return this.myString == otherString;
+	}
+	
+	/**
+	 * 
+	 * @return myInteger + 1;
+	 */
+	public Integer getMyIntegerIncrement() {
+		return this.myInteger + 1;
+	}
+}
+
+
+package del10;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class TestableClassTest {
+
+	@Test
+	public void testIsMyStringEqualsToYieldsWrongResult() {
+
+	}
+
+	@Test
+	public void testIncrementIntegerHandlesEdgeCases() {
+
+	}
+}
+
+
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="8aadd997-7c2e-46f1-b060-fead74211591" data-macro-parameters="title=LF" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MRn0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p class="auto-cursor-target"><br></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="49f19397-08c8-4c9c-9fc8-e110b7ccded0" data-macro-parameters="language=java" data-macro-schema-version="1" style="background-image: url(https://www.ntnu.no/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YX0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>package del10;
+
+public class TestableClass {
+
+	private Integer myInteger;
+	private String myString;
+	
+	public TestableClass(Integer myInteger, String myString) {
+		this.myInteger = myInteger;
+		this.myString = myString;
+	}
+	
+	/**
+	 * 
+	 * @param otherString a string
+	 * @return whether myString text value is equal to the otherString
+	 */
+	public boolean isMyStringEqualTo(String otherString) {
+		return this.myString == otherString;
+	}
+	
+	/**
+	 * 
+	 * @return myInteger + 1;
+	 */
+	public Integer getMyIntegerIncrement() {
+		return this.myInteger + 1;
+	}
+
+}
+
+package del10;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+public class TestableClassTest {
+
+	@Test
+	public void testIsMyStringEqualsToYieldsWrongResult() {
+		TestableClass test = new TestableClass(1, "test");
+		String equalString = new String("test");
+		Assertions.assertTrue(test.isMyStringEqualTo(equalString));
+		
+	}
+	
+	@Test
+	public void testIncrementIntegerHandlesEdgeCases() {
+		TestableClass test = new TestableClass(null, "test");
+		Assertions.assertNull(test.getMyIntegerIncrement());
+
+	}
+}
+</pre></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p class="auto-cursor-target"><br></p></td></tr></tbody></table><p><br></p><p><br></p>
+        <p>&nbsp;</p>
+    
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
