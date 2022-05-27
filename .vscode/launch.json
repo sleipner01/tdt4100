@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CachingCalculations",
+            "request": "launch",
+            "mainClass": "minegenkode/eksamenOving.kode.kont2021.CachingCalculations",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch VoterCounter",
             "request": "launch",
             "mainClass": "minegenkode/eksamenOving.kode.kont2021.VoterCounter",
