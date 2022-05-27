@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "minegenkode/eksamenOving.kode.kont2021.App",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch CachingCalculations",
             "request": "launch",
             "mainClass": "minegenkode/eksamenOving.kode.kont2021.CachingCalculations",

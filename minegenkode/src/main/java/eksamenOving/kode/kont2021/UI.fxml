@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="del2.AppController">
+<AnchorPane prefHeight="400.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eksamenOving.kode.kont2021.AppController">
    <children>
       <Label layoutX="112.0" layoutY="111.0" text="Brukernavn" />
       <Label layoutX="272.0" layoutY="111.0" text="Passord" />

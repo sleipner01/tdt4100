@@ -1,8 +1,6 @@
 package eksamenOving.kode.kont2021;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map.Entry;
 
 public class VoterCounter {
 
