@@ -62,7 +62,7 @@ public class Property {
 	 * @throws IllegalStateException if no bids have been received
 	 */
 	public void setIsSold() {
-        if(this.getNumberOfBids() <= 0) throw new IllegalArgumentException("No bids recieved");
+        if(this.getNumberOfBids() <= 0) throw new IllegalStateException("No bids recieved");
 		this.isSold = true;
 	}
 
@@ -135,8 +135,8 @@ public class Property {
 	 * 
 	 * @throws IllegalStateException - if the property is already sold
 	 */
-	public void bidReceived(String bidder, int bid) {
-        if(this.isSold) throw new IllegalArgumentException("Already sold");
+	public void bidReceived(String bidder, int bid) throws IllegalStateException {
+        if(this.isSold) throw new IllegalStateException("Already sold");
 
         Bid newBid = new Bid(bidder, this, bid);
 
@@ -157,6 +157,7 @@ public class Property {
 	 * @param bid the most recent bid
 	 */
 	void notifyListeners(Bid bid) {
+        // this.listeners.get(ALL).forEach(listener -> listener.alert(bid));
 		this.listeners.get(ALL).forEach(new Consumer<BidListener>() {
             public void accept(BidListener listener) {
                 listener.alert(bid);
@@ -176,7 +177,12 @@ public class Property {
 	 * @return the current highest bid. If the property has no bids, return 0
 	 */
 	public int getHighestBid() {
+        if(this.bids.size() <= 0) return 0;
+
 		return this.bids.get(0).getBid();
+
+        // return this.bids.stream().mapToInt(b -> b.getBid()).max().orElse(0);
+
 	}
 
 	public static void main(String[] args) {
