@@ -1,4 +1,4 @@
-package eksamenOving.kode.kont2021;
+package eksamenOving.kode.kont2021.task4;
 
 public class Temperature {
 

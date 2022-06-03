@@ -3,6 +3,7 @@ package eksamenOving.kode.kont2021.task5to8;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class Property {
 
@@ -11,7 +12,7 @@ public class Property {
     private int price;
     private boolean isSold;
     private List<Bid> bids;
-    private HashMap<Integer, List<Bid>> listeners;
+    private HashMap<Integer, List<BidListener>> listeners;
 
     private final int ALL = 0;
     private final int HIGHEST = 1; 
@@ -78,7 +79,13 @@ public class Property {
 	 * @param listener register listener to be notified of any bids to this property
 	 */
 	public void addListenerForAllBids(BidListener listener) {
-		// TODO
+        if(this.listeners.get(ALL).contains(listener)) 
+            throw new IllegalArgumentException("Already added");
+
+        if(this.listeners.get(HIGHEST).contains(listener))
+        this.listeners.get(HIGHEST).remove(listener);
+
+		this.listeners.get(ALL).add(listener);
 	}
 
 	/**
@@ -89,8 +96,14 @@ public class Property {
 	 *                 bids
 	 */
 	public void addListenerForHighestBids(BidListener listener) {
-		// TODO
-	}
+        if(this.listeners.get(HIGHEST).contains(listener)) 
+        throw new IllegalArgumentException("Already added");
+
+		if(this.listeners.get(ALL).contains(listener))
+    		this.listeners.get(ALL).remove(listener);
+
+		this.listeners.get(HIGHEST).add(listener);
+    }
 
 	/**
 	 * 
@@ -98,7 +111,20 @@ public class Property {
 	 *                 the above methods
 	 */
 	public void removeListener(BidListener listener) {
-		// TODO
+        List<BidListener> temp = this.listeners.get(ALL);
+        
+        if(temp.contains(listener)) {
+            temp.remove(listener);
+            return;
+        }
+
+        temp = this.listeners.get(HIGHEST);
+        if(temp.contains(listener)) {
+            temp.remove(listener);
+            return;
+        }
+        
+        
 	}
 
 	/**
@@ -110,7 +136,15 @@ public class Property {
 	 * @throws IllegalStateException - if the property is already sold
 	 */
 	public void bidReceived(String bidder, int bid) {
-		// TODO
+        if(this.isSold) throw new IllegalArgumentException("Already sold");
+
+        Bid newBid = new Bid(bidder, this, bid);
+
+		this.bids.add(newBid);
+
+        this.bids.sort((a, b) -> b.getBid() - a.getBid());
+
+        this.notifyListeners(newBid);
 	}
 
 	/**
@@ -123,7 +157,18 @@ public class Property {
 	 * @param bid the most recent bid
 	 */
 	void notifyListeners(Bid bid) {
-		// TODO
+		this.listeners.get(ALL).forEach(new Consumer<BidListener>() {
+            public void accept(BidListener listener) {
+                listener.alert(bid);
+            }
+        });
+
+        if(bid.getBid() > this.getHighestBid())
+            this.listeners.get(HIGHEST).forEach(new Consumer<BidListener>() {
+                public void accept(BidListener listener) {
+                    listener.alert(bid);
+                }
+            });
 	}
 
 	/**
@@ -131,8 +176,7 @@ public class Property {
 	 * @return the current highest bid. If the property has no bids, return 0
 	 */
 	public int getHighestBid() {
-		// TODO
-		return 0;
+		return this.bids.get(0).getBid();
 	}
 
 	public static void main(String[] args) {

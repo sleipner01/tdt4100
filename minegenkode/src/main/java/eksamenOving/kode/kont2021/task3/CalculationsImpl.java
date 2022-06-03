@@ -1,4 +1,4 @@
-package eksamenOving.kode.kont2021;
+package eksamenOving.kode.kont2021.task3;
 
 public class CalculationsImpl implements Calculations {
 

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Property",
+            "request": "launch",
+            "mainClass": "minegenkode/eksamenOving.kode.kont2021.task5to8.Property",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch DelegatingTemperature",
             "request": "launch",
             "mainClass": "minegenkode/eksamenOving.kode.kont2021.DelegatingTemperature",

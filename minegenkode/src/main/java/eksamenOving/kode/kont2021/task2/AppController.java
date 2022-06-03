@@ -1,4 +1,4 @@
-package eksamenOving.kode.kont2021;
+package eksamenOving.kode.kont2021.task2;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
