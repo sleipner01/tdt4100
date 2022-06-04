@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch RealtorComparator",
+            "request": "launch",
+            "mainClass": "minegenkode/eksamenOving.kode.kont2021.task5to8.RealtorComparator",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch Realtor",
             "request": "launch",
             "mainClass": "minegenkode/eksamenOving.kode.kont2021.task5to8.Realtor",

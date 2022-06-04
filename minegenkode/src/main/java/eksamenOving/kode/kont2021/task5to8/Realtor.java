@@ -104,6 +104,11 @@ public class Realtor implements Iterable<Property> {
     public Iterator<Property> iterable() {
         return this.iterator();
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
  
     public static void main(String[] args) {
         Realtor realtor = new Realtor("test", 10);
