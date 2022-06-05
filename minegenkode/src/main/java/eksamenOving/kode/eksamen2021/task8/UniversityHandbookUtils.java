@@ -1,9 +1,6 @@
 package eksamenOving.kode.eksamen2021.task8;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.function.Predicate;
 
 import eksamenOving.kode.eksamen2021.task7.Course;
