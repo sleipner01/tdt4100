@@ -23,6 +23,9 @@
             "name": "Launch Realtor",
             "request": "launch",
             "mainClass": "minegenkode/eksamenOving.kode.kont2021.task5to8.Realtor",
+            "name": "Launch BusinessProperty",
+            "request": "launch",
+            "mainClass": "minegenkode/eksamenOving.kode.kont2021.task5to8.BusinessProperty",
             "projectName": "minegenkode"
         },
         {
