@@ -47,6 +47,6 @@ public class UniversityHandbookUtils {
      * @return whether the courses contains an impossible course
      */
     public static boolean containsImpossibleCourse(Collection<Course> courses) {
-        
+        return courses.stream().anyMatch(course -> course.getPrerequisites().stream().anyMatch(prerequesite -> prerequesite.getPrerequisites().contains(course)));
     }
 }
