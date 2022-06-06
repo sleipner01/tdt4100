@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MathApp",
+            "request": "launch",
+            "mainClass": "minegenkode/eksamenOving.kode.kont2020.stuff.MathApp",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
+            "name": "Launch Movie",
+            "request": "launch",
+            "mainClass": "minegenkode/eksamenOving.kode.kont2020.stuff.Movie",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch CarRentalAwards",
             "request": "launch",
             "mainClass": "minegenkode/eksamenOving.kode.eksamen2021.task6.CarRentalAwards",

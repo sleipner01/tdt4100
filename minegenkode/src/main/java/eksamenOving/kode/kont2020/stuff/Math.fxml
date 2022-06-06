@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eksamenOving.kode.kont2020.stuff.MathController">
+	<children>
+		<HBox>
+			<children>
+            <TextField fx:id="firstField" />
+				<ComboBox fx:id="typeSelector" />
+				<TextField fx:id="secondField" />
+				<Button onAction="#onCalculate" text="Calculate" />
+			</children>
+		</HBox>
+<!-- 		<Label resultLabel fx:id="resultLabel" prefHeight="100.0" wrapText="true" /> -->
+		<TextArea fx:id="resultArea" prefHeight="100.0" wrapText="true" />
+		<Button onAction="#randomizeNumbers" text="Randomize numbers" />
+<!-- 		<Label>Shopping List:</Label> -->
+	</children>
+</VBox>
