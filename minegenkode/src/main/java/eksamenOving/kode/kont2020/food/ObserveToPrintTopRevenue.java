@@ -1,6 +1,6 @@
-package food;
+package eksamenOving.kode.kont2020.food;
 
-import static org.junit.Assert.assertEquals;
+// import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import food.def.KitchenObserver;
+import eksamenOving.kode.kont2020.food.def.KitchenObserver;
 
 /**
  * The main point of this implementation of KitchenObserver is to keep track of revenue
@@ -21,7 +21,6 @@ import food.def.KitchenObserver;
 public class ObserveToPrintTopRevenue implements KitchenObserver {
 
 	// Internal variables go here:
-	
 	
 	/**
 	 * 
@@ -50,7 +49,7 @@ public class ObserveToPrintTopRevenue implements KitchenObserver {
 		ObserveToPrintTopRevenue test = new ObserveToPrintTopRevenue();
 		System.out.println("> Only waffles: 50.0");
 		test.mealOrder("waffles", 50.0);
-		assertEquals("waffles: 50.0", test.getTopSellers().trim());
+		//assertEquals("waffles: 50.0", test.getTopSellers().trim());
 		System.out.println("> Only waffles: 100.0");
 		test.mealOrder("waffles", 50.0);
 		System.out.println("> Pancakes and waffles (two lines): 100.0");

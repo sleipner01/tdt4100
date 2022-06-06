@@ -1,8 +1,8 @@
-package food.def;
+package eksamenOving.kode.kont2020.food.def;
 
 import java.util.Collection;
 
-import food.Customer;
+import eksamenOving.kode.kont2020.food.Customer;
 
 // Do no edit this file!
 public interface IKitchen {

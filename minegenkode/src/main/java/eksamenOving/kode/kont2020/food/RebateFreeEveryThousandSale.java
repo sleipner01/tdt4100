@@ -1,6 +1,6 @@
-package food;
+package eksamenOving.kode.kont2020.food;
 
-import food.def.PriceProvider;
+import eksamenOving.kode.kont2020.food.def.PriceProvider;
 
 /**
  * A rebate where every thousandth purchase (regardless of meal, price, or customer)
@@ -10,7 +10,12 @@ public class RebateFreeEveryThousandSale implements PriceProvider {
 
 	@Override
 	public double providePrice(String meal, double price, Customer customer) {
-		return 0; // dummy return value
+		int orders = customer.getNumberOfOrderedMeals();
+
+		if(orders == 0) return 1;
+		if(orders % 1000 == 0) return 0;
+
+		return 1;
 	}
 
 

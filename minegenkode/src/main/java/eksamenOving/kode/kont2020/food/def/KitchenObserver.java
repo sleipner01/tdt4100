@@ -1,4 +1,4 @@
-package food.def;
+package eksamenOving.kode.kont2020.food.def;
 
 // THIS INTERFACE IS NOT TO BE EDITED
 public interface KitchenObserver {

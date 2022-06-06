@@ -1,6 +1,6 @@
-package food;
+package eksamenOving.kode.kont2020.food;
 
-import food.def.PriceProvider;
+import eksamenOving.kode.kont2020.food.def.PriceProvider;
 
 /**
  * A rebate where a customer will get 50% off on every fifth purchase - 
@@ -16,7 +16,11 @@ public class RebateEveryFifthBuyFromSameCustomer implements PriceProvider {
 	 */
 	@Override
 	public double providePrice(String meal, double price, Customer customer) {
-		return 0; // dummy return value
+		int orders = customer.getNumberOfOrderedMeals() - 1;
+		if(orders == 0) return 0.5;
+		if(orders % 5 == 0) return 0.5;
+
+		return 1;
 	}
 
 }

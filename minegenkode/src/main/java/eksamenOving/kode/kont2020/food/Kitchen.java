@@ -1,18 +1,26 @@
-package food;
+package eksamenOving.kode.kont2020.food;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-import food.def.IKitchen;
-import food.def.KitchenObserver;
-import food.def.PriceProvider;
+import eksamenOving.kode.kont2020.food.def.IKitchen;
+import eksamenOving.kode.kont2020.food.def.KitchenObserver;
+import eksamenOving.kode.kont2020.food.def.PriceProvider;
 
 // Important: There is no similarity between Kitchen in the exam v2020 and this one.
 public class Kitchen implements IKitchen {
 
 	// Add internal variables here:
+	private Collection<String> recipes;
+	private List<Customer> customers;
+	private double turnover;
 	
 	public Kitchen() {
 		super();
+		this.recipes = new ArrayList<>();
+		this.customers = new ArrayList<>();
+		this.turnover = 0;
 	}
 	
 	
@@ -24,6 +32,10 @@ public class Kitchen implements IKitchen {
 	 */
 	@Override
 	public void addCustomer(Customer customer) {
+		if(getCustomer(customer.getName()) == null)
+			throw new IllegalArgumentException("This customer already exists");
+
+		this.customers.add(customer);
 	}
 
 	/**
@@ -32,6 +44,7 @@ public class Kitchen implements IKitchen {
 	 */
 	@Override
 	public void addRecipe(String recipe) {
+		recipes.add(recipe);
 	}
 	
 	/**
@@ -41,7 +54,7 @@ public class Kitchen implements IKitchen {
 	 */
 	@Override
 	public double getTurnover() {
-		return 0; // Dummy return value
+		return this.turnover;
 	}
 
 	
@@ -50,7 +63,7 @@ public class Kitchen implements IKitchen {
 	 */
 	@Override
 	public Collection<String> getRecipes() {
-		return null; // Dummy return value
+		return new ArrayList<>(this.recipes);
 	}
 	
 	/**
@@ -59,7 +72,17 @@ public class Kitchen implements IKitchen {
 	 * @return The customer with the given name, or null if no such customer is registered
 	 */
 	public Customer getCustomer(String name) {
-		return null; // dummy return value
+		for (Customer customer : this.customers) {
+			if(customer.getName().equals(name)) return customer;
+		}
+		return null;
+	}
+
+	private boolean hasMeal(String meal) {
+		for (String recipe : recipes) {
+			if(recipe.equals(meal)) return true;
+		}
+		return false;
 	}
 
 	/**
@@ -78,6 +101,14 @@ public class Kitchen implements IKitchen {
 	 */
 	@Override
 	public void provideMeal(String meal, double price, String customerName) {
+		if(!hasMeal(meal))
+			throw new IllegalStateException("The kitchen does not have this meal");
+
+		Customer customer = this.getCustomer(customerName);
+		if(customer == null)
+			throw new IllegalStateException("This customer is not registered");
+		
+		customer.buyMeal(meal, computeActualPrice(meal, price, customer));
 	}
 		
 	/**

@@ -1,13 +1,17 @@
-package food;
+package eksamenOving.kode.kont2020.food;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-import food.def.ICustomer;
+import eksamenOving.kode.kont2020.food.def.ICustomer;
 
 public class Customer implements ICustomer {
 
 
 	// Add internal variables here:
+	private String name;
+	private List<MealOrder> mealsOrdered;
 	
 	
 	/**
@@ -16,6 +20,8 @@ public class Customer implements ICustomer {
 	 * @param name The name of the customer
 	 */
 	public Customer(String name) {
+		this.name = name;
+		this.mealsOrdered = new ArrayList<>();
 	}
 	
 	
@@ -24,7 +30,7 @@ public class Customer implements ICustomer {
 	 * @return A list containing all meals bought by this customer
 	 */
 	public Collection<MealOrder> getMealsOrdered() {
-		return null; // Dummy return value
+		return this.mealsOrdered;
 	}
 
 	/**
@@ -35,6 +41,7 @@ public class Customer implements ICustomer {
 	 */
 	@Override
 	public void buyMeal(String meal, double price) {
+		this.mealsOrdered.add(new MealOrder(meal, price));
 	}
 	
 	
@@ -43,7 +50,7 @@ public class Customer implements ICustomer {
 	 */
 	@Override
 	public int getNumberOfOrderedMeals() {
-		return 0; // Dummy return value
+		return this.mealsOrdered.size();
 	}
 	
 	/**
@@ -51,7 +58,7 @@ public class Customer implements ICustomer {
 	 */
 	@Override
 	public String getName() {
-		return null; // Dummy return value
+		return this.name;
 	}
 
 	/**
@@ -59,7 +66,7 @@ public class Customer implements ICustomer {
 	 */
 	@Override
 	public String toString() {
-		return null; // dummy return value
+		return this.name + ": " + getNumberOfOrderedMeals();
 	}
 
 	/**
@@ -68,7 +75,7 @@ public class Customer implements ICustomer {
 	 */
 	@Override
 	public MealOrder getLastOrderedMeal() {
-		return null; // Dummy return value
+		return this.mealsOrdered.get(this.mealsOrdered.size()-1);
 	}
 	
 	/**
@@ -80,7 +87,7 @@ public class Customer implements ICustomer {
 	 */
 	@Override
 	public int timesEaten(String meal) {
-		return 0; // Dummy return value
+		return this.mealsOrdered.stream().filter(order -> order.getMeal().equals(meal)).toList().size();
 	}
 	
 	public static void main(String[] args) {
@@ -88,6 +95,6 @@ public class Customer implements ICustomer {
 		customer.buyMeal("pancakes", 100);
 		customer.buyMeal("pancakes", 75);
 		System.out.println("Skal være 2 kjøp: " + customer.getMealsOrdered().size());
-//		System.out.println("Skal være pris 75: " + customer.getLastOrderedMeal().getPrice()); // Som definert i README.
+		System.out.println("Skal være pris 75: " + customer.getLastOrderedMeal().getPrice()); // Som definert i README.
 	}
 }

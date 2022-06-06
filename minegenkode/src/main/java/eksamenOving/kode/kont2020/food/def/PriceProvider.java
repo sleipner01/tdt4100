@@ -1,6 +1,6 @@
-package food.def;
+package eksamenOving.kode.kont2020.food.def;
 
-import food.Customer;
+import eksamenOving.kode.kont2020.food.Customer;
 
 //THIS INTERFACE IS NOT TO BE EDITED
 public interface PriceProvider {

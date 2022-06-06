@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Customer",
+            "request": "launch",
+            "mainClass": "minegenkode/eksamenOving.kode.kont2020.food.Customer",
+            "projectName": "minegenkode"
+        },
+        {
+            "type": "java",
             "name": "Launch MathApp",
             "request": "launch",
             "mainClass": "minegenkode/eksamenOving.kode.kont2020.stuff.MathApp",
