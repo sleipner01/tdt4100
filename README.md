@@ -1,3 +1,9 @@
+# TDT4100 - Objektorientert Programmering | Object Oriented Programming
+
+This repo contains all examples, exercises and solutions for the course TDT4100 - Object Oriented Programming at NTNU in 2022.
+It contains my solutions and work towards the exam.
+
+
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.stack.it.ntnu.no/#https://gitlab.stud.idi.ntnu.no/tdt4100/v2021/students)
 
 # Student-repo TDT4100 V2021
